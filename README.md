@@ -6,6 +6,7 @@ Welcome to my portfolio! This website showcases my projects, skills, and experie
 
 I'm Stephen Carew, a passionate software developer with a Bachelor's Degree with Honours in Electrical and Electronics Engineering. I specialize in web development, machine learning, and Web3 technology. I love building solutions that tackle real-world challenges and am dedicated to continuously enhancing my skills.
 
+Thesis: Gait Phase Detection using Inertial Measurement Unit and Neural Networks
 
 ## Projects
 
