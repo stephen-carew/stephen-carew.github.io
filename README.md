@@ -199,16 +199,9 @@ Built with **Anchor**, SacredDAO’s smart contract includes modular programs to
 
 ---
 
-Let me know if you'd like a shorter version, contributor guidelines, or docs-specific README.
 
+### Project 3: [🌸 Naomi's Little Corner – Elegant Floral Fashion E-Commerce Platform](link-to-project)
 
-### Project 3: [Naomi's Little Corner](link-to-project)
-
-Here’s a cleaner, more professional, and engaging version of your README. It keeps the focus on clarity, visual hierarchy, and presenting both the product and your skills effectively:
-
----
-
-# 🌸 Naomi's Little Corner – Elegant Floral Fashion E-Commerce Platform
 
 ## 🛍️ Overview
 
