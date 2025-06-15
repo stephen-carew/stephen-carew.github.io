@@ -627,6 +627,19 @@ p {
   transition: all var(--transition-normal);
   box-shadow: 0 4px 15px var(--shadow-color);
   position: relative;
+  z-index: var(--z-elevate);
+}
+
+/* Mobile social icons adjustments */
+@media (max-width: 768px) {
+  .social-icons {
+    margin-bottom: var(--spacing-xxl);
+    z-index: var(--z-elevate);
+  }
+  
+  .social-link {
+    z-index: var(--z-elevate);
+  }
 }
 
 .social-link:hover {
@@ -808,7 +821,26 @@ p {
   align-items: center;
   color: var(--text-color-light);
   font-size: 0.875rem;
-  z-index: var(--z-elevate);
+  z-index: var(--z-dropdown);
+}
+
+/* Mobile scroll-down fixes */
+@media (max-width: 768px) {
+  .scroll-down {
+    bottom: 20px;
+    z-index: var(--z-modal);
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media (max-width: 576px) {
+  .scroll-down {
+    bottom: 15px;
+    font-size: 0.8rem;
+  }
 }
 
 .mouse {
