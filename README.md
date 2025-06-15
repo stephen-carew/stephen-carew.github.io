@@ -212,10 +212,3 @@ All projects are open-source and licensed under the [MIT License](LICENSE).
 
 ---
 
-Let me know if you'd like this converted into:
-
-* A styled markdown README for GitHub
-* A polished PDF version
-* A live portfolio site (I can scaffold it in Next.js/React if you’d like)
-
-Would you like one of those next?
