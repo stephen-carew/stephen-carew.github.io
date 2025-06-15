@@ -1,0 +1,28 @@
+<svg width="300" height="200" viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="dex-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="300" height="200" fill="url(#dex-bg)" rx="12"/>
+  <g transform="translate(150,100)">
+    <!-- Exchange Symbol -->
+    <circle cx="-30" cy="-20" r="15" fill="white" opacity="0.9"/>
+    <circle cx="30" cy="20" r="15" fill="white" opacity="0.9"/>
+    <!-- Arrow connecting circles -->
+    <path d="M-15,-20 L15,20" stroke="white" stroke-width="3" opacity="0.8"/>
+    <path d="M10,15 L15,20 L20,15" stroke="white" stroke-width="3" fill="none" opacity="0.8"/>
+    <!-- Currency symbols -->
+    <text x="-30" y="-15" text-anchor="middle" fill="#4a5568" font-family="Arial, sans-serif" font-size="12" font-weight="bold">$</text>
+    <text x="30" y="25" text-anchor="middle" fill="#4a5568" font-family="Arial, sans-serif" font-size="12" font-weight="bold">₿</text>
+    <!-- Trading chart lines -->
+    <g opacity="0.6">
+      <polyline points="-60,-10 -50,-5 -40,-15 -30,-8 -20,-12 -10,-3 0,-8 10,-2 20,-10 30,-5 40,-12 50,-7 60,-15" 
+                stroke="white" stroke-width="2" fill="none"/>
+      <polyline points="-60,25 -50,30 -40,20 -30,27 -20,23 -10,32 0,27 10,33 20,25 30,30 40,23 50,28 60,20" 
+                stroke="white" stroke-width="2" fill="none"/>
+    </g>
+  </g>
+  <text x="150" y="170" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="18" font-weight="bold">DEX Exchange</text>
+</svg>

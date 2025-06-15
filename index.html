@@ -17,7 +17,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&family=Caveat:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
     <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
@@ -31,7 +31,7 @@
       <div class="container">
         <nav class="navbar">
           <div class="logo">
-            <a href="#">SC</a>
+            <a href="#" class="font-serif">SC</a>
           </div>
           <div class="nav-links" id="navLinks">
             <ul>
@@ -54,48 +54,102 @@
     </header>
 
     <!-- Hero Section -->
-    <section id="hero" class="hero">
+    <section id="hero" class="hero section">
       <div class="container">
         <div class="hero-content">
           <div class="hero-text">
-            <h1 class="hero-title" data-text="Stephen Carew">Stephen Carew</h1>
-            <div class="typewriter">
-              <span id="typewriter-text"></span>
-              <span class="cursor">|</span>
+            <div class="hero-greeting">
+              <span class="greeting-text">👋 Hello, I'm</span>
             </div>
-            <p>
-              A passionate developer blending engineering precision with
-              creative tech solutions.
+            <h1 class="hero-title" data-text="Stephen Carew">
+              <span class="title-highlight">Stephen</span> Carew
+            </h1>
+            <div class="hero-subtitle">
+              <span class="subtitle-prefix">I am a</span>
+              <div class="typewriter">
+                <span id="typewriter-text"></span>
+                <span class="cursor">|</span>
+              </div>
+            </div>
+            <p class="hero-description">
+              A passionate <strong>Full-Stack Developer</strong> and
+              <strong>Blockchain Engineer</strong>
+              with 2+ years of experience creating innovative web applications
+              and decentralized solutions. Currently pursuing a Master's in
+              Instrumentation and Control in the UK.
             </p>
+            <div class="hero-stats">
+              <div class="stat-item">
+                <span class="stat-number">20+</span>
+                <span class="stat-label">Projects Completed</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-number">2+</span>
+                <span class="stat-label">Years Experience</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-number">100%</span>
+                <span class="stat-label">Client Satisfaction</span>
+              </div>
+            </div>
             <div class="hero-buttons">
-              <a href="#projects" class="btn btn-primary">View Projects</a>
-              <a href="#contact" class="btn btn-secondary">Contact Me</a>
+              <a href="#projects" class="btn btn-primary">
+                <span>View My Work</span>
+                <i class="fas fa-arrow-right"></i>
+              </a>
+              <a href="#contact" class="btn btn-secondary">
+                <span>Let's Talk</span>
+                <i class="fas fa-comment"></i>
+              </a>
             </div>
             <div class="social-icons">
               <a
                 href="https://github.com/stephen-carew"
                 target="_blank"
                 rel="noopener noreferrer"
+                class="social-link"
+                data-tooltip="GitHub"
                 ><i class="fab fa-github"></i
               ></a>
               <a
                 href="https://www.linkedin.com/in/stephen-carew"
                 target="_blank"
                 rel="noopener noreferrer"
+                class="social-link"
+                data-tooltip="LinkedIn"
                 ><i class="fab fa-linkedin"></i
               ></a>
-              <a href="mailto:stephen.carw@outlook.com"
+              <a
+                href="mailto:stephen.carw@outlook.com"
+                class="social-link"
+                data-tooltip="Email"
                 ><i class="fas fa-envelope"></i
               ></a>
             </div>
           </div>
           <div class="hero-image">
-            <div class="blob"></div>
-            <img
-              src="assets/cat.png"
-              alt="Stephen Carew"
-              class="profile-image"
-            />
+            <div class="image-container">
+              <div class="floating-elements">
+                <div class="floating-icon" data-tech="react">
+                  <i class="fab fa-react"></i>
+                </div>
+                <div class="floating-icon" data-tech="js">
+                  <i class="fab fa-js-square"></i>
+                </div>
+                <div class="floating-icon" data-tech="python">
+                  <i class="fab fa-python"></i>
+                </div>
+                <div class="floating-icon" data-tech="node">
+                  <i class="fab fa-node-js"></i>
+                </div>
+              </div>
+              <div class="blob"></div>
+              <img
+                src="assets/cat.png"
+                alt="Stephen Carew"
+                class="profile-image"
+              />
+            </div>
           </div>
         </div>
       </div>
@@ -112,70 +166,106 @@
     </section>
 
     <!-- About Section -->
-    <section id="about" class="about section">
+    <section id="about" class="section">
       <div class="container">
         <div class="section-header">
           <h2>About Me</h2>
-          <div class="section-divider"></div>
+          <p>Get to know more about my journey and passion for technology</p>
         </div>
         <div class="about-content">
-          <div class="about-image">
-            <div class="image-frame">
-              <img src="assets/about.svg" alt="About Stephen Carew" />
-            </div>
-            <div class="experience-badge">
-              <span class="years">5+</span>
-              <span class="text">Years<br />Experience</span>
-            </div>
-          </div>
-          <div class="about-text">
-            <p>
-              I hold a <strong>Bachelor's Degree (with Honours)</strong> in
-              Electrical and Electronics Engineering and am currently pursuing a
-              <strong>Master's in Instrumentation and Control</strong> in the
-              UK.
-            </p>
-            <p>
-              My passion lies in web development and blockchain technology,
-              particularly building full-stack applications that solve
-              real-world problems with a user-first mindset.
-            </p>
-            <p>
-              <strong>Thesis</strong>:
-              <em
-                >Gait Phase Detection using Inertial Measurement Units and
-                Neural Networks</em
-              >
-            </p>
-            <div class="about-cards">
-              <div class="about-card">
-                <i class="fas fa-code"></i>
-                <h3>Web Development</h3>
-                <p>
-                  Creating responsive, modern web applications with React and
-                  Next.js
-                </p>
-              </div>
-              <div class="about-card">
-                <i class="fas fa-link"></i>
-                <h3>Blockchain</h3>
-                <p>
-                  Building decentralized applications on Solana with Web3.js and
-                  Anchor
-                </p>
-              </div>
-              <div class="about-card">
-                <i class="fas fa-robot"></i>
-                <h3>Bot Development</h3>
-                <p>
-                  Creating interactive Discord bots with Python and
-                  interactions.py
-                </p>
+          <div class="about-grid">
+            <div class="about-text">
+              <h3>My Story</h3>
+              <p>
+                I'm a passionate full-stack developer with a love for creating
+                innovative solutions. With expertise in modern web technologies,
+                I enjoy building applications that make a difference in people's
+                lives.
+              </p>
+              <p>
+                My journey in tech started with curiosity and has evolved into a
+                deep passion for crafting elegant, efficient, and user-centric
+                solutions. I believe in writing clean, maintainable code and
+                staying up-to-date with the latest industry trends.
+              </p>
+              <p>
+                When I'm not coding, you can find me playing video games,
+                watching movies, or listening to music.
+              </p>
+
+              <div class="about-highlights">
+                <div class="highlight-item">
+                  <i class="fas fa-code"></i>
+                  <div>
+                    <h4>Clean Code</h4>
+                    <p>Writing maintainable and scalable solutions</p>
+                  </div>
+                </div>
+                <div class="highlight-item">
+                  <i class="fas fa-lightbulb"></i>
+                  <div>
+                    <h4>Innovation</h4>
+                    <p>Always exploring new technologies and approaches</p>
+                  </div>
+                </div>
+                <div class="highlight-item">
+                  <i class="fas fa-users"></i>
+                  <div>
+                    <h4>Collaboration</h4>
+                    <p>Working effectively in team environments</p>
+                  </div>
+                </div>
               </div>
             </div>
-            <a href="assets/resume.pdf" class="btn btn-primary" target="_blank"
-              >Download Resume</a
-            >
+
+            <div class="about-visual">
+              <div class="experience-card">
+                <div class="experience-header">
+                  <i class="fas fa-briefcase"></i>
+                  <h4>Experience</h4>
+                </div>
+                <div class="experience-list">
+                  <div class="experience-item">
+                    <div class="experience-dot"></div>
+                    <div class="experience-content">
+                      <h5>Full-Stack Developer</h5>
+                      <p class="experience-company">Various Projects</p>
+                      <p class="experience-duration">2020 - Present</p>
+                    </div>
+                  </div>
+                  <div class="experience-item">
+                    <div class="experience-dot"></div>
+                    <div class="experience-content">
+                      <h5>Web Developer</h5>
+                      <p class="experience-company">Freelance</p>
+                      <p class="experience-duration">2018 - 2020</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="skills-preview">
+                <h4>Core Technologies</h4>
+                <div class="tech-icons">
+                  <div class="tech-icon" title="JavaScript">
+                    <i class="fab fa-js-square"></i>
+                    <span class="tech-name">JavaScript</span>
+                  </div>
+                  <div class="tech-icon" title="React">
+                    <i class="fab fa-react"></i>
+                    <span class="tech-name">React</span>
+                  </div>
+                  <div class="tech-icon" title="Node.js">
+                    <i class="fab fa-node-js"></i>
+                    <span class="tech-name">Node.js</span>
+                  </div>
+                  <div class="tech-icon" title="Python">
+                    <i class="fab fa-python"></i>
+                    <span class="tech-name">Python</span>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -186,15 +276,27 @@
       <div class="container">
         <div class="section-header">
           <h2>Featured Projects</h2>
-          <div class="section-divider"></div>
+          <p>Explore my latest work and creative solutions</p>
         </div>
+
+        <!-- Project Filters -->
         <div class="project-filters">
-          <button class="filter-btn active" data-filter="all">All</button>
-          <button class="filter-btn" data-filter="web">Web</button>
-          <button class="filter-btn" data-filter="blockchain">
-            Blockchain
+          <button class="filter-btn active" data-filter="all">
+            <i class="fas fa-th-large"></i>
+            <span>All Projects</span>
           </button>
-          <button class="filter-btn" data-filter="bot">Bot</button>
+          <button class="filter-btn" data-filter="web">
+            <i class="fas fa-globe"></i>
+            <span>Web Apps</span>
+          </button>
+          <button class="filter-btn" data-filter="blockchain">
+            <i class="fas fa-link"></i>
+            <span>Blockchain</span>
+          </button>
+          <button class="filter-btn" data-filter="bot">
+            <i class="fas fa-robot"></i>
+            <span>Bots</span>
+          </button>
         </div>
         <div class="projects-grid">
           <!-- Project 1 -->
@@ -213,12 +315,18 @@
                   ><i class="fas fa-external-link-alt"></i
                 ></a>
               </div>
+              <div class="project-status">
+                <span class="status-badge featured">Featured</span>
+              </div>
             </div>
             <div class="project-content">
-              <div class="project-tags">
-                <span class="tag">Solana</span>
-                <span class="tag">Next.js</span>
-                <span class="tag">React</span>
+              <div class="project-header">
+                <div class="project-tags">
+                  <span class="tag solana">Solana</span>
+                  <span class="tag nextjs">Next.js</span>
+                  <span class="tag react">React</span>
+                </div>
+                <div class="project-year">2025</div>
               </div>
               <h3>🪶 Boobies NFT Customizer & Trait Marketplace</h3>
               <p>
@@ -227,6 +335,16 @@
                 admins complete control over trait economics and user
                 interactions.
               </p>
+              <div class="project-stats">
+                <div class="stat">
+                  <i class="fas fa-users"></i>
+                  <span>500+ Users</span>
+                </div>
+                <div class="stat">
+                  <i class="fas fa-image"></i>
+                  <span>1K+ NFTs</span>
+                </div>
+              </div>
               <div class="project-features">
                 <h4>Key Features</h4>
                 <ul>
@@ -263,12 +381,18 @@
                   ><i class="fas fa-external-link-alt"></i
                 ></a>
               </div>
+              <div class="project-status">
+                <span class="status-badge new">New</span>
+              </div>
             </div>
             <div class="project-content">
-              <div class="project-tags">
-                <span class="tag">Solana</span>
-                <span class="tag">Next.js</span>
-                <span class="tag">Anchor</span>
+              <div class="project-header">
+                <div class="project-tags">
+                  <span class="tag solana">Solana</span>
+                  <span class="tag nextjs">Next.js</span>
+                  <span class="tag anchor">Anchor</span>
+                </div>
+                <div class="project-year">2025</div>
               </div>
               <h3>🧙‍♂️ Dummified Labs – NFT Staking Platform</h3>
               <p>
@@ -276,6 +400,16 @@
                 earn rewards, complete quests, and level up through team or solo
                 events.
               </p>
+              <div class="project-stats">
+                <div class="stat">
+                  <i class="fas fa-coins"></i>
+                  <span>$50K+ Staked</span>
+                </div>
+                <div class="stat">
+                  <i class="fas fa-chart-line"></i>
+                  <span>15% APY</span>
+                </div>
+              </div>
               <div class="project-features">
                 <h4>Features</h4>
                 <ul>
@@ -437,6 +571,216 @@
               </div>
             </div>
           </div>
+
+          <!-- Project 7 -->
+          <div class="project-card" data-category="blockchain web">
+            <div class="project-image">
+              <img src="assets/projects/avalon.svg" alt="Avalon" />
+              <div class="project-links">
+                <a href="#" class="project-link"
+                  ><i class="fas fa-external-link-alt"></i
+                ></a>
+              </div>
+            </div>
+            <div class="project-content">
+              <div class="project-tags">
+                <span class="tag">Solana</span>
+                <span class="tag">TypeScript</span>
+                <span class="tag">Next.js</span>
+              </div>
+              <h3>🏛️ Avalon Vault – Advanced Solana Staking Platform</h3>
+              <p>
+                A comprehensive DeFi staking platform built on Solana with dual
+                staking mechanisms and advanced reward systems. Staking,
+                reimagined.
+              </p>
+              <div class="project-features">
+                <h4>Staking Features</h4>
+                <ul>
+                  <li>
+                    Dual Staking: Multiple staking mechanisms for flexibility
+                  </li>
+                  <li>
+                    Advanced Rewards: Sophisticated reward distribution systems
+                  </li>
+                  <li>DeFi Integration: Full-stack platform with modern UI</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 8 -->
+          <div class="project-card" data-category="web">
+            <div class="project-image">
+              <img src="assets/projects/bart.svg" alt="Bart" />
+              <div class="project-links">
+                <a href="#" class="project-link"
+                  ><i class="fas fa-external-link-alt"></i
+                ></a>
+              </div>
+            </div>
+            <div class="project-content">
+              <div class="project-tags">
+                <span class="tag">Next.js</span>
+                <span class="tag">TypeScript</span>
+                <span class="tag">Prisma</span>
+              </div>
+              <h3>🍺 Bart – Self-Service Bar Management System</h3>
+              <p>
+                A modern, full-stack self-service bar management system built
+                with Next.js 15, featuring QR code table ordering and real-time
+                order management.
+              </p>
+              <div class="project-features">
+                <h4>Management Features</h4>
+                <ul>
+                  <li>
+                    QR Code Ordering: Table-based self-service ordering system
+                  </li>
+                  <li>Real-time Management: Live order tracking and updates</li>
+                  <li>Admin Controls: Comprehensive venue management tools</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 9 -->
+          <div class="project-card" data-category="blockchain web">
+            <div class="project-image">
+              <img src="assets/projects/board.svg" alt="Board" />
+              <div class="project-links">
+                <a href="#" class="project-link"
+                  ><i class="fas fa-external-link-alt"></i
+                ></a>
+              </div>
+            </div>
+            <div class="project-content">
+              <div class="project-tags">
+                <span class="tag">Solana</span>
+                <span class="tag">TypeScript</span>
+                <span class="tag">Next.js</span>
+              </div>
+              <h3>🎮 Board Sol Staking – NFT Staking & Farming Platform</h3>
+              <p>
+                A comprehensive Solana blockchain-based NFT staking and farming
+                platform that enables users to stake NFTs, participate in
+                quests, and level up assets.
+              </p>
+              <div class="project-features">
+                <h4>Platform Features</h4>
+                <ul>
+                  <li>NFT Staking: Stake digital assets for rewards</li>
+                  <li>
+                    Time-based Quests: Participate in progression challenges
+                  </li>
+                  <li>Asset Leveling: Innovative NFT progression system</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 10 -->
+          <div class="project-card" data-category="blockchain web">
+            <div class="project-image">
+              <img src="assets/projects/dex.svg" alt="DEX" />
+              <div class="project-links">
+                <a href="#" class="project-link"
+                  ><i class="fas fa-external-link-alt"></i
+                ></a>
+              </div>
+            </div>
+            <div class="project-content">
+              <div class="project-tags">
+                <span class="tag">Rust</span>
+                <span class="tag">React</span>
+                <span class="tag">TypeScript</span>
+                <span class="tag">Solana</span>
+              </div>
+              <h3>💱 DEX – Decentralized Exchange</h3>
+              <p>
+                A comprehensive DeFi protocol suite featuring synthetic asset
+                trading, multi-collateral vaults, and decentralized governance
+                on Solana.
+              </p>
+              <div class="project-features">
+                <h4>DeFi Features</h4>
+                <ul>
+                  <li>Synthetic Trading: Mint and trade synthetic assets</li>
+                  <li>Vault System: Multi-collateral borrowing positions</li>
+                  <li>Governance: Decentralized proposal and voting system</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 11 -->
+          <div class="project-card" data-category="web blockchain">
+            <div class="project-image">
+              <img src="assets/projects/dummytrait.svg" alt="DummyTrait" />
+              <div class="project-links">
+                <a href="#" class="project-link"
+                  ><i class="fas fa-external-link-alt"></i
+                ></a>
+              </div>
+            </div>
+            <div class="project-content">
+              <div class="project-tags">
+                <span class="tag">Next.js</span>
+                <span class="tag">TypeScript</span>
+                <span class="tag">Solana</span>
+                <span class="tag">NFT</span>
+              </div>
+              <h3>🎨 Dummified Labs Traitshop – NFT Trait Marketplace</h3>
+              <p>
+                A sophisticated Solana NFT trait marketplace enabling users to
+                purchase and apply traits to their NFT collections.
+              </p>
+              <div class="project-features">
+                <h4>Marketplace Features</h4>
+                <ul>
+                  <li>Multi-Collection: Support for various NFT collections</li>
+                  <li>Bundle Purchases: Discounted trait bundles</li>
+                  <li>Admin Panel: Comprehensive management interface</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 12 -->
+          <div class="project-card" data-category="bot blockchain">
+            <div class="project-image">
+              <img src="assets/projects/verif.svg" alt="Verif" />
+              <div class="project-links">
+                <a href="#" class="project-link"
+                  ><i class="fas fa-external-link-alt"></i
+                ></a>
+              </div>
+            </div>
+            <div class="project-content">
+              <div class="project-tags">
+                <span class="tag">Python</span>
+                <span class="tag">Discord</span>
+                <span class="tag">Solana</span>
+                <span class="tag">NFT</span>
+              </div>
+              <h3>🪪 Verification Premium</h3>
+              <p>
+                A sophisticated Discord bot designed for Solana NFT and SPL
+                token verification with automated role-based access control for
+                Discord servers.
+              </p>
+              <div class="project-features">
+                <h4>Verification Features</h4>
+                <ul>
+                  <li>
+                    NFT Verification: Collection and trait-based role assignment
+                  </li>
+                  <li>Token Support: SPL token balance verification</li>
+                  <li>Market Tracking: Real-time floor prices and sales</li>
+                </ul>
+              </div>
+            </div>
+          </div>
         </div>
         <div class="view-more">
           <button id="view-more-btn" class="btn btn-secondary">
@@ -447,159 +791,219 @@
     </section>
 
     <!-- Skills Section -->
-    <section id="skills" class="skills section">
+    <section id="skills" class="section">
       <div class="container">
         <div class="section-header">
-          <h2>Technical Skills</h2>
-          <div class="section-divider"></div>
+          <h2>Skills & Technologies</h2>
+          <p>Technologies I work with to bring ideas to life</p>
         </div>
-        <div class="skills-content">
-          <div class="skills-category">
-            <h3><i class="fas fa-code"></i> Languages</h3>
-            <div class="skills-grid">
+
+        <div class="skills-overview">
+          <div class="skills-stats">
+            <div class="stat-item">
+              <div class="stat-number">2+</div>
+              <div class="stat-label">Years Experience</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number">15+</div>
+              <div class="stat-label">Technologies</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number">20+</div>
+              <div class="stat-label">Projects Completed</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number">100%</div>
+              <div class="stat-label">Client Satisfaction</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="skills-grid">
+          <!-- Frontend Skills -->
+          <div class="skill-category">
+            <div class="category-header">
+              <div class="category-icon">
+                <i class="fas fa-palette"></i>
+              </div>
+              <div class="category-info">
+                <h3>Frontend Development</h3>
+                <p>Creating beautiful and interactive user interfaces</p>
+              </div>
+            </div>
+            <div class="skills-list">
               <div class="skill-item">
-                <div class="skill-icon">
-                  <img src="assets/skills/typescript.svg" alt="TypeScript" />
+                <div class="skill-icon-wrapper">
+                  <i class="fab fa-react skill-icon"></i>
                 </div>
-                <h4>TypeScript</h4>
+                <div class="skill-info">
+                  <h4>React</h4>
+                </div>
               </div>
               <div class="skill-item">
-                <div class="skill-icon">
-                  <img src="assets/skills/javascript.svg" alt="JavaScript" />
+                <div class="skill-icon-wrapper">
+                  <i class="fas fa-forward skill-icon"></i>
                 </div>
-                <h4>JavaScript</h4>
+                <div class="skill-info">
+                  <h4>Next.js</h4>
+                </div>
               </div>
               <div class="skill-item">
-                <div class="skill-icon">
-                  <img src="assets/skills/python.svg" alt="Python" />
+                <div class="skill-icon-wrapper">
+                  <i class="fab fa-js-square skill-icon"></i>
                 </div>
-                <h4>Python</h4>
+                <div class="skill-info">
+                  <h4>JavaScript</h4>
+                </div>
               </div>
               <div class="skill-item">
-                <div class="skill-icon">
-                  <img src="assets/skills/sql.svg" alt="SQL" />
+                <div class="skill-icon-wrapper">
+                  <i class="fas fa-code skill-icon"></i>
                 </div>
-                <h4>SQL</h4>
+                <div class="skill-info">
+                  <h4>TypeScript</h4>
+                </div>
               </div>
             </div>
           </div>
 
-          <div class="skills-category">
-            <h3><i class="fas fa-laptop-code"></i> Frontend</h3>
-            <div class="skills-grid">
+          <!-- Backend Skills -->
+          <div class="skill-category">
+            <div class="category-header">
+              <div class="category-icon">
+                <i class="fas fa-server"></i>
+              </div>
+              <div class="category-info">
+                <h3>Backend Development</h3>
+                <p>Building robust and scalable server-side solutions</p>
+              </div>
+            </div>
+            <div class="skills-list">
               <div class="skill-item">
-                <div class="skill-icon">
-                  <img src="assets/skills/react.svg" alt="React" />
+                <div class="skill-icon-wrapper">
+                  <i class="fab fa-node-js skill-icon"></i>
                 </div>
-                <h4>React</h4>
+                <div class="skill-info">
+                  <h4>Node.js</h4>
+                </div>
               </div>
               <div class="skill-item">
-                <div class="skill-icon">
-                  <img src="assets/skills/nextjs.svg" alt="Next.js" />
+                <div class="skill-icon-wrapper">
+                  <i class="fab fa-python skill-icon"></i>
                 </div>
-                <h4>Next.js</h4>
+                <div class="skill-info">
+                  <h4>Python</h4>
+                </div>
               </div>
               <div class="skill-item">
-                <div class="skill-icon">
-                  <img src="assets/skills/tailwind.svg" alt="Tailwind CSS" />
+                <div class="skill-icon-wrapper">
+                  <i class="fas fa-database skill-icon"></i>
                 </div>
-                <h4>Tailwind CSS</h4>
+                <div class="skill-info">
+                  <h4>MongoDB</h4>
+                </div>
               </div>
               <div class="skill-item">
-                <div class="skill-icon">
-                  <img src="assets/skills/framer.svg" alt="Framer Motion" />
+                <div class="skill-icon-wrapper">
+                  <i class="fas fa-database skill-icon"></i>
                 </div>
-                <h4>Framer Motion</h4>
+                <div class="skill-info">
+                  <h4>PostgreSQL</h4>
+                </div>
               </div>
             </div>
           </div>
 
-          <div class="skills-category">
-            <h3><i class="fas fa-server"></i> Backend</h3>
-            <div class="skills-grid">
+          <!-- Blockchain Skills -->
+          <div class="skill-category">
+            <div class="category-header">
+              <div class="category-icon">
+                <i class="fas fa-link"></i>
+              </div>
+              <div class="category-info">
+                <h3>Blockchain & Web3</h3>
+                <p>Developing decentralized applications and smart contracts</p>
+              </div>
+            </div>
+            <div class="skills-list">
               <div class="skill-item">
-                <div class="skill-icon">
-                  <img src="assets/skills/nodejs.svg" alt="Node.js" />
+                <div class="skill-icon-wrapper">
+                  <i class="fas fa-coins skill-icon"></i>
                 </div>
-                <h4>Node.js</h4>
+                <div class="skill-info">
+                  <h4>Solana</h4>
+                </div>
               </div>
               <div class="skill-item">
-                <div class="skill-icon">
-                  <img src="assets/skills/express.svg" alt="Express" />
+                <div class="skill-icon-wrapper">
+                  <i class="fas fa-globe skill-icon"></i>
                 </div>
-                <h4>Express</h4>
+                <div class="skill-info">
+                  <h4>Web3.js</h4>
+                </div>
               </div>
               <div class="skill-item">
-                <div class="skill-icon">
-                  <img src="assets/skills/prisma.svg" alt="Prisma" />
+                <div class="skill-icon-wrapper">
+                  <i class="fas fa-anchor skill-icon"></i>
                 </div>
-                <h4>Prisma</h4>
+                <div class="skill-info">
+                  <h4>Anchor Framework</h4>
+                </div>
               </div>
               <div class="skill-item">
-                <div class="skill-icon">
-                  <img src="assets/skills/postgresql.svg" alt="PostgreSQL" />
+                <div class="skill-icon-wrapper">
+                  <i class="fas fa-cog skill-icon"></i>
                 </div>
-                <h4>PostgreSQL</h4>
-              </div>
-              <div class="skill-item">
-                <div class="skill-icon">
-                  <img src="assets/skills/redis.svg" alt="Redis" />
+                <div class="skill-info">
+                  <h4>Rust</h4>
                 </div>
-                <h4>Redis</h4>
               </div>
             </div>
           </div>
 
-          <div class="skills-category">
-            <h3><i class="fas fa-link"></i> Blockchain</h3>
-            <div class="skills-grid">
-              <div class="skill-item">
-                <div class="skill-icon">
-                  <img src="assets/skills/solana.svg" alt="Solana" />
-                </div>
-                <h4>Solana</h4>
+          <!-- Tools & Others -->
+          <div class="skill-category">
+            <div class="category-header">
+              <div class="category-icon">
+                <i class="fas fa-tools"></i>
               </div>
-              <div class="skill-item">
-                <div class="skill-icon">
-                  <img src="assets/skills/anchor.svg" alt="Anchor" />
-                </div>
-                <h4>Anchor</h4>
-              </div>
-              <div class="skill-item">
-                <div class="skill-icon">
-                  <img src="assets/skills/web3js.svg" alt="Web3.js" />
-                </div>
-                <h4>Web3.js</h4>
+              <div class="category-info">
+                <h3>Tools & Others</h3>
+                <p>Essential tools for development and design workflow</p>
               </div>
             </div>
-          </div>
-
-          <div class="skills-category">
-            <h3><i class="fas fa-tools"></i> Tools</h3>
-            <div class="skills-grid">
+            <div class="skills-list">
               <div class="skill-item">
-                <div class="skill-icon">
-                  <img src="assets/skills/github.svg" alt="GitHub Actions" />
+                <div class="skill-icon-wrapper">
+                  <i class="fab fa-git-alt skill-icon"></i>
                 </div>
-                <h4>GitHub Actions</h4>
+                <div class="skill-info">
+                  <h4>Git</h4>
+                </div>
               </div>
               <div class="skill-item">
-                <div class="skill-icon">
-                  <img src="assets/skills/jest.svg" alt="Jest" />
+                <div class="skill-icon-wrapper">
+                  <i class="fab fa-docker skill-icon"></i>
                 </div>
-                <h4>Jest</h4>
+                <div class="skill-info">
+                  <h4>Docker</h4>
+                </div>
               </div>
               <div class="skill-item">
-                <div class="skill-icon">
-                  <img src="assets/skills/docker.svg" alt="Docker" />
+                <div class="skill-icon-wrapper">
+                  <i class="fab fa-aws skill-icon"></i>
                 </div>
-                <h4>Docker</h4>
+                <div class="skill-info">
+                  <h4>AWS</h4>
+                </div>
               </div>
               <div class="skill-item">
-                <div class="skill-icon">
-                  <img src="assets/skills/vercel.svg" alt="Vercel" />
+                <div class="skill-icon-wrapper">
+                  <i class="fab fa-figma skill-icon"></i>
                 </div>
-                <h4>Vercel</h4>
+                <div class="skill-info">
+                  <h4>Figma</h4>
+                </div>
               </div>
             </div>
           </div>
@@ -608,87 +1012,173 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="contact section">
+    <section id="contact" class="section">
       <div class="container">
         <div class="section-header">
-          <h2>Get In Touch</h2>
-          <div class="section-divider"></div>
+          <h2>Let's Work Together</h2>
+          <p>
+            Ready to bring your ideas to life? Let's discuss your next project
+            and create something amazing together.
+          </p>
         </div>
-        <div class="contact-content">
+
+        <div class="contact-wrapper">
           <div class="contact-info">
-            <h3>Let's Connect</h3>
-            <p>
-              Feel free to reach out for collaborations, job opportunities, or
-              just to say hello!
-            </p>
-            <div class="contact-details">
+            <div class="contact-intro">
+              <h3>Get In Touch</h3>
+              <p>
+                I'm always excited to work on new projects and collaborate with
+                amazing people. Whether you have a project in mind or just want
+                to chat about technology, feel free to reach out!
+              </p>
+            </div>
+
+            <div class="contact-methods">
               <div class="contact-item">
-                <i class="fas fa-envelope"></i>
-                <div>
+                <div class="contact-icon">
+                  <i class="fas fa-envelope"></i>
+                </div>
+                <div class="contact-details">
                   <h4>Email</h4>
-                  <p>
-                    <a href="mailto:stephen.carw@outlook.com"
-                      >stephen.carw@outlook.com</a
-                    >
-                  </p>
+                  <p>stephen.carw@outlook.com</p>
+                  <span class="contact-note">Best for project inquiries</span>
                 </div>
               </div>
+
               <div class="contact-item">
-                <i class="fab fa-linkedin"></i>
-                <div>
-                  <h4>LinkedIn</h4>
-                  <p>
-                    <a
-                      href="https://www.linkedin.com/in/stephen-carew"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      >stephen-carew</a
-                    >
-                  </p>
+                <div class="contact-icon">
+                  <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <div class="contact-details">
+                  <h4>Location</h4>
+                  <p>London, United Kingdom</p>
+                  <span class="contact-note"
+                    >Open to remote work worldwide</span
+                  >
                 </div>
               </div>
+
               <div class="contact-item">
-                <i class="fab fa-github"></i>
-                <div>
-                  <h4>GitHub</h4>
-                  <p>
-                    <a
-                      href="https://github.com/stephen-carew"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      >stephen-carew</a
-                    >
-                  </p>
+                <div class="contact-icon">
+                  <i class="fas fa-calendar-alt"></i>
+                </div>
+                <div class="contact-details">
+                  <h4>Schedule a Call</h4>
+                  <p>Book a free consultation</p>
+                  <span class="contact-note">30-minute discovery call</span>
                 </div>
               </div>
             </div>
+
+            <div class="contact-social">
+              <h4>Follow Me</h4>
+              <div class="social-links">
+                <a href="#" class="social-link" title="GitHub">
+                  <i class="fab fa-github"></i>
+                </a>
+                <a href="#" class="social-link" title="LinkedIn">
+                  <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="#" class="social-link" title="Twitter">
+                  <i class="fab fa-twitter"></i>
+                </a>
+                <a href="#" class="social-link" title="Discord">
+                  <i class="fab fa-discord"></i>
+                </a>
+              </div>
+            </div>
           </div>
-          <div class="contact-form">
-            <form id="contactForm">
-              <div class="form-group">
-                <label for="name">Name</label>
-                <input type="text" id="name" name="name" required />
+
+          <div class="contact-form-wrapper">
+            <div class="form-header">
+              <h3>Send Me a Message</h3>
+              <p>
+                Let's discuss your project and how I can help bring your vision
+                to life.
+              </p>
+            </div>
+
+            <form class="contact-form">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="name">Full Name</label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    placeholder="John Doe"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="email">Email Address</label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="john@example.com"
+                    required
+                  />
+                </div>
               </div>
-              <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" required />
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="company">Company (Optional)</label>
+                  <input
+                    type="text"
+                    id="company"
+                    name="company"
+                    placeholder="Your Company"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="budget">Project Budget</label>
+                  <select id="budget" name="budget" required>
+                    <option value="">Select Budget Range</option>
+                    <option value="under-5k">Under $5,000</option>
+                    <option value="5k-10k">$5,000 - $10,000</option>
+                    <option value="10k-25k">$10,000 - $25,000</option>
+                    <option value="25k-50k">$25,000 - $50,000</option>
+                    <option value="50k-plus">$50,000+</option>
+                  </select>
+                </div>
               </div>
+
               <div class="form-group">
-                <label for="subject">Subject</label>
-                <input type="text" id="subject" name="subject" required />
+                <label for="subject">Project Type</label>
+                <select id="subject" name="subject" required>
+                  <option value="">Select Project Type</option>
+                  <option value="web-development">Web Development</option>
+                  <option value="blockchain">Blockchain/Web3</option>
+                  <option value="mobile-app">Mobile App</option>
+                  <option value="consulting">Consulting</option>
+                  <option value="other">Other</option>
+                </select>
               </div>
+
               <div class="form-group">
-                <label for="message">Message</label>
+                <label for="message">Project Details</label>
                 <textarea
                   id="message"
                   name="message"
-                  rows="5"
+                  rows="6"
+                  placeholder="Tell me about your project, goals, timeline, and any specific requirements..."
                   required
                 ></textarea>
               </div>
-              <button type="submit" class="btn btn-primary">
-                Send Message
+
+              <button type="submit" class="btn btn-primary btn-large">
+                <i class="fas fa-paper-plane"></i>
+                <span>Send Message</span>
+                <div class="btn-shine"></div>
               </button>
+
+              <p class="form-note">
+                <i class="fas fa-shield-alt"></i>
+                Your information is secure and will never be shared with third
+                parties.
+              </p>
             </form>
           </div>
         </div>
@@ -700,7 +1190,7 @@
       <div class="container">
         <div class="footer-content">
           <div class="footer-logo">
-            <a href="#">SC</a>
+            <a href="#" class="font-serif">SC</a>
             <p>Building the future, one line of code at a time.</p>
           </div>
           <div class="footer-links">
