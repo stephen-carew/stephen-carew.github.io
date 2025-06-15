@@ -274,27 +274,6 @@ Built with **Anchor**, SacredDAO’s smart contract includes modular programs to
 * **Testing**: Jest, Playwright, React Testing Library
 * **Code Quality**: ESLint, Prettier, TypeScript
 
----
-
-## 🗂️ Project Structure Highlights
-
-* **Pages**: Home, product listings, individual product view, checkout, admin panel
-* **Components**: Product cards, modals, cart UI, form inputs, responsive navbar
-* **APIs**: Auth, products, orders, user account management
-
----
-
-## 🔍 Explore More
-
-Check out [my GitHub profile](https://github.com/stephen-carew) for more projects and contributions.
-
----
-
-## 🧠 Skills Demonstrated
-
-* TypeScript, React, Node.js
-* PostgreSQL, MySQL, Prisma
-* Git & GitHub workflows
 
 ## Contact Me
 
