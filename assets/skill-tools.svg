@@ -1,0 +1,35 @@
+<svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Circle with Gradient -->
+  <circle cx="40" cy="40" r="40" fill="url(#toolsGradient)" />
+  
+  <!-- Tools and Technologies Icon -->
+  <g transform="translate(16, 16) scale(0.6)">
+    <!-- Wrench -->
+    <path d="M20 20C20 15 25 10 30 10C35 10 40 15 40 20C40 25 35 30 30 30C28 30 26 29 25 28L10 45L15 50L30 33C31 34 33 35 35 35C40 35 45 30 45 25C45 20 40 15 35 15C33 15 30 16 28 18L45 35L40 40L23 23C22 25 20 28 20 30C20 35 25 40 30 40C35 40 40 35 40 30" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+    
+    <!-- Gear -->
+    <path d="M70 40C70 42.5 69.5 45 68.5 47.5L75 52.5L65 67.5L58.5 62.5C56 64 53 65 50 65C47 65 44 64 41.5 62.5L35 67.5L25 52.5L31.5 47.5C30.5 45 30 42.5 30 40C30 37.5 30.5 35 31.5 32.5L25 27.5L35 12.5L41.5 17.5C44 16 47 15 50 15C53 15 56 16 58.5 17.5L65 12.5L75 27.5L68.5 32.5C69.5 35 70 37.5 70 40Z" fill="white" opacity="0.8" />
+    <circle cx="50" cy="40" r="10" fill="#EC4899" />
+    <circle cx="50" cy="40" r="5" fill="white" opacity="0.5" />
+    
+    <!-- Code Symbol -->
+    <path d="M15 70L5 80" stroke="white" stroke-width="3" stroke-linecap="round" />
+    <path d="M15 80L5 70" stroke="white" stroke-width="3" stroke-linecap="round" />
+    
+    <!-- Terminal Symbol -->
+    <rect x="25" y="70" width="20" height="15" rx="2" stroke="white" stroke-width="2" fill="none" />
+    <path d="M28 75L32 78L28 81" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+    <path d="M35 81H42" stroke="white" stroke-width="1.5" stroke-linecap="round" />
+    
+    <!-- Cloud Symbol -->
+    <path d="M60 75C60 72.5 62.5 70 65 70C67.5 70 70 72.5 70 75C70 77.5 67.5 80 65 80H55C52.5 80 50 77.5 50 75C50 72.5 52.5 70 55 70C55 67.5 57.5 65 60 65C62.5 65 65 67.5 65 70" stroke="white" stroke-width="2" fill="none" />
+  </g>
+  
+  <!-- Gradient Definition -->
+  <defs>
+    <linearGradient id="toolsGradient" x1="0" y1="0" x2="80" y2="80" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#EC4899" />
+      <stop offset="1" stop-color="#8B5CF6" />
+    </linearGradient>
+  </defs>
+</svg>

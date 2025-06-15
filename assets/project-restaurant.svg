@@ -1,0 +1,41 @@
+<svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Circle with Gradient -->
+  <circle cx="40" cy="40" r="40" fill="url(#restaurantGradient)" />
+  
+  <!-- Restaurant Management Icon -->
+  <g transform="translate(16, 16) scale(0.6)">
+    <!-- Plate -->
+    <circle cx="40" cy="40" r="30" fill="white" opacity="0.9" />
+    <circle cx="40" cy="40" r="25" stroke="#FB7185" stroke-width="2" stroke-dasharray="2 2" fill="none" />
+    
+    <!-- Fork -->
+    <path d="M20 15V40" stroke="#FB7185" stroke-width="3" stroke-linecap="round" />
+    <path d="M20 15C20 15 15 20 15 25C15 30 20 30 20 30" stroke="#FB7185" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+    <path d="M20 15C20 15 25 20 25 25C25 30 20 30 20 30" stroke="#FB7185" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+    
+    <!-- Knife -->
+    <path d="M60 15V40" stroke="#FB7185" stroke-width="3" stroke-linecap="round" />
+    <path d="M60 15C60 15 65 20 65 30C65 35 60 40 60 40" stroke="#FB7185" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+    
+    <!-- Food -->
+    <path d="M30 40C30 40 35 35 40 35C45 35 50 40 50 40" stroke="#FB7185" stroke-width="2" stroke-linecap="round" />
+    <circle cx="35" cy="45" r="3" fill="#FB7185" />
+    <circle cx="45" cy="45" r="3" fill="#FB7185" />
+    
+    <!-- Management Elements -->
+    <rect x="10" y="60" width="60" height="15" rx="3" fill="white" opacity="0.7" />
+    <path d="M20 65H30" stroke="#FB7185" stroke-width="2" stroke-linecap="round" />
+    <path d="M20 70H40" stroke="#FB7185" stroke-width="2" stroke-linecap="round" />
+    <circle cx="55" cy="67.5" r="5" stroke="#FB7185" stroke-width="2" fill="none" />
+    <path d="M52 67.5H58" stroke="#FB7185" stroke-width="2" stroke-linecap="round" />
+    <path d="M55 64.5V70.5" stroke="#FB7185" stroke-width="2" stroke-linecap="round" />
+  </g>
+  
+  <!-- Gradient Definition -->
+  <defs>
+    <linearGradient id="restaurantGradient" x1="0" y1="0" x2="80" y2="80" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FB7185" />
+      <stop offset="1" stop-color="#F59E0B" />
+    </linearGradient>
+  </defs>
+</svg>

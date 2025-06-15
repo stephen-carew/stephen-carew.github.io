@@ -1,0 +1,47 @@
+<svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Circle with Gradient -->
+  <circle cx="40" cy="40" r="40" fill="url(#frontendGradient)" />
+  
+  <!-- Frontend Development Icon -->
+  <g transform="translate(16, 16) scale(0.6)">
+    <!-- Browser Window -->
+    <rect x="5" y="10" width="70" height="60" rx="5" fill="white" opacity="0.9" />
+    
+    <!-- Browser Header -->
+    <rect x="5" y="10" width="70" height="10" rx="5" fill="#0EA5E9" />
+    <circle cx="10" cy="15" r="2" fill="white" />
+    <circle cx="17" cy="15" r="2" fill="white" />
+    <circle cx="24" cy="15" r="2" fill="white" />
+    <rect x="35" y="13" width="30" height="4" rx="2" fill="white" opacity="0.7" />
+    
+    <!-- UI Elements -->
+    <!-- Header -->
+    <rect x="10" y="25" width="60" height="5" rx="2.5" fill="#0EA5E9" opacity="0.7" />
+    
+    <!-- Navigation -->
+    <rect x="10" y="35" width="10" height="3" rx="1.5" fill="#0EA5E9" opacity="0.7" />
+    <rect x="25" y="35" width="10" height="3" rx="1.5" fill="#0EA5E9" opacity="0.7" />
+    <rect x="40" y="35" width="10" height="3" rx="1.5" fill="#0EA5E9" opacity="0.7" />
+    <rect x="55" y="35" width="10" height="3" rx="1.5" fill="#0EA5E9" opacity="0.7" />
+    
+    <!-- Content Blocks -->
+    <rect x="10" y="45" width="25" height="20" rx="2" fill="#0EA5E9" opacity="0.3" />
+    <rect x="40" y="45" width="25" height="10" rx="2" fill="#0EA5E9" opacity="0.3" />
+    <rect x="40" y="60" width="25" height="5" rx="2" fill="#0EA5E9" opacity="0.3" />
+    
+    <!-- Responsive Design Elements -->
+    <path d="M75 40H85" stroke="white" stroke-width="2" stroke-linecap="round" />
+    <rect x="85" y="30" width="15" height="20" rx="2" stroke="white" stroke-width="2" fill="none" />
+    <path d="M90 50V55" stroke="white" stroke-width="2" stroke-linecap="round" />
+    <path d="M95 50V55" stroke="white" stroke-width="2" stroke-linecap="round" />
+    <path d="M87.5 55H97.5" stroke="white" stroke-width="2" stroke-linecap="round" />
+  </g>
+  
+  <!-- Gradient Definition -->
+  <defs>
+    <linearGradient id="frontendGradient" x1="0" y1="0" x2="80" y2="80" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0EA5E9" />
+      <stop offset="1" stop-color="#10B981" />
+    </linearGradient>
+  </defs>
+</svg>

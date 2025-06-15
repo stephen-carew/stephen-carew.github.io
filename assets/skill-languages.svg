@@ -1,0 +1,29 @@
+<svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Circle with Gradient -->
+  <circle cx="40" cy="40" r="40" fill="url(#languagesGradient)" />
+  
+  <!-- Programming Languages Icon -->
+  <g transform="translate(16, 16) scale(0.6)">
+    <!-- Code Brackets -->
+    <path d="M20 20L5 40L20 60" stroke="white" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" />
+    <path d="M60 20L75 40L60 60" stroke="white" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" />
+    
+    <!-- Code Line -->
+    <path d="M35 15L45 65" stroke="white" stroke-width="5" stroke-linecap="round" />
+    
+    <!-- Code Symbols -->
+    <circle cx="15" cy="30" r="3" fill="white" />
+    <circle cx="65" cy="30" r="3" fill="white" />
+    <rect x="35" y="30" width="10" height="3" rx="1.5" fill="white" />
+    <rect x="30" y="40" width="20" height="3" rx="1.5" fill="white" />
+    <rect x="25" y="50" width="15" height="3" rx="1.5" fill="white" />
+  </g>
+  
+  <!-- Gradient Definition -->
+  <defs>
+    <linearGradient id="languagesGradient" x1="0" y1="0" x2="80" y2="80" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#6366F1" />
+      <stop offset="1" stop-color="#2563EB" />
+    </linearGradient>
+  </defs>
+</svg>

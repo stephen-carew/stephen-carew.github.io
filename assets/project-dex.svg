@@ -1,0 +1,44 @@
+<svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Circle with Gradient -->
+  <circle cx="40" cy="40" r="40" fill="url(#dexGradient)" />
+  
+  <!-- DEX Icon -->
+  <g transform="translate(16, 16) scale(0.6)">
+    <!-- Exchange Arrows -->
+    <path d="M20 30H60" stroke="white" stroke-width="4" stroke-linecap="round" />
+    <path d="M60 30L50 20" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+    <path d="M60 30L50 40" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+    
+    <path d="M60 50H20" stroke="white" stroke-width="4" stroke-linecap="round" />
+    <path d="M20 50L30 40" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+    <path d="M20 50L30 60" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+    
+    <!-- Tokens/Coins -->
+    <circle cx="15" cy="30" r="10" fill="white" opacity="0.9" />
+    <path d="M15 25V35" stroke="#9333EA" stroke-width="2" stroke-linecap="round" />
+    <path d="M10 30H20" stroke="#9333EA" stroke-width="2" stroke-linecap="round" />
+    
+    <circle cx="65" cy="50" r="10" fill="white" opacity="0.9" />
+    <path d="M65 45L65 55" stroke="#9333EA" stroke-width="2" stroke-linecap="round" />
+    <path d="M60 50H70" stroke="#9333EA" stroke-width="2" stroke-linecap="round" />
+    <path d="M65 47V53" stroke="#9333EA" stroke-width="2" stroke-linecap="round" />
+    
+    <!-- Liquidity Pool -->
+    <rect x="30" y="65" width="20" height="15" rx="3" fill="white" opacity="0.7" />
+    <path d="M35 70C35 70 37 75 40 75C43 75 45 70 45 70" stroke="#9333EA" stroke-width="1.5" stroke-linecap="round" />
+    
+    <!-- Blockchain Connection -->
+    <path d="M10 80H70" stroke="white" stroke-width="2" stroke-dasharray="3 3" />
+    <circle cx="25" cy="80" r="3" fill="white" />
+    <circle cx="40" cy="80" r="3" fill="white" />
+    <circle cx="55" cy="80" r="3" fill="white" />
+  </g>
+  
+  <!-- Gradient Definition -->
+  <defs>
+    <linearGradient id="dexGradient" x1="0" y1="0" x2="80" y2="80" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#9333EA" />
+      <stop offset="1" stop-color="#EC4899" />
+    </linearGradient>
+  </defs>
+</svg>

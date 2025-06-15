@@ -1,0 +1,76 @@
+<svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Circle with Gradient -->
+  <circle cx="40" cy="40" r="40" fill="url(#blockchainGradient)" />
+  
+  <!-- Blockchain Development Icon -->
+  <g transform="translate(16, 16) scale(0.6)">
+    <!-- Blockchain Nodes and Connections -->
+    <!-- Central Node -->
+    <rect x="35" y="35" width="10" height="10" rx="2" fill="white" opacity="0.9" />
+    <path d="M37 40H43" stroke="#F59E0B" stroke-width="1.5" stroke-linecap="round" />
+    <path d="M40 37V43" stroke="#F59E0B" stroke-width="1.5" stroke-linecap="round" />
+    
+    <!-- Surrounding Nodes -->
+    <!-- Top Node -->
+    <rect x="35" y="5" width="10" height="10" rx="2" fill="white" opacity="0.9" />
+    <path d="M37 10H43" stroke="#F59E0B" stroke-width="1.5" stroke-linecap="round" />
+    <path d="M40 7V13" stroke="#F59E0B" stroke-width="1.5" stroke-linecap="round" />
+    
+    <!-- Right Node -->
+    <rect x="65" y="35" width="10" height="10" rx="2" fill="white" opacity="0.9" />
+    <path d="M67 40H73" stroke="#F59E0B" stroke-width="1.5" stroke-linecap="round" />
+    <path d="M70 37V43" stroke="#F59E0B" stroke-width="1.5" stroke-linecap="round" />
+    
+    <!-- Bottom Node -->
+    <rect x="35" y="65" width="10" height="10" rx="2" fill="white" opacity="0.9" />
+    <path d="M37 70H43" stroke="#F59E0B" stroke-width="1.5" stroke-linecap="round" />
+    <path d="M40 67V73" stroke="#F59E0B" stroke-width="1.5" stroke-linecap="round" />
+    
+    <!-- Left Node -->
+    <rect x="5" y="35" width="10" height="10" rx="2" fill="white" opacity="0.9" />
+    <path d="M7 40H13" stroke="#F59E0B" stroke-width="1.5" stroke-linecap="round" />
+    <path d="M10 37V43" stroke="#F59E0B" stroke-width="1.5" stroke-linecap="round" />
+    
+    <!-- Diagonal Nodes -->
+    <!-- Top-Right Node -->
+    <rect x="65" y="5" width="10" height="10" rx="2" fill="white" opacity="0.9" />
+    <path d="M67 10H73" stroke="#F59E0B" stroke-width="1.5" stroke-linecap="round" />
+    <path d="M70 7V13" stroke="#F59E0B" stroke-width="1.5" stroke-linecap="round" />
+    
+    <!-- Bottom-Right Node -->
+    <rect x="65" y="65" width="10" height="10" rx="2" fill="white" opacity="0.9" />
+    <path d="M67 70H73" stroke="#F59E0B" stroke-width="1.5" stroke-linecap="round" />
+    <path d="M70 67V73" stroke="#F59E0B" stroke-width="1.5" stroke-linecap="round" />
+    
+    <!-- Bottom-Left Node -->
+    <rect x="5" y="65" width="10" height="10" rx="2" fill="white" opacity="0.9" />
+    <path d="M7 70H13" stroke="#F59E0B" stroke-width="1.5" stroke-linecap="round" />
+    <path d="M10 67V73" stroke="#F59E0B" stroke-width="1.5" stroke-linecap="round" />
+    
+    <!-- Top-Left Node -->
+    <rect x="5" y="5" width="10" height="10" rx="2" fill="white" opacity="0.9" />
+    <path d="M7 10H13" stroke="#F59E0B" stroke-width="1.5" stroke-linecap="round" />
+    <path d="M10 7V13" stroke="#F59E0B" stroke-width="1.5" stroke-linecap="round" />
+    
+    <!-- Connection Lines -->
+    <!-- Horizontal and Vertical Connections -->
+    <path d="M40 15V35" stroke="white" stroke-width="2" stroke-linecap="round" stroke-dasharray="2 2" />
+    <path d="M40 45V65" stroke="white" stroke-width="2" stroke-linecap="round" stroke-dasharray="2 2" />
+    <path d="M15 40H35" stroke="white" stroke-width="2" stroke-linecap="round" stroke-dasharray="2 2" />
+    <path d="M45 40H65" stroke="white" stroke-width="2" stroke-linecap="round" stroke-dasharray="2 2" />
+    
+    <!-- Diagonal Connections -->
+    <path d="M15 15L35 35" stroke="white" stroke-width="2" stroke-linecap="round" stroke-dasharray="2 2" />
+    <path d="M15 65L35 45" stroke="white" stroke-width="2" stroke-linecap="round" stroke-dasharray="2 2" />
+    <path d="M65 15L45 35" stroke="white" stroke-width="2" stroke-linecap="round" stroke-dasharray="2 2" />
+    <path d="M65 65L45 45" stroke="white" stroke-width="2" stroke-linecap="round" stroke-dasharray="2 2" />
+  </g>
+  
+  <!-- Gradient Definition -->
+  <defs>
+    <linearGradient id="blockchainGradient" x1="0" y1="0" x2="80" y2="80" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F59E0B" />
+      <stop offset="1" stop-color="#D97706" />
+    </linearGradient>
+  </defs>
+</svg>

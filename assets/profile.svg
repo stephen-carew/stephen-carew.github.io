@@ -1,0 +1,58 @@
+<svg width="400" height="400" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Circle with Gradient -->
+  <circle cx="200" cy="200" r="200" fill="url(#profileGradient)" />
+  
+  <!-- Abstract Background Pattern -->
+  <path d="M0 200C0 89.5431 89.5431 0 200 0C310.457 0 400 89.5431 400 200C400 310.457 310.457 400 200 400C89.5431 400 0 310.457 0 200Z" fill="url(#patternGradient)" />
+  <mask id="mask0" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="400" height="400">
+    <circle cx="200" cy="200" r="200" fill="white" />
+  </mask>
+  <g mask="url(#mask0)">
+    <path d="M376.5 112.5C393.5 157.5 356 187 376.5 229.5C397 272 356 306.5 376.5 341.5" stroke="rgba(255,255,255,0.15)" stroke-width="40" />
+    <path d="M23.5 112.5C40.5 157.5 3 187 23.5 229.5C44 272 3 306.5 23.5 341.5" stroke="rgba(255,255,255,0.15)" stroke-width="40" />
+    <path d="M200 0V400" stroke="rgba(255,255,255,0.1)" stroke-width="60" />
+    <path d="M0 200H400" stroke="rgba(255,255,255,0.1)" stroke-width="60" />
+  </g>
+  
+  <!-- Stylized Person -->
+  <!-- Head -->
+  <circle cx="200" cy="150" r="70" fill="#F8FAFC" />
+  
+  <!-- Body -->
+  <path d="M120 280C120 230 170 220 200 220C230 220 280 230 280 280V400H120V280Z" fill="#F8FAFC" />
+  
+  <!-- Facial Features (minimalist) -->
+  <!-- Eyes -->
+  <ellipse cx="175" cy="140" rx="10" ry="8" fill="#1E293B" />
+  <ellipse cx="225" cy="140" rx="10" ry="8" fill="#1E293B" />
+  
+  <!-- Smile -->
+  <path d="M175 170C175 170 187.5 185 200 185C212.5 185 225 170 225 170" stroke="#1E293B" stroke-width="5" stroke-linecap="round" />
+  
+  <!-- Hair -->
+  <path d="M130 120C130 120 150 70 200 70C250 70 270 120 270 120" fill="#1E293B" />
+  <path d="M130 120C130 120 150 70 200 70C250 70 270 120 270 120" stroke="#1E293B" stroke-width="40" stroke-linecap="round" />
+  
+  <!-- Neck -->
+  <path d="M180 220V190C180 190 200 200 220 190V220" fill="#F8FAFC" />
+  
+  <!-- Clothing Details -->
+  <path d="M120 280C120 280 150 260 200 260C250 260 280 280 280 280" fill="#6366F1" />
+  <path d="M160 400V280C160 280 180 270 200 270C220 270 240 280 240 280V400" fill="#6366F1" />
+  
+  <!-- Decorative Elements -->
+  <circle cx="200" cy="290" r="10" fill="white" />
+  <rect x="195" y="290" width="10" height="60" fill="white" />
+  
+  <!-- Gradient Definitions -->
+  <defs>
+    <linearGradient id="profileGradient" x1="0" y1="0" x2="400" y2="400" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#6366F1" />
+      <stop offset="1" stop-color="#10B981" />
+    </linearGradient>
+    <linearGradient id="patternGradient" x1="0" y1="0" x2="400" y2="400" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#6366F1" />
+      <stop offset="1" stop-color="#10B981" />
+    </linearGradient>
+  </defs>
+</svg>
