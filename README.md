@@ -1,284 +1,138 @@
-# Stephen Carew's Portfolio
-
-Welcome to my portfolio! This website showcases my projects, skills, and experience as a developer.
-
-## About Me
-
-I'm Stephen Carew, a passionate software developer with a Bachelor's Degree with Honours in Electrical and Electronics Engineering, currently pursuing Instrumentation and Control in the UK. I specialize in web development, and Web3 technology. I love building solutions that tackle real-world challenges and am eager to continuously enhance my skills.
-
-Thesis: Gait Phase Detection using Inertial Measurement Unit and Neural Networks
-
-## Projects
-
-### Project 1: [Boobies NFT Customizer & Trait Marketplace](https://plume.bluefoot.xyz)
-
-A full-stack application for customizing and upgrading Boobies NFTs on the Solana blockchain. Users can personalize their NFTs with overlays, buy traits, and manage digital assets—while admins handle collections, traits, and payments through a robust dashboard.
+Here's a polished and professional version of your portfolio. I've tightened the language, improved the flow, and standardized formatting for clarity and impact—perfect for sharing on GitHub, a personal website, or as a PDF:
 
 ---
 
-## 🌟 Core Features
+# **Stephen Carew's Portfolio**
 
-### 🖌️ NFT Customization
-
-* **Overlay System**: Apply and layer categorized overlays (daily, events, community, etc.)
-* **Text & Effects**: Add styled text, blur, glow, shadow, and outlines
-* **Community Contributions**: Upload and share custom overlays
-* **Preview & Export**: Real-time preview and export for social media
-
-### 🛍️ Trait Marketplace
-
-* **Trait Purchasing**: Upgrade NFTs by buying traits
-* **Dynamic Rarity**: Plume Protocol ensures rarity balance
-* **Transaction History**: View past purchases and upgrades
-
-### 🔧 Admin Dashboard
-
-* **Collection & Trait Management**: Add, price, and manage traits and collections
-* **Overlay Management**: Curate official and community overlays
-* **Payment Tools**: Configure tokens, track purchases, verify transactions
+Welcome! I’m Stephen Carew—a passionate developer blending engineering precision with creative tech. This portfolio highlights my projects, skills, and experience in full-stack development, Web3 technologies, and real-world problem solving.
 
 ---
 
-## ⚙️ Tech Stack
+## 👨‍💻 About Me
 
-### 🖥️ Frontend
+I hold a **Bachelor’s Degree (with Honours)** in Electrical and Electronics Engineering and am currently pursuing a **Master’s in Instrumentation and Control** in the UK. My passion lies in web development and blockchain technology, particularly building full-stack applications that solve real-world problems with a user-first mindset.
 
-* **Framework**: Next.js 15 (React 19)
-* **Styling**: Tailwind CSS, SCSS, Radix UI, Framer Motion
-* **UI Libraries**: MUI, Headless UI, Radix Themes
-* **State**: React Context API
-
-### 🔗 Blockchain
-
-* **Solana Web3.js**: Core blockchain integration
-* **Wallet Adapter**: Multi-wallet support
-* **Metaplex**: Compressed NFTs (Bubblegum), token metadata, UMI
-
-### 🧠 Backend
-
-* **Framework**: Express.js with TypeScript
-* **Database**: PostgreSQL with Prisma ORM
-* **Storage**: Vercel Blob for asset management
-* **API Routes**: For traits, collections, purchases, previews, admin auth
+**Thesis**: *Gait Phase Detection using Inertial Measurement Units and Neural Networks*
 
 ---
 
-## 🔐 Blockchain Services
-
-* **Purchases & Token Transfers**: Supports SOL & SPL tokens
-* **Metadata Updates**: Reflect trait changes on-chain
-* **Transaction Verification**: Ensures secure, valid operations
+## 🚀 Featured Projects
 
 ---
 
-## 🧪 Development Tools
+### 🪶 [Boobies NFT Customizer & Trait Marketplace](https://plume.bluefoot.xyz)
 
-* **TypeScript** for type safety
-* **ESLint & Prettier** for consistent code
-* **Yarn** for dependency management
+A full-stack Solana-based platform enabling users to customize their NFTs through overlays and trait upgrades, while giving admins complete control over trait economics and user interactions.
 
----
+#### 🔍 Key Features
 
-### Project 2: [Dummified Labs NFT Staking Platform](staking.dummifiedlabs.xyz)
-Here's an improved and more polished version of your README that emphasizes clarity, structure, and professionalism while retaining all technical details:
+* **NFT Customization**:
 
----
+  * Layered overlays (daily, events, community)
+  * Styled text, blur, glow, and exportable previews
+* **Trait Marketplace**:
 
-# 
+  * Trait purchases, dynamic rarity via Plume Protocol
+  * History of upgrades and transactions
+* **Admin Dashboard**:
 
-## 🧭 Overview
+  * Trait and overlay management
+  * Payment configurations and token support
 
-**SacredDAO** is a decentralized NFT staking platform on the **Solana blockchain** that enables users to stake NFTs, embark on time-based quests (called *Pilgrimages*), and earn dynamic rewards. The platform blends gamified mechanics with on-chain utility, offering an engaging and rewarding experience for NFT holders and developers alike.
+#### 🧰 Tech Stack
 
----
-
-## 🚀 Core Features
-
-### 🧱 NFT Staking
-
-* **Multi-Farm Support**: Stake NFTs across various farm types (standard & quest farms)
-* **Time-Based Rewards**: Earn tokens based on staking duration
-* **Level Progression**: NFTs level up while staked
-* **Flexible Claiming**: Claim rewards at any time
-
-### ✨ Pilgrimages / Quests
-
-* **Duration-Based Incentives**: Longer quests yield better rewards
-* **Dynamic Loot System**: Decreasing odds encourage early participation
-* **Team-Based Bonuses**: Collaborate for enhanced rewards
-* **Level Requirements**: Unlock advanced quests with higher-level NFTs
-
-### 🎁 Loot System
-
-* **Time-Sensitive Drops**: Reward probability changes over time
-* **Multi-Type Rewards**: Earn both tokens and NFTs
-* **Custom Loot Boxes**: Configurable containers with rarity-based rewards
-
-### 🛠️ Admin Controls
-
-* **Farm Management**: Deploy and configure farms with reward logic
-* **Quest Designer**: Create and manage custom pilgrimage parameters
-* **Reward Pool Funding**: Allocate SPL tokens for farm and quest rewards
-* **Analytics Dashboard**: Real-time monitoring of user activity and farm performance
+* **Frontend**: Next.js 15 (React 19), Tailwind CSS, Framer Motion
+* **Backend**: Express.js (TypeScript), PostgreSQL + Prisma, Vercel Blob
+* **Blockchain**: Solana Web3.js, Metaplex (Bubblegum), Wallet Adapter
+* **Dev Tools**: ESLint, Prettier, TypeScript, Yarn
 
 ---
 
-## 🧰 Tech Stack
+### 🧙‍♂️ [Dummified Labs – NFT Staking Platform](https://staking.dummifiedlabs.xyz)
 
-### 🖥️ Frontend
+A gamified decentralized NFT staking experience built on Solana. Users stake NFTs to earn rewards and complete quests ("Pilgrimages") while leveling up NFTs and unlocking dynamic loot.
 
-* **Framework**: Next.js + React
-* **Styling**: Theme UI + Emotion
-* **State Management**: React Hooks & Context API
-* **UI**: Custom components with responsive design
+#### ⚙️ Features
 
-### 🔗 Blockchain Integration
+* **Staking**:
 
-* **Chain**: Solana
-* **Dev Framework**: Anchor (for smart contracts)
-* **Standards**: SPL tokens & Metaplex NFTs
-* **Wallet Support**: Solana Wallet Adapter
+  * Multi-farm, time-based reward logic
+  * NFT leveling and flexible reward claims
+* **Quests & Loot**:
 
-### 🧠 Backend
+  * Dynamic drop system, team boosts, and time-sensitive quests
+* **Admin Suite**:
 
-* **Database**: PostgreSQL + Prisma ORM
-* **Auth**: Wallet-based authentication
-* **API**: Next.js API Routes
+  * Farm & quest configuration, reward pool funding, analytics
 
----
+#### 🛠️ Tech Stack
 
-## 🗂️ Project Structure
-
-### 📦 Components
-
-* `Header`, `Layout`: UI structure & navigation
-* `NFTGallery`, `NFTSelectInput`, `TokenSelectModal`: NFT and token UI
-* `WalletManager`: Wallet integration
-
-### ⚓ Hooks
-
-* `useAnchorStakingProgram`: Connect with Anchor programs
-* `useStaking`, `useQuests`: Core business logic
-* `useWalletNFTs`, `useTotalStaked`: NFT and staking data
-* `useFarmToasts`: Notifications
-
-### 🧱 Lib
-
-* `pda`: Program-Derived Address utilities
-* `utils`: Utility helpers
-* `gen`: Auto-generated Anchor integration code
-
-  * `accounts`, `instructions`, `types`, `errors`
-
-### 🧭 Pages
-
-* **Main**: Home, Pilgrimage, Crash Course
-* **Admin**: Dashboard, Farm/Quest Management
-* **API**: Backend endpoints
+* **Frontend**: Next.js, React, Theme UI, Emotion
+* **Backend**: PostgreSQL + Prisma, Next.js API Routes
+* **Blockchain**: Solana + Anchor framework, SPL tokens, Metaplex NFTs
 
 ---
 
-## ⚙️ Smart Contract Architecture
+### 🌸 [Naomi’s Little Corner – Floral Fashion E-Commerce](#)
 
-Built with **Anchor**, SacredDAO’s smart contract includes modular programs to manage staking, progression, and rewards.
+A refined e-commerce platform focused on floral fashion, built with aesthetic detail and robust admin tools.
 
-### 📜 State Accounts
+#### 🛍️ Features
 
-* **Farm**: Controls staking parameters and rewards
-* **Farmer**: Tracks individual stakers and claims
-* **Level**: Stores NFT progression data
-* **Quest**: Defines quest structure and rewards
-* **StakeReceipt**: Records each staking action
+* **Customer UX**: Responsive design, advanced filtering, wishlist, checkout
+* **Admin Panel**: Inventory, order, and customer management
+* **Authentication**: Email login, password recovery, order history
 
-### 🛠️ Instructions
+#### 💻 Tech Stack
 
-* `initializeFarm`, `initializeFarmer`: Setup functions
-* `stake`, `unstake`: Handle deposits and withdrawals
-* `claimRewards`, `fundRewards`: Reward distribution
-* `createQuest`, `manageQuest`: Quest configuration
+* **Frontend**: Next.js 15 (App Router), React 19, Tailwind CSS v4
+* **Backend**: PostgreSQL + Prisma, NextAuth.js, Nodemailer
+* **Testing & Deployment**: Jest, Playwright, GitHub Actions, Vercel
 
 ---
 
+### 🍽️ Restauranter – Restaurant Management Platform
 
-### Project 3: [🌸 Naomi's Little Corner – Elegant Floral Fashion E-Commerce Platform](link-to-project)
+An all-in-one restaurant system for customers, waitstaff, hosts, and admins—featuring real-time ordering, payments, reservations, and inventory control.
 
+#### 👥 Multi-Role Interfaces
 
-## 🛍️ Overview
+* **Customers**: QR ordering, live tracking, M-Pesa integration
+* **Waitstaff**: Real-time orders, payment tracking
+* **Hosts**: Reservation system, QR generator, guest profiles
+* **Admins**: Menu builder, role management, analytics
 
-**Naomi’s Little Corner** is a refined and responsive e-commerce platform tailored for floral-themed fashion. Designed with modern web technologies and a strong aesthetic focus, it delivers a seamless shopping experience and robust administrative tools.
+#### 🧱 Architecture
 
----
-
-## ✨ Key Features
-
-### 🛒 Customer Experience
-
-* **Elegant UI/UX**
-
-  * Floral-inspired design with soft animations and transitions
-  * Fully responsive across desktop and mobile devices
-* **Product Discovery**
-
-  * Featured product highlights
-  * Category-based navigation & search
-  * Detailed product pages with image galleries
-* **Shopping Flow**
-
-  * Interactive cart with size/color selection
-  * Wishlist functionality
-  * Secure and smooth checkout process
-* **User Accounts**
-
-  * Email-verified sign-up & login
-  * Password recovery support
-  * Order history and address book
-
-### 🧑‍💼 Admin Capabilities
-
-* **Product Management**
-
-  * Add, update, and delete products
-  * Manage inventory and mark featured items
-* **Order Processing**
-
-  * View, update, and fulfill orders
-  * Process cancellations and refunds
-* **Customer Management**
-
-  * Access customer data
-  * Manage user accounts and interactions
+* **Frontend**: Next.js 15 + Tailwind CSS, Framer Motion, Radix UI
+* **Backend**: PostgreSQL + Prisma, Upstash Redis, SSE (Server-Sent Events)
+* **Payments**: Full M-Pesa support for African markets
 
 ---
 
-## 🧰 Tech Stack
+## 🧠 Technical Skills
 
-### 🔧 Frontend
+* **Languages**: TypeScript, JavaScript, SQL, Python
+* **Frameworks**: React, Next.js, Express, Node.js
+* **Blockchain**: Solana, Web3.js, Anchor, Metaplex
+* **Databases**: PostgreSQL, Redis
+* **Tools**: Prisma, Tailwind CSS, Framer Motion, Vercel, GitHub Actions
 
-* **Framework**: Next.js 15 (App Router)
-* **Library**: React 19
-* **Styling**: Tailwind CSS v4 with a custom floral theme
-* **UI Components**: Custom-built using Radix UI primitives
-* **State Management**: React Context API
+---
 
-### 🗄️ Backend
+## 📫 Contact Me
 
-* **API**: Next.js API Routes
-* **Database**: PostgreSQL with Prisma ORM
-* **Auth**: NextAuth.js (JWT strategy)
-* **Email**: Nodemailer for transactional communications
+Feel free to connect or collaborate:
 
-### ⚙️ DevOps & Tooling
+* 📧 [stephen.carw@outlook.com](mailto:stephen.carw@outlook.com)
+* 🔗 [LinkedIn](https://www.linkedin.com/in/stephen-carew)
 
-* **Hosting**: Vercel
-* **CI/CD**: GitHub Actions
-* **Testing**: Jest, Playwright, React Testing Library
-* **Code Quality**: ESLint, Prettier, TypeScript
+---
 
+## 📜 License
 
-## Contact Me
+All showcased projects are open-source and licensed under the [MIT License](LICENSE).
 
-Feel free to reach out to me via email at [stephen.carw@outlook.com](mailto:stephen.carw@outlook.com) or connect with me on [LinkedIn](https://www.linkedin.com/in/stephen-carew).
+---
 
-## License
-
-This project is licensed under the [MIT License](LICENSE).
+Would you like a matching personal website built from this portfolio? I can scaffold a custom portfolio page using React + Tailwind or Next.js.
