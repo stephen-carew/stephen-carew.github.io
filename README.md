@@ -1,6 +1,3 @@
-Here's a polished and professional version of your portfolio. I've tightened the language, improved the flow, and standardized formatting for clarity and impact—perfect for sharing on GitHub, a personal website, or as a PDF:
-
----
 
 # **Stephen Carew's Portfolio**
 
