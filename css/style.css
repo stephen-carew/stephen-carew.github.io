@@ -1437,10 +1437,104 @@ p {
 }
 
 .project-features {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--spacing-sm);
   margin-top: auto;
+  padding-top: var(--spacing-lg);
+  border-top: 1px solid var(--border-color);
+}
+
+.project-features h4 {
+  color: var(--text-color);
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: var(--spacing-md);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+}
+
+.project-features h4::before {
+  content: "⚡";
+  font-size: 1.2rem;
+  color: var(--primary-color);
+}
+
+.project-features ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: var(--spacing-md);
+}
+
+.project-features li {
+  position: relative;
+  padding: var(--spacing-md);
+  background: linear-gradient(135deg, 
+    rgba(255, 255, 255, 0.05), 
+    rgba(255, 255, 255, 0.02));
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--border-radius-md);
+  color: var(--text-color-light);
+  font-size: 0.9rem;
+  line-height: 1.5;
+  transition: all var(--transition-normal);
+  backdrop-filter: blur(10px);
+}
+
+.project-features li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: linear-gradient(180deg, var(--primary-color), var(--secondary-color));
+  border-radius: 0 var(--border-radius-sm) var(--border-radius-sm) 0;
+  opacity: 0;
+  transition: opacity var(--transition-normal);
+}
+
+.project-features li:hover {
+  transform: translateX(5px);
+  background: linear-gradient(135deg, 
+    rgba(255, 255, 255, 0.08), 
+    rgba(255, 255, 255, 0.04));
+  border-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.project-features li:hover::before {
+  opacity: 1;
+}
+
+/* Dark theme adjustments */
+[data-theme="dark"] .project-features li {
+  background: linear-gradient(135deg, 
+    rgba(255, 255, 255, 0.03), 
+    rgba(255, 255, 255, 0.01));
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+[data-theme="dark"] .project-features li:hover {
+  background: linear-gradient(135deg, 
+    rgba(255, 255, 255, 0.06), 
+    rgba(255, 255, 255, 0.03));
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+/* Light theme adjustments */
+[data-theme="light"] .project-features li {
+  background: linear-gradient(135deg, 
+    rgba(0, 0, 0, 0.02), 
+    rgba(0, 0, 0, 0.01));
+  border-color: rgba(0, 0, 0, 0.08);
+}
+
+[data-theme="light"] .project-features li:hover {
+  background: linear-gradient(135deg, 
+    rgba(0, 0, 0, 0.04), 
+    rgba(0, 0, 0, 0.02));
+  border-color: rgba(0, 0, 0, 0.12);
 }
 
 .feature {
