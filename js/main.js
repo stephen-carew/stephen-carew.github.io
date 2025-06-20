@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
   initContactForm();
   initBackToTop();
   initThemeToggle();
+  initProjectPreviews();
 });
 
 // Navigation functionality
@@ -439,4 +440,79 @@ function initThemeToggle() {
     document.documentElement.setAttribute("data-theme", newTheme);
     localStorage.setItem("theme", newTheme);
   });
+}
+
+// Project Preview Functionality
+function initProjectPreviews() {
+  const projectImages = document.querySelectorAll('.project-image[data-url]');
+  let hoverTimeout;
+  let currentPopup = null;
+
+  projectImages.forEach(projectImage => {
+    const popup = projectImage.querySelector('.project-popup');
+    const overlay = projectImage.querySelector('.iframe-overlay');
+    const closeBtn = popup.querySelector('.popup-close');
+    const projectUrl = projectImage.getAttribute('data-url');
+    
+    // Move popup to body for full-screen positioning
+    if (popup && !popup.dataset.moved) {
+      document.body.appendChild(popup);
+      popup.dataset.moved = 'true';
+      popup.dataset.url = projectUrl;
+    }
+    
+    // Hover to show popup after 3 seconds
+    projectImage.addEventListener('mouseenter', () => {
+      hoverTimeout = setTimeout(() => {
+        showPopup(popup);
+        currentPopup = popup;
+      }, 3000); // 3 second delay
+    });
+
+    // Clear timeout on mouse leave
+    projectImage.addEventListener('mouseleave', () => {
+      clearTimeout(hoverTimeout);
+    });
+
+    // Click overlay to show popup immediately
+    overlay.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      clearTimeout(hoverTimeout);
+      showPopup(popup);
+      currentPopup = popup;
+    });
+
+    // Close popup
+    closeBtn.addEventListener('click', () => {
+      hidePopup(popup);
+      currentPopup = null;
+    });
+
+    // Close popup when clicking outside
+    popup.addEventListener('click', (e) => {
+      if (e.target === popup) {
+        hidePopup(popup);
+        currentPopup = null;
+      }
+    });
+  });
+
+  // Close popup with Escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && currentPopup) {
+      hidePopup(currentPopup);
+      currentPopup = null;
+    }
+  });
+
+  function showPopup(popup) {
+    popup.classList.add('show');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function hidePopup(popup) {
+    popup.classList.remove('show');
+    document.body.style.overflow = '';
+  }
 }
