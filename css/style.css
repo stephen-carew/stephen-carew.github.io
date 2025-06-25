@@ -1354,6 +1354,21 @@ p {
   }
 }
 
+.badge {
+  display: inline-block;
+  padding: 0.2em 0.6em;
+  margin-left: 10px;
+  font-size: 0.7em;
+  font-weight: bold;
+  line-height: 1;
+  color: #fff;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  border-radius: 0.25rem;
+  background-color: #ffc107; /* A yellow/orange color for "Work in Progress" */
+}
+
 /* Project Popup Styles */
 .project-popup {
   position: fixed;
