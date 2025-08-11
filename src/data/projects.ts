@@ -65,6 +65,23 @@ export const projects: Project[] = [
     year: 2024
   },
   {
+    id: 'car-parts-finder',
+    title: 'Car Parts Finder – Store Management System',
+    description: 'A comprehensive car parts marketplace with advanced store management capabilities built with Next.js 14, TypeScript, and modern web technologies.',
+    longDescription: 'A full-featured marketplace platform that connects car parts stores with customers. Features role-based access control, advanced search capabilities, inventory management, and analytics dashboards. Built with PostgreSQL, Drizzle ORM, NextAuth.js authentication, and Cloudinary integration for image management.',
+    technologies: ['Next.js', 'TypeScript', 'PostgreSQL', 'Drizzle ORM', 'NextAuth.js', 'Tailwind CSS'],
+    category: 'web',
+    featured: true,
+    year: 2025,
+    liveUrl: 'https://car-parts-finder-silk.vercel.app',
+    features: [
+      'Multi-Role Platform: Customer browsing, store owner management, and admin oversight with role-based permissions',
+      'Advanced Search & Discovery: Search parts by make, model, year, and category with intelligent filtering',
+      'Store Management Suite: Complete inventory management, analytics dashboard, and order processing',
+      'Enterprise Features: PostgreSQL database with Drizzle ORM, NextAuth.js authentication, Cloudinary image storage'
+    ]
+  },
+  {
     id: 'bart-management',
     title: 'Bart – Self-Service Bar Management System',
     description: 'A comprehensive bar management platform with inventory tracking, sales analytics, and customer management.',
