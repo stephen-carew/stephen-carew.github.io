@@ -42,6 +42,7 @@ export const projects: Project[] = [
     description: 'A cutting-edge Solana blockchain platform that pioneered the concept of progressive NFT evolution through staking mechanics.',
     technologies: ['Solana', 'Next.js', 'React'],
     category: 'blockchain',
+    liveUrl: 'https://plume.bluefoot.xyz',
     featured: true,
     year: 2024
   },
@@ -51,6 +52,7 @@ export const projects: Project[] = [
     description: 'A cutting-edge Solana blockchain platform that pioneered the concept of progressive NFT evolution through staking mechanics.',
     longDescription: 'The system implements a sophisticated leveling algorithm that tracks staking duration, quest completion, and community engagement to evolve NFTs through multiple tiers.',
     technologies: ['Solana', 'TypeScript', 'Next.js'],
+    liveUrl: 'https://boardsols-staking.vercel.app',
     category: 'blockchain',
     featured: true,
     year: 2024
@@ -99,6 +101,7 @@ export const projects: Project[] = [
     technologies: ['Next.js', 'React', 'Tailwind'],
     category: 'web',
     featured: true,
+    liveUrl: 'https://naomi-s-little-corner.vercel.app',
     year: 2024,
     features: [
       'Advanced Shopping Experience: AI-powered product recommendations, multi-criteria filtering',
