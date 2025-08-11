@@ -26,8 +26,9 @@ const Navigation = () => {
 
   const navItems = [
     { href: '#about', label: 'About' },
+    { href: '#skills-showcase', label: 'Skills' },
+    { href: '#tech-stack', label: 'Tech Stack' },
     { href: '#projects', label: 'Projects' },
-    { href: '#skills', label: 'Skills' },
     { href: '#contact', label: 'Contact' },
   ];
 

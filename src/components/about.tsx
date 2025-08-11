@@ -17,7 +17,6 @@ import {
   Award,
   Brain,
   Target,
-  Sparkles
 } from 'lucide-react';
 
 const About = () => {
@@ -108,7 +107,7 @@ const About = () => {
       period: '2022 - Present',
       description: 'Developing decentralized applications and smart contracts on Solana blockchain',
       achievements: [
-        'Built 5+ DeFi applications with $100K+ TVL',
+        'Built various DeFi applications',
         'Created NFT marketplaces and staking platforms',
         'Optimized smart contracts for gas efficiency'
       ]
@@ -403,7 +402,6 @@ const About = () => {
                         "Built full-stack applications with 99.9% uptime",
                         "Developed blockchain solutions for real-world use cases",
                         "Mentored junior developers in modern web technologies",
-                        "Contributed to open-source projects with 1000+ stars"
                       ].map((achievement, index) => (
                         <motion.div
                           key={index}
