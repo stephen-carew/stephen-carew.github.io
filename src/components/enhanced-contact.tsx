@@ -47,6 +47,7 @@ const EnhancedContact = () => {
     setSubmitStatus('submitting');
 
     try {
+      // Try API route first
       const response = await fetch('/api/contact', {
         method: 'POST',
         headers: {
@@ -65,7 +66,17 @@ const EnhancedContact = () => {
       }
     } catch (error) {
       console.error('Contact form error:', error);
-      setSubmitStatus('error');
+      
+      // Fallback for static deployment - open email client
+      const subject = encodeURIComponent(formData.subject || 'Contact from Portfolio');
+      const body = encodeURIComponent(
+        `Hi Stephen,\n\nName: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
+      );
+      const mailtoUrl = `mailto:stephen.carw@outlook.com?subject=${subject}&body=${body}`;
+      
+      window.open(mailtoUrl, '_blank');
+      setSubmitStatus('success');
+      setFormData({ name: '', email: '', subject: '', message: '' });
     } finally {
       setIsSubmitting(false);
       setTimeout(() => setSubmitStatus('idle'), 5000);
