@@ -17,7 +17,7 @@ I hold a **Bachelor’s Degree (with Honours)** in Electrical and Electronics En
 
 ---
 
-### 🪶 [Boobies NFT Customizer & Trait Marketplace](https://plume.bluefoot.xyz)
+### 🪶 Plume Trait Marketplace
 
 A full-stack Solana-based platform enabling users to customize their NFTs through overlays and trait upgrades, while giving admins complete control over trait economics and user interactions.
 
@@ -35,7 +35,7 @@ A full-stack Solana-based platform enabling users to customize their NFTs throug
 
 ---
 
-### 🧙‍♂️ [Dummified Labs – NFT Staking Platform](https://staking.dummifiedlabs.xyz)
+### 🧙‍♂️ Dummified Labs – NFT Staking Platform
 
 A gamified Solana NFT staking experience. Users stake NFTs to earn rewards, complete quests, and level up through team or solo events.
 
