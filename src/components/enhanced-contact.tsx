@@ -66,14 +66,14 @@ const EnhancedContact = () => {
       }
     } catch (error) {
       console.error('Contact form error:', error);
-      
+
       // Fallback for static deployment - open email client
       const subject = encodeURIComponent(formData.subject || 'Contact from Portfolio');
       const body = encodeURIComponent(
         `Hi Stephen,\n\nName: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
       );
       const mailtoUrl = `mailto:stephen.carw@outlook.com?subject=${subject}&body=${body}`;
-      
+
       window.open(mailtoUrl, '_blank');
       setSubmitStatus('success');
       setFormData({ name: '', email: '', subject: '', message: '' });
@@ -193,7 +193,7 @@ const EnhancedContact = () => {
                   whileHover={{ scale: 1.2 }}
                   transition={{ duration: 0.5 }}
                 >
-                  <Zap className="h-6 w-6" />
+
                 </motion.div>
                 Get In Touch
               </h3>
@@ -284,7 +284,7 @@ const EnhancedContact = () => {
             <Card className="border-0 bg-background/50 backdrop-blur-sm shadow-xl">
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
-                  <Send className="h-5 w-5" />
+
                   Send me a Message
                 </CardTitle>
                 <CardDescription>

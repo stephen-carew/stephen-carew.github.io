@@ -1,7 +1,6 @@
 import Navigation from '@/components/navigation';
 import Hero from '@/components/hero';
 import About from '@/components/about';
-import TechStack from '@/components/tech-stack';
 import Projects from '@/components/projects';
 import EnhancedContact from '@/components/enhanced-contact';
 import Footer from '@/components/footer';
@@ -15,7 +14,6 @@ export default function Home() {
       <main>
         <Hero />
         <About />
-        <TechStack />
         <Projects />
         <EnhancedContact />
       </main>

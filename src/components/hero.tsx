@@ -1,11 +1,11 @@
 'use client';
 
-import { useState, useEffect, useMemo } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
-import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import { MessageCircle, Github, Linkedin, Twitter, Code2, Zap, ArrowRight } from 'lucide-react';
+import { motion, useScroll, useTransform } from 'framer-motion';
+import { ArrowRight, Github, Linkedin, MessageCircle, Twitter } from 'lucide-react';
+import { useEffect, useMemo, useState } from 'react';
 
 const Hero = () => {
   const [currentTitle, setCurrentTitle] = useState(0);
@@ -18,7 +18,6 @@ const Hero = () => {
   const opacity = useTransform(scrollY, [0, 300], [1, 0]);
 
   const titles = useMemo(() => [
-    'Blockchain Engineer',
     'Full Stack Developer',
     'Web3 Enthusiast',
     'Problem Solver'
@@ -46,30 +45,6 @@ const Hero = () => {
     return () => clearTimeout(timer);
   }, [displayText, isDeleting, currentTitle, titles]);
 
-  // Floating animation variants
-  const floatingVariants = {
-    animate: {
-      y: [-10, 10, -10],
-      rotate: [-5, 5, -5],
-      transition: {
-        duration: 6,
-        repeat: Infinity,
-        ease: "easeInOut" as const
-      }
-    }
-  };
-
-  const sparkleVariants = {
-    animate: {
-      scale: [1, 1.2, 1],
-      opacity: [0.5, 1, 0.5],
-      transition: {
-        duration: 2,
-        repeat: Infinity,
-        ease: "easeInOut" as const
-      }
-    }
-  };
 
   const stats = [
     { number: '20+', label: 'Projects Completed' },
@@ -79,48 +54,6 @@ const Hero = () => {
 
   return (
     <section id="hero" className="min-h-screen flex items-center justify-center pt-16 relative overflow-hidden">
-      {/* Floating Background Elements */}
-      <div className="absolute inset-0 pointer-events-none">
-        <motion.div
-          variants={floatingVariants}
-          animate="animate"
-          className="absolute top-20 left-10 text-primary/20"
-        >
-          <Code2 size={60} />
-        </motion.div>
-        <motion.div
-          variants={floatingVariants}
-          animate="animate"
-          style={{ animationDelay: '1s' }}
-          className="absolute top-40 right-20 text-primary/20"
-        >
-          <Zap size={40} />
-        </motion.div>
-        <motion.div
-          variants={floatingVariants}
-          animate="animate"
-          style={{ animationDelay: '2s' }}
-          className="absolute bottom-40 left-20 text-primary/20"
-        >
-          <Github size={50} />
-        </motion.div>
-        <motion.div
-          variants={sparkleVariants}
-          animate="animate"
-          className="absolute top-32 left-1/3 text-yellow-400/60"
-        >
-
-        </motion.div>
-        <motion.div
-          variants={sparkleVariants}
-          animate="animate"
-          style={{ animationDelay: '1.5s' }}
-          className="absolute bottom-32 right-1/3 text-yellow-400/60"
-        >
-
-        </motion.div>
-      </div>
-
       <motion.div
         style={{ y, opacity }}
         className="container mx-auto px-4 relative z-10"
@@ -187,8 +120,7 @@ const Hero = () => {
             transition={{ duration: 0.8, delay: 0.6 }}
             className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto leading-relaxed"
           >
-            A passionate <strong className="text-primary">Full-Stack Developer</strong> and{' '}
-            <strong className="text-primary">Blockchain Engineer</strong> with 2+ years of experience creating
+            A passionate <strong className="text-primary">Full-Stack Developer</strong> with 2+ years of experience creating
             innovative web applications and decentralized solutions. Currently pursuing
             a Master&apos;s in Instrumentation and Control in the UK.
           </motion.p>

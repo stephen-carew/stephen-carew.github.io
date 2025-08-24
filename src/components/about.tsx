@@ -1,23 +1,22 @@
 'use client';
 
-import { motion, useScroll, useTransform, useInView } from 'framer-motion';
-import { useRef } from 'react';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Progress } from '@/components/ui/progress';
+import { motion, useInView, useScroll, useTransform } from 'framer-motion';
 import {
+  Award,
+  Brain,
+  Briefcase,
   Code2,
   Database,
   Globe,
-  Smartphone,
-  Zap,
-  Shield,
-  Briefcase,
   GraduationCap,
-  Award,
-  Brain,
-  Target,
+  Shield,
+  Smartphone,
+  Zap
 } from 'lucide-react';
+import { useRef } from 'react';
 
 const About = () => {
   const ref = useRef(null);
@@ -28,8 +27,6 @@ const About = () => {
   });
 
   const y = useTransform(scrollYProgress, [0, 1], [100, -100]);
-  const opacity = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0, 1, 1, 0]);
-
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -144,53 +141,7 @@ const About = () => {
 
   return (
     <section id="about" className="py-20 bg-muted/30 relative overflow-hidden" ref={ref}>
-      {/* Floating Background Elements */}
-      <div className="absolute inset-0 pointer-events-none">
-        <motion.div
-          className="absolute top-20 left-10 text-primary/5"
-          style={{ y }}
-          animate={{
-            rotate: [0, 360],
-            scale: [1, 1.3, 1]
-          }}
-          transition={{
-            duration: 25,
-            repeat: Infinity,
-            ease: "linear"
-          }}
-        >
-          <Brain size={120} />
-        </motion.div>
-        <motion.div
-          className="absolute bottom-20 right-10 text-primary/5"
-          style={{ y: useTransform(scrollYProgress, [0, 1], [-50, 50]) }}
-          animate={{
-            rotate: [360, 0],
-            scale: [1, 0.7, 1]
-          }}
-          transition={{
-            duration: 20,
-            repeat: Infinity,
-            ease: "linear"
-          }}
-        >
-          <Target size={100} />
-        </motion.div>
-        <motion.div
-          className="absolute top-1/2 left-1/4 text-primary/3"
-          animate={{
-            y: [0, -20, 0],
-            rotate: [0, 180, 360]
-          }}
-          transition={{
-            duration: 15,
-            repeat: Infinity,
-            ease: "easeInOut"
-          }}
-        >
 
-        </motion.div>
-      </div>
 
       <div className="container mx-auto px-4 relative z-10">
         <motion.div
@@ -545,17 +496,7 @@ const About = () => {
         viewport={{ once: true }}
         className="text-center  pt-10"
       >
-        <Card className="max-w-4xl mx-auto">
-          <CardContent className="p-8 ">
-            <blockquote className="text-lg italic text-muted-foreground leading-relaxed">
-              &quot;I believe in the power of technology to solve real-world problems.
-              My journey from traditional engineering to blockchain development has taught me
-              that the best solutions come from understanding both the technical possibilities
-              and the human needs they serve.&quot;
-            </blockquote>
-            <footer className="mt-4 text-sm font-medium">— Stephen Carew</footer>
-          </CardContent>
-        </Card>
+
       </motion.div>
     </section>
 
