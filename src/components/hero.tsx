@@ -217,7 +217,6 @@ const Hero = () => {
                 className="p-3 rounded-full border border-primary/20 hover:border-primary/40 transition-colors"
                 whileHover={{
                   scale: 1.2,
-                  rotate: 360,
                   transition: { duration: 0.3 }
                 }}
                 whileTap={{ scale: 0.9 }}
