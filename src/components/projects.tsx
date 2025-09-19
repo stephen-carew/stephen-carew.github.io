@@ -8,7 +8,7 @@ import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
 import { ExternalLink, Github, Globe, Link, Bot, Zap, Filter, Code2, RefreshCw, Bitcoin, AlertCircle, Calendar, Star } from 'lucide-react';
 import { Project } from '@/types';
-import { useGitHubProjects } from '@/hooks/useGitHubProjects';
+import { projects as localProjects } from '@/data/projects';
 
 const Projects = () => {
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
@@ -16,7 +16,7 @@ const Projects = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
-  const { projects, isLoading, error, refreshProjects, githubProjects } = useGitHubProjects();
+  const projects = localProjects;
 
   const getProjectsByCategory = (category: string) => {
     return projects.filter(project => project.category === category);
@@ -385,23 +385,21 @@ const Projects = () => {
             A showcase of my recent work in web development, blockchain technology, and automation
           </motion.p>
 
-          {/* GitHub Integration Status */}
-          {githubProjects.length > 0 && (
+          {/* Local Projects Status */}
+          <motion.div
+            className="flex items-center justify-center gap-2 mt-4 text-sm text-muted-foreground"
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
+            transition={{ duration: 0.6, delay: 0.6 }}
+          >
+            <Code2 className="h-4 w-4" />
+            <span>Featured projects • {projects.length} projects</span>
             <motion.div
-              className="flex items-center justify-center gap-2 mt-4 text-sm text-muted-foreground"
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
-              transition={{ duration: 0.6, delay: 0.6 }}
-            >
-              <Github className="h-4 w-4" />
-              <span>Live projects from GitHub • {githubProjects.length} repositories</span>
-              <motion.div
-                className="w-2 h-2 bg-green-500 rounded-full"
-                animate={{ scale: [1, 1.2, 1] }}
-                transition={{ duration: 2, repeat: Infinity }}
-              />
-            </motion.div>
-          )}
+              className="w-2 h-2 bg-green-500 rounded-full"
+              animate={{ scale: [1, 1.2, 1] }}
+              transition={{ duration: 2, repeat: Infinity }}
+            />
+          </motion.div>
         </motion.div>
 
         {/* Filter Buttons */}
@@ -466,43 +464,10 @@ const Projects = () => {
           ))}
         </motion.div>
 
-        {/* Loading State */}
-        {isLoading && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            className="text-center py-12"
-          >
-            <motion.div
-              animate={{ rotate: 360 }}
-              transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
-              className="inline-block"
-            >
-              <RefreshCw className="h-8 w-8 text-primary" />
-            </motion.div>
-            <p className="mt-4 text-muted-foreground">Loading projects...</p>
-          </motion.div>
-        )}
-
-        {/* Error State */}
-        {error && (
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            className="text-center py-12"
-          >
-            <AlertCircle className="h-12 w-12 text-destructive mx-auto mb-4" />
-            <h3 className="text-lg font-semibold mb-2">Failed to load projects</h3>
-            <p className="text-muted-foreground mb-4">{error}</p>
-            <Button onClick={refreshProjects} variant="outline">
-              <RefreshCw className="h-4 w-4 mr-2" />
-              Try Again
-            </Button>
-          </motion.div>
-        )}
+        {/* No loading or error states needed with local data */}
 
         {/* Load More Button */}
-        {!isLoading && !error && hasMoreProjects && (
+        {hasMoreProjects && (
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
