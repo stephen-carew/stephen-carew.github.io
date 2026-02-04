@@ -15,6 +15,10 @@ export interface Project {
   stars?: number;
   forks?: number;
   lastUpdated?: string;
+  // Case Study Fields
+  problem?: string;
+  solution?: string;
+  metrics?: string[];
 }
 
 export interface Skill {

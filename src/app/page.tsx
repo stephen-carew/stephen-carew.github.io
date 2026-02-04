@@ -1,20 +1,20 @@
 import Navigation from '@/components/navigation';
 import Hero from '@/components/hero';
-import About from '@/components/about';
+import SkillsMatrix from '@/components/skills-matrix';
 import Projects from '@/components/projects';
-import EnhancedContact from '@/components/enhanced-contact';
+import Education from '@/components/education';
+import EnhancedContact from '@/components/contact';
 import Footer from '@/components/footer';
-import ScrollProgress from '@/components/scroll-progress';
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-background">
-      <ScrollProgress />
+    <div className="min-h-screen bg-background text-foreground">
       <Navigation />
       <main>
         <Hero />
-        <About />
+        <SkillsMatrix />
         <Projects />
+        <Education />
         <EnhancedContact />
       </main>
       <Footer />

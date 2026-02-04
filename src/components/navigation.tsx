@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
-import { Menu, Moon, Sun, Github, Linkedin, Mail } from 'lucide-react';
+import { Menu, Moon, Sun, Github, Linkedin, Mail, Terminal } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const Navigation = () => {
@@ -25,10 +25,8 @@ const Navigation = () => {
   };
 
   const navItems = [
-    { href: '#about', label: 'About' },
-    { href: '#skills-showcase', label: 'Skills' },
-    { href: '#tech-stack', label: 'Tech Stack' },
-    { href: '#projects', label: 'Projects' },
+    { href: '#skills', label: 'Expertise' },
+    { href: '#projects', label: 'Case Studies' },
     { href: '#contact', label: 'Contact' },
   ];
 
@@ -42,9 +40,8 @@ const Navigation = () => {
     <motion.header
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-background/80 backdrop-blur-md border-b' : 'bg-transparent'
-      }`}
+      className={`fixed top-0 w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-background/80 backdrop-blur-md border-b' : 'bg-transparent'
+        }`}
     >
       <div className="container mx-auto px-4">
         <nav className="flex items-center justify-between h-16">
@@ -52,9 +49,12 @@ const Navigation = () => {
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            className="text-2xl font-bold"
+            className="text-xl font-bold font-mono"
           >
-            <a href="#" className="text-primary">SC</a>
+            <a href="#" className="flex items-center gap-2 text-primary hover:text-primary/80 transition-colors">
+              <Terminal className="h-5 w-5" />
+              <span>Stephen Carew</span>
+            </a>
           </motion.div>
 
           {/* Desktop Navigation */}

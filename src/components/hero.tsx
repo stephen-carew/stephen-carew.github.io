@@ -1,234 +1,126 @@
 'use client';
 
-import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent } from '@/components/ui/card';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { ArrowRight, Github, Linkedin, MessageCircle, Twitter } from 'lucide-react';
-import { useEffect, useMemo, useState } from 'react';
+import { ArrowRight, Github, Linkedin, Terminal, FileCode } from 'lucide-react';
+import Image from 'next/image';
 
 const Hero = () => {
-  const [currentTitle, setCurrentTitle] = useState(0);
-  const [displayText, setDisplayText] = useState('');
-  const [isDeleting, setIsDeleting] = useState(false);
   const { scrollY } = useScroll();
-
-  // Parallax effects
   const y = useTransform(scrollY, [0, 500], [0, 150]);
   const opacity = useTransform(scrollY, [0, 300], [1, 0]);
 
-  const titles = useMemo(() => [
-    'Full Stack Developer',
-    'Web3 Enthusiast',
-    'Problem Solver'
-  ], []);
-
-  useEffect(() => {
-    const typeSpeed = isDeleting ? 50 : 100;
-    const currentFullTitle = titles[currentTitle];
-
-    const timer = setTimeout(() => {
-      if (!isDeleting && displayText === currentFullTitle) {
-        setTimeout(() => setIsDeleting(true), 1000);
-      } else if (isDeleting && displayText === '') {
-        setIsDeleting(false);
-        setCurrentTitle((prev) => (prev + 1) % titles.length);
-      } else {
-        setDisplayText(
-          isDeleting
-            ? currentFullTitle.substring(0, displayText.length - 1)
-            : currentFullTitle.substring(0, displayText.length + 1)
-        );
-      }
-    }, typeSpeed);
-
-    return () => clearTimeout(timer);
-  }, [displayText, isDeleting, currentTitle, titles]);
-
-
-  const stats = [
-    { number: '20+', label: 'Projects Completed' },
-    { number: '2+', label: 'Years Experience' },
-    { number: '100%', label: 'Client Satisfaction' },
-  ];
-
   return (
-    <section id="hero" className="min-h-screen flex items-center justify-center pt-16 relative overflow-hidden">
+    <section id="hero" className="min-h-screen flex items-center justify-center relative overflow-hidden bg-background pt-24 pb-12">
+      {/* Abstract Background Elements */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-secondary/10 rounded-full blur-3xl" />
+      </div>
+
       <motion.div
         style={{ y, opacity }}
         className="container mx-auto px-4 relative z-10"
       >
-        <div className="max-w-4xl mx-auto text-center">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.5 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{
-              duration: 0.8,
-              type: "spring",
-              stiffness: 100,
-              damping: 10
-            }}
-            className="mb-6"
-          >
-            <Badge variant="outline" className="text-lg px-4 py-2 animate-pulse">
-              👋 Hello, I&apos;m
-            </Badge>
-          </motion.div>
-
-          <motion.h1
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{
-              duration: 1,
-              delay: 0.2,
-              type: "spring",
-              stiffness: 80
-            }}
-            className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 bg-gradient-to-r from-primary via-purple-500 to-black bg-clip-text text-transparent"
-          >
-            Stephen Carew
-          </motion.h1>
-
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-xl md:text-2xl lg:text-3xl mb-8 flex items-center justify-center gap-2 flex-wrap"
-          >
-            <span className="text-muted-foreground">I am a</span>
-            <motion.span
-              key={displayText}
+        <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="order-2 lg:order-1">
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.3 }}
-              className="text-primary font-semibold min-w-[300px] text-left relative"
+              transition={{ duration: 0.5 }}
+              className="mb-6 flex items-center gap-2 text-primary font-mono text-sm tracking-wide uppercase"
             >
-              {displayText}
-              <motion.span
-                animate={{ opacity: [1, 0, 1] }}
-                transition={{ duration: 1, repeat: Infinity }}
-                className="text-primary"
-              >
-                |
-              </motion.span>
-            </motion.span>
-          </motion.div>
+              <Terminal className="w-4 h-4" />
+              <span>Full-Stack Engineer</span>
+            </motion.div>
 
-          <motion.p
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
-            className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto leading-relaxed"
-          >
-            A passionate <strong className="text-primary">Full-Stack Developer</strong> with 2+ years of experience creating
-            innovative web applications and decentralized solutions. Currently pursuing
-            a Master&apos;s in Instrumentation and Control in the UK.
-          </motion.p>
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight tracking-tight text-foreground"
+            >
+              Building Scalable <br />
+              <span className="text-primary">Distributed Systems</span> & <br />
+              Blockchain Infrastructure
+            </motion.h1>
 
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.8 }}
-            className="grid grid-cols-3 gap-8 mb-8 max-w-md mx-auto"
-          >
-            {stats.map((stat, index) => (
-              <motion.div
-                key={index}
-                className="text-center"
-                whileHover={{
-                  scale: 1.1,
-                  transition: { type: "spring", stiffness: 300 }
-                }}
-              >
-                <Card className="p-4 border-primary/20 hover:border-primary/40 transition-colors">
-                  <CardContent className="p-0">
-                    <motion.div
-                      className="text-2xl md:text-3xl font-bold text-primary"
-                      initial={{ scale: 0 }}
-                      animate={{ scale: 1 }}
-                      transition={{
-                        delay: 1 + index * 0.1,
-                        type: "spring",
-                        stiffness: 200
-                      }}
-                    >
-                      {stat.number}
-                    </motion.div>
-                    <div className="text-sm text-muted-foreground">{stat.label}</div>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            ))}
-          </motion.div>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="text-xl text-muted-foreground mb-10 max-w-xl leading-relaxed"
+            >
+              I architect and deliver enterprise-grade web applications and decentralized solutions.
+              Specializing in high-performance React architectures, Solana smart contracts,
+              and cloud-native infrastructure.
+            </motion.p>
 
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 1.2 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center"
-          >
             <motion.div
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              className="flex flex-col sm:flex-row gap-4"
             >
-              <Button size="lg" asChild className="group relative overflow-hidden">
+              <Button size="lg" className="h-12 px-8 text-base" asChild>
                 <a href="#projects">
-                  <span className="relative z-10">View My Work</span>
-                  <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1 relative z-10" />
-                  <motion.div
-                    className="absolute inset-0 bg-gradient-to-r from-primary/20 to-purple-500/20"
-                    initial={{ x: "-100%" }}
-                    whileHover={{ x: "0%" }}
-                    transition={{ duration: 0.3 }}
-                  />
+                  View Technical Case Studies
+                  <ArrowRight className="ml-2 h-4 w-4" />
                 </a>
               </Button>
-            </motion.div>
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <Button size="lg" variant="outline" asChild className="group">
+              <Button size="lg" variant="outline" className="h-12 px-8 text-base" asChild>
                 <a href="#contact">
-                  Let&apos;s Talk
-                  <MessageCircle className="ml-2 h-4 w-4 group-hover:animate-bounce" />
+                  Contact Me
                 </a>
               </Button>
             </motion.div>
-          </motion.div>
 
-          {/* Social Links */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 1.4 }}
-            className="flex justify-center gap-4 mt-8"
-          >
-            {[
-              { icon: Github, href: "https://github.com/stephen-carew" },
-              { icon: Linkedin, href: "https://linkedin.com/in/stephen-carew" },
-              { icon: Twitter, href: "https://twitter.com/stephen_carew" }
-            ].map((social, index) => (
-              <motion.a
-                key={index}
-                href={social.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-3 rounded-full border border-primary/20 hover:border-primary/40 transition-colors"
-                whileHover={{
-                  scale: 1.2,
-                  transition: { duration: 0.3 }
-                }}
-                whileTap={{ scale: 0.9 }}
-              >
-                <social.icon className="h-5 w-5 text-primary" />
-              </motion.a>
-            ))}
-          </motion.div>
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.5, delay: 0.5 }}
+              className="mt pt-8 border-t border-border/50 flex flex-wrap gap-8 text-muted-foreground"
+            >
+              <div className="flex items-center gap-2">
+                <Github className="w-5 h-5" />
+                <a href="https://github.com/stephen-carew" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors">
+                  github.com/stephen-carew
+                </a>
+              </div>
+              <div className="flex items-center gap-2">
+                <Linkedin className="w-5 h-5" />
+                <a href="https://linkedin.com/in/stephen-carew" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors">
+                  linkedin.com/in/stephen-carew
+                </a>
+              </div>
+              <div className="flex items-center gap-2">
+                <FileCode className="w-5 h-5" />
+                <span className="font-mono text-sm">2+ Years Experience</span>
+              </div>
+            </motion.div>
+          </div>
+
+          <div className="order-1 lg:order-2 flex justify-center lg:justify-end">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="relative w-72 h-72 md:w-96 md:h-96"
+            >
+              <div className="absolute inset-0 bg-primary/20 rounded-full blur-3xl transform -translate-x-4 translate-y-4" />
+              <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-background shadow-2xl">
+                <Image
+                  src="/IMG_3191.jpg"
+                  alt="Stephen Carew"
+                  fill
+                  className="object-cover"
+                  priority
+                />
+              </div>
+            </motion.div>
+          </div>
         </div>
       </motion.div>
-
-
     </section>
   );
 };
