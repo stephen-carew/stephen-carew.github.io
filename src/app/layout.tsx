@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
@@ -15,6 +15,7 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://stephen-carew.dev'),
   title: "Stephen Carew | Full-Stack Engineer",
   description: "Full-Stack Engineer specializing in high-performance React architectures, Solana smart contracts, and cloud-native infrastructure.",
   keywords: ["Full Stack Engineer", "React", "Next.js", "Solana", "Blockchain", "TypeScript", "Enterprise Software"],
@@ -43,11 +44,6 @@ export const metadata: Metadata = {
     description: "Building Scalable Distributed Systems & Blockchain Infrastructure.",
     creator: "@stephen_carew",
   },
-  viewport: {
-    width: "device-width",
-    initialScale: 1,
-    maximumScale: 1,
-  },
   robots: {
     index: true,
     follow: true,
@@ -59,6 +55,12 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
 };
 
 export default function RootLayout({

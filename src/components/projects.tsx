@@ -71,7 +71,10 @@ const Projects = () => {
               <Card className="overflow-hidden border-border/60 bg-card/40 hover:bg-card/60 transition-colors">
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-0">
                   {/* Left Column: Core Info */}
-                  <div className="lg:col-span-8 p-6 md:p-8 border-b lg:border-b-0 lg:border-r border-border/60">
+                  <div className={cn(
+                    "p-6 md:p-8 border-b lg:border-b-0 border-border/60",
+                    project.features ? "lg:col-span-8 lg:border-r" : "lg:col-span-12"
+                  )}>
                     <div className="flex justify-between items-start mb-4">
                       <div>
                         <div className="text-primary font-mono text-xs uppercase tracking-wider mb-2">
@@ -178,31 +181,21 @@ const Projects = () => {
                     </div>
                   </div>
 
-                  {/* Right Column: Visual/Status (Simplified) */}
-                  <div className="lg:col-span-4 bg-muted/30 p-6 md:p-8 flex flex-col justify-between">
-                    <div className="space-y-4">
-                      <div className="text-sm font-semibold text-foreground">Project Status</div>
-                      <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                        <span className={cn(
-                          "w-2 h-2 rounded-full",
-                          project.status === 'new' ? "bg-emerald-500" : "bg-blue-500"
-                        )} />
-                        {project.status === 'new' ? 'Active Development' : 'Production Stable'}
+                  {/* Right Column: Visual/Features */}
+                  {project.features && (
+                    <div className="lg:col-span-4 bg-muted/30 p-6 md:p-8 flex flex-col justify-center">
+                      <div className="space-y-4">
+                        <div className="text-sm font-semibold text-foreground mb-3">Key Features</div>
+                        <ul className="space-y-2">
+                          {project.features.slice(0, 4).map((feature, i) => (
+                            <li key={i} className="text-xs text-muted-foreground flex gap-2">
+                              <span className="text-primary/50">•</span> {feature}
+                            </li>
+                          ))}
+                        </ul>
                       </div>
-                      {project.features && (
-                        <div className="mt-6">
-                          <div className="text-sm font-semibold text-foreground mb-3">Key Features</div>
-                          <ul className="space-y-2">
-                            {project.features.slice(0, 3).map((feature, i) => (
-                              <li key={i} className="text-xs text-muted-foreground flex gap-2">
-                                <span className="text-primary/50">•</span> {feature}
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
-                      )}
                     </div>
-                  </div>
+                  )}
                 </div>
               </Card>
             </motion.div>

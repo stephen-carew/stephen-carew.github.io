@@ -9,7 +9,6 @@ export const projects: Project[] = [
     technologies: ['Next.js', 'TypeScript', 'Solana', 'Rust', 'Tailwind'],
     category: 'blockchain',
     featured: true,
-    liveUrl: 'https://traitshop.dummifiedlabs.xyz',
     year: 2024,
     problem: 'NFT collections often suffer from static metadata, leading to reduced engagement after the initial mint. Users had no way to customize or upgrade their assets without centralized intervention.',
     solution: 'Architected a decentralized marketplace using Solana smart contracts (Anchor) where traits are tokenized assets. Implemented a "trait application" program that securely modifies on-chain metadata while burning/swapping trait tokens.',
@@ -28,7 +27,6 @@ export const projects: Project[] = [
     category: 'blockchain',
     featured: true,
     status: 'new',
-    liveUrl: 'https://staking.dummifiedlabs.xyz',
     year: 2024,
     problem: 'Traditional staking protocols are passive and boring, leading to high churn rates. Projects needed a way to incentivize long-term holding while keeping the community active.',
     solution: 'Built a gamified staking engine with "Expeditions" (quests). Used a time-weighted algorithm for rewards and a probability-based loot system for item drops, all verified on-chain.',
@@ -47,7 +45,6 @@ export const projects: Project[] = [
     category: 'web',
     featured: true,
     year: 2025,
-    liveUrl: 'https://car-parts-finder-silk.vercel.app',
     problem: 'Local auto parts stores struggle with inventory digitization and lack a unified platform to reach wider audiences. Existing solutions were clunky and expensive.',
     solution: 'Developed a multi-tenant SaaS platform using Next.js 14 and Drizzle ORM. Implemented complex filtering logic for vehicle compatibility (Make/Model/Year) and a real-time inventory sync system.',
     metrics: [
@@ -64,7 +61,6 @@ export const projects: Project[] = [
     technologies: ['Next.js', 'OpenAI API', 'Stripe', 'Tailwind'],
     category: 'web',
     featured: true,
-    liveUrl: 'https://naomi-s-little-corner.vercel.app',
     year: 2024,
     problem: 'Boutique fashion needs high-touch personalization that standard Shopify templates cannot provide without expensive plugins.',
     solution: 'Integrated OpenAI to analyze user browsing patterns and generate personalized outfit recommendations. Built a custom cart and checkout flow optimized for conversion.',
@@ -75,13 +71,21 @@ export const projects: Project[] = [
     ]
   },
   {
-    id: 'dex-exchange',
-    title: 'Solana DEX Interface',
-    description: 'High-performance decentralized exchange interface with real-time charts.',
-    technologies: ['React', 'TypeScript', 'Serum', 'TradingView'],
-    category: 'blockchain',
-    featured: false,
-    year: 2024
+    id: 'discord-bots-ecosystem',
+    title: 'Discord Bot Ecosystem',
+    description: 'A collection of high-performance Discord bots for community management, verification, and gaming.',
+    longDescription: 'Developed a suite of Python-based Discord bots serving diverse communities. Features include crypto wallet verification, battle royale game mechanics, and automated server management.',
+    technologies: ['Python', 'Discord.py', 'Solana Web3.py', 'SQL', 'Redis'],
+    category: 'bot',
+    featured: true,
+    year: 2023,
+    problem: 'Discord communities needed robust tools for verifying crypto assets (NFTs/Tokens) and engaging users with interactive content, but existing solutions were fragmented or expensive.',
+    solution: 'Built a modular bot architecture using Python and Discord.py. Implemented wallet verification via Solana Web3.py and created a custom "Rumble Royale" game engine with persistent stats using SQL.',
+    metrics: [
+      'Verified 10k+ Wallets',
+      'Active in 50+ Servers',
+      '99.9% Uptime with Redis Caching'
+    ]
   },
   {
     id: 'restauranter',
