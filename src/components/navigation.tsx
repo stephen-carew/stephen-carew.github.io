@@ -86,6 +86,8 @@ const Navigation = () => {
             ))}
           </div>
 
+          {/* Desktop actions */}
+          <div className="hidden md:flex items-center gap-2">
 
             <div className="ml-2 h-6 w-px bg-white/[0.10]" />
             <a
