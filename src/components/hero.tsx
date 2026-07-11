@@ -245,7 +245,7 @@ const Hero = () => {
           transition={{ duration: 0.6, delay: 0.8, ease: "easeOut" }}
           className="absolute -left-4 top-[58%] hidden lg:block rounded-2xl border border-white/[0.10] bg-white/[0.08] p-4 shadow-glass backdrop-blur-2xl"
         >
-          <p className="text-xs text-text-muted">Recent deploy</p>
+          <p className="text-xs text-text-muted">Recent deployment</p>
           <p className="mt-1.5 font-mono text-xs text-accent-sand">
             Tenora v2.4 — 12h ago
           </p>

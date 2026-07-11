@@ -86,26 +86,7 @@ const Navigation = () => {
             ))}
           </div>
 
-          {/* Desktop actions */}
-          <div className="hidden md:flex items-center gap-2">
-            {socialLinks.map((social) => (
-              <Button
-                key={social.href}
-                variant="ghost"
-                size="sm"
-                className="h-9 w-9 rounded-xl text-text-secondary hover:text-cream-50 hover:bg-white/[0.06]"
-                asChild
-              >
-                <a
-                  href={social.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={social.label}
-                >
-                  <social.icon className="h-4 w-4" />
-                </a>
-              </Button>
-            ))}
+
             <div className="ml-2 h-6 w-px bg-white/[0.10]" />
             <a
               href="#contact"
