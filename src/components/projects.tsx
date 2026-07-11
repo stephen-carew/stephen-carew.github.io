@@ -13,12 +13,18 @@ import {
 import { projects as localProjects } from "@/data/projects";
 import { cn } from "@/lib/utils";
 
-const categories = [
-  { id: "all", label: "All Work" },
-  { id: "saas", label: "SaaS" },
-  { id: "web", label: "Web Applications" },
-  { id: "blockchain", label: "Blockchain & Web3" },
-];
+const categoryLabels: Record<string, string> = {
+  all: "All Work",
+  saas: "SaaS",
+  web: "Web Applications",
+  blockchain: "Blockchain & Web3",
+  bot: "Bots & Automation",
+};
+
+const categories = Object.entries(categoryLabels).map(([id, label]) => ({
+  id,
+  label,
+}));
 
 const Projects = () => {
   const [selectedCategory, setSelectedCategory] = useState<string>("all");
@@ -98,7 +104,7 @@ const Projects = () => {
                       <div>
                         <div className="flex items-center gap-3 mb-2">
                           <span className="text-accent-sand font-mono text-xs uppercase tracking-wider">
-                            {project.category}
+                            {categoryLabels[project.category] || project.category}
                           </span>
                           <span className="h-1 w-1 rounded-full bg-white/[0.18]" />
                           <span className="text-xs text-text-muted">

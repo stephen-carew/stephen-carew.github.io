@@ -9,13 +9,13 @@ const sidebarItems = [
   "Architecture",
   "Payments",
   "Blockchain",
-  "Infrastructure",
+  "Bots",
 ];
 
 const statCards = [
-  { label: "Projects shipped", value: "7+" },
-  { label: "Lines of TypeScript", value: "30k+" },
-  { label: "Smart contracts", value: "3" },
+  { label: "Projects shipped", value: "8+" },
+  { label: "Lines of TypeScript", value: "50k+" },
+  { label: "Smart contracts", value: "5" },
 ];
 
 const Hero = () => {
@@ -117,7 +117,7 @@ const Hero = () => {
               <div className="flex items-center justify-between mb-6">
                 <div>
                   <p className="text-xs text-text-muted">
-                    Engineering portfolio
+                     Portfolio
                   </p>
                   <h2 className="text-xl font-semibold text-cream-50 mt-0.5">
                     Stephen Carew
@@ -174,9 +174,9 @@ const Hero = () => {
                       "Supabase",
                       "Stripe",
                       "Solana",
-                      "Rust",
+                      "Python",
+                      "Prisma",
                       "Tailwind",
-                      "OpenAI",
                       "Redis",
                     ].map((tech) => (
                       <span
@@ -196,8 +196,8 @@ const Hero = () => {
                   <div className="space-y-2.5">
                     {[
                       { name: "Tenora SaaS", status: "Active" },
-                      { name: "Car Parts Finder", status: "Complete" },
-                      { name: "Staking Protocol", status: "Live" },
+                      { name: "Plume Marketplace", status: "New" },
+                      { name: "Restauranter", status: "Complete" },
                     ].map((item) => (
                       <div
                         key={item.name}
@@ -228,12 +228,12 @@ const Hero = () => {
         >
           <p className="text-xs text-text-muted">Stack depth</p>
           <p className="mt-1.5 text-sm font-semibold text-cream-50">
-            Full-stack + Web3
+            Full-stack + Web3 + Python
           </p>
           <div className="mt-3 flex gap-1.5">
             <div className="h-1.5 w-8 rounded-full bg-accent-sand" />
             <div className="h-1.5 w-6 rounded-full bg-accent-sand/60" />
-            <div className="h-1.5 w-4 rounded-full bg-accent-sand/30" />
+            <div className="h-1.5 w-6 rounded-full bg-accent-sand/40" />
           </div>
         </motion.div>
 

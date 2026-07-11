@@ -91,21 +91,9 @@ const EnhancedContact = () => {
   ];
 
   const socialLinks = [
-    {
-      icon: Github,
-      label: "GitHub",
-      href: "https://github.com/stephen-carew",
-    },
-    {
-      icon: Linkedin,
-      label: "LinkedIn",
-      href: "https://linkedin.com/in/stephen-carew",
-    },
-    {
-      icon: Twitter,
-      label: "Twitter",
-      href: "https://twitter.com/stephen_carew",
-    },
+    { icon: Github, label: "GitHub", href: "https://github.com/stephen-carew" },
+    { icon: Linkedin, label: "LinkedIn", href: "https://linkedin.com/in/stephen-carew" },
+    { icon: Twitter, label: "Twitter", href: "https://twitter.com/stephen_carew" },
   ];
 
   return (
@@ -173,7 +161,25 @@ const EnhancedContact = () => {
               ))}
             </div>
 
-
+            <div>
+              <h4 className="text-sm font-semibold text-cream-50 mb-3">
+                Connect with me
+              </h4>
+              <div className="flex gap-2.5">
+                {socialLinks.map((social) => (
+                  <a
+                    key={social.label}
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex h-10 w-10 items-center justify-center rounded-xl border border-white/[0.08] text-text-secondary hover:text-cream-50 hover:border-white/[0.16] hover:bg-white/[0.04] transition-all duration-200"
+                    aria-label={social.label}
+                  >
+                    <social.icon className="h-4 w-4" />
+                  </a>
+                ))}
+              </div>
+            </div>
           </motion.div>
 
           {/* Right: form */}
