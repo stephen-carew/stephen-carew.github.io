@@ -28,7 +28,7 @@ const Hero = () => {
   const floatingCard2Y = useTransform(scrollY, [0, 900], [0, reduceMotion ? 0 : -80]);
 
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden pt-20 pb-16">
+    <section className="relative min-h-screen flex items-center overflow-hidden pt-20 pb-16 md:pb-0">
       {/* Parallax atmospheric layer */}
       <motion.div
         style={{ y: bgY }}
@@ -38,7 +38,7 @@ const Hero = () => {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_15%,rgba(185,145,120,0.28),transparent_34%),radial-gradient(circle_at_80%_65%,rgba(42,49,36,0.30),transparent_40%)]" />
       </motion.div>
 
-      <div className="relative mx-auto w-full max-w-[1180px] px-6">
+      <div className="relative mx-auto w-full max-w-[1180px] px-4 sm:px-6">
         {/* Text content */}
         <motion.div
           initial={{ opacity: 0, y: 24 }}
@@ -46,11 +46,11 @@ const Hero = () => {
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
           className="mx-auto max-w-3xl text-center"
         >
-          <p className="mb-5 text-sm font-medium text-text-muted tracking-wide uppercase">
+          <p className="mb-4 sm:mb-5 text-xs sm:text-sm font-medium text-text-muted tracking-wide uppercase">
             Full-stack product engineer
           </p>
 
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-semibold tracking-[-0.045em] leading-[1.08] text-cream-50">
+          <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-semibold tracking-[-0.04em] leading-[1.12] sm:leading-[1.08] text-cream-50">
             I build SaaS products
             <br />
             <span className="text-accent-sand">
@@ -58,38 +58,118 @@ const Hero = () => {
             </span>
           </h1>
 
-          <p className="mx-auto mt-6 max-w-xl text-base md:text-lg leading-8 text-text-secondary">
+          <p className="mx-auto mt-4 sm:mt-6 max-w-xl text-sm sm:text-base md:text-lg leading-7 sm:leading-8 text-text-secondary">
             Database design, API architecture, UI components, payment
             integrations, and AI features — built end-to-end and shipped.
           </p>
 
-          <div className="mt-8 flex justify-center gap-3">
+          <div className="mt-6 sm:mt-8 flex flex-col sm:flex-row justify-center gap-3">
             <a
               href="#projects"
-              className="inline-flex items-center gap-2 rounded-2xl bg-white px-6 py-3 text-sm font-semibold text-ink-950 transition-all duration-200 hover:bg-cream-100 hover:-translate-y-0.5"
+              className="inline-flex items-center justify-center gap-2 rounded-2xl bg-white px-6 py-3 text-sm font-semibold text-ink-950 transition-all duration-200 hover:bg-cream-100 active:scale-[0.98]"
             >
               View case studies
               <ArrowDown className="h-4 w-4" />
             </a>
             <a
               href="#contact"
-              className="inline-flex items-center gap-2 rounded-2xl border border-white/[0.10] bg-white/[0.06] px-6 py-3 text-sm font-medium text-cream-50 backdrop-blur-xl transition-all duration-200 hover:bg-white/[0.10] hover:-translate-y-0.5"
+              className="inline-flex items-center justify-center gap-2 rounded-2xl border border-white/[0.10] bg-white/[0.06] px-6 py-3 text-sm font-medium text-cream-50 backdrop-blur-xl transition-all duration-200 hover:bg-white/[0.10] active:scale-[0.98]"
             >
               Get in touch
             </a>
           </div>
         </motion.div>
 
-        {/* Dashboard mockup */}
+        {/* Dashboard mockup — hidden on mobile, simplified on tablet, full on desktop */}
         <motion.div
           style={{ y: mockupY }}
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-          className="relative mx-auto mt-16 overflow-hidden rounded-[32px] border border-white/[0.10] shadow-cinematic bg-[rgba(20,22,21,0.82)] backdrop-blur-[30px]"
+          className="relative mx-auto mt-12 sm:mt-16 overflow-hidden rounded-2xl sm:rounded-[24px] md:rounded-[32px] border border-white/[0.10] shadow-cinematic bg-[rgba(20,22,21,0.82)] backdrop-blur-[30px]"
         >
-          <div className="grid min-h-[540px] grid-cols-[200px_1fr] bg-black/25">
-            {/* Sidebar */}
+          {/* Mobile: simplified stacked layout */}
+          <div className="block md:hidden p-4 sm:p-5 bg-black/25">
+            {/* Compact header */}
+            <div className="flex items-center justify-between mb-4">
+              <div>
+                <p className="text-[10px] sm:text-xs text-text-muted">Portfolio</p>
+                <h2 className="text-base sm:text-lg font-semibold text-cream-50 mt-0.5">
+                  Stephen Carew
+                </h2>
+              </div>
+              <div className="flex items-center gap-2">
+                <a
+                  href="https://github.com/stephen-carew"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-1.5 rounded-full bg-white/[0.06] px-3 py-1.5 text-[10px] sm:text-xs text-text-secondary hover:text-cream-50 transition-colors border border-white/[0.06]"
+                >
+                  <Github className="h-3 w-3" />
+                  <span className="hidden sm:inline">GitHub</span>
+                </a>
+                <a
+                  href="https://linkedin.com/in/stephen-carew"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-1.5 rounded-full bg-white/[0.06] px-3 py-1.5 text-[10px] sm:text-xs text-text-secondary hover:text-cream-50 transition-colors border border-white/[0.06]"
+                >
+                  <Linkedin className="h-3 w-3" />
+                  <span className="hidden sm:inline">LinkedIn</span>
+                </a>
+              </div>
+            </div>
+
+            {/* Mobile stat cards */}
+            <div className="grid grid-cols-3 gap-2 mb-3">
+              {statCards.map((stat) => (
+                <div
+                  key={stat.label}
+                  className="rounded-xl sm:rounded-2xl border border-white/[0.08] bg-white/[0.04] p-3 sm:p-4"
+                >
+                  <p className="text-[10px] sm:text-xs text-text-muted">{stat.label}</p>
+                  <p className="mt-1.5 sm:mt-2 text-lg sm:text-xl font-semibold text-cream-50">
+                    {stat.value}
+                  </p>
+                </div>
+              ))}
+            </div>
+
+            {/* Mobile: stacked sections */}
+            <div className="space-y-2">
+              <div className="rounded-xl sm:rounded-2xl border border-white/[0.08] bg-white/[0.04] p-3 sm:p-4">
+                <h3 className="text-xs sm:text-sm font-semibold text-cream-50 mb-2">Core stack</h3>
+                <div className="flex flex-wrap gap-1">
+                  {["Next.js", "TypeScript", "PostgreSQL", "Supabase", "Stripe", "Solana", "Python", "Prisma", "Tailwind", "Redis"].map((tech) => (
+                    <span key={tech} className="rounded-lg bg-white/[0.06] px-2 py-1 text-[10px] sm:text-xs text-text-secondary">
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              <div className="rounded-xl sm:rounded-2xl border border-white/[0.08] bg-white/[0.04] p-3 sm:p-4">
+                <h3 className="text-xs sm:text-sm font-semibold text-cream-50 mb-2">Recent</h3>
+                <div className="space-y-2">
+                  {[
+                    { name: "Tenora SaaS", status: "Active" },
+                    { name: "Plume Marketplace", status: "New" },
+                    { name: "Restauranter", status: "Complete" },
+                  ].map((item) => (
+                    <div key={item.name} className="flex items-center justify-between">
+                      <span className="text-[10px] sm:text-xs text-text-secondary">{item.name}</span>
+                      <span className="rounded-full bg-status-success/15 px-2 py-0.5 text-[9px] sm:text-[10px] text-status-success font-medium">
+                        {item.status}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Desktop: sidebar + main layout */}
+          <div className="hidden md:grid min-h-[540px] grid-cols-[200px_1fr] bg-black/25">
             <aside className="border-r border-white/[0.08] p-4">
               <div className="mb-8 flex items-center gap-2">
                 <div className="h-7 w-7 rounded-lg bg-accent-sand/30" />
@@ -111,14 +191,10 @@ const Hero = () => {
               </nav>
             </aside>
 
-            {/* Main dashboard area */}
             <main className="p-5">
-              {/* Header */}
               <div className="flex items-center justify-between mb-6">
                 <div>
-                  <p className="text-xs text-text-muted">
-                     Portfolio
-                  </p>
+                  <p className="text-xs text-text-muted">Portfolio</p>
                   <h2 className="text-xl font-semibold text-cream-50 mt-0.5">
                     Stephen Carew
                   </h2>
@@ -145,7 +221,6 @@ const Hero = () => {
                 </div>
               </div>
 
-              {/* Stat cards */}
               <div className="grid grid-cols-3 gap-3 mb-4">
                 {statCards.map((stat) => (
                   <div
@@ -160,29 +235,14 @@ const Hero = () => {
                 ))}
               </div>
 
-              {/* Bottom row: skills + tech */}
               <div className="grid grid-cols-[1.3fr_0.7fr] gap-3">
                 <div className="rounded-2xl border border-white/[0.08] bg-white/[0.04] p-4">
                   <h3 className="text-sm font-semibold text-cream-50 mb-3">
                     Core stack
                   </h3>
                   <div className="flex flex-wrap gap-1.5">
-                    {[
-                      "Next.js",
-                      "TypeScript",
-                      "PostgreSQL",
-                      "Supabase",
-                      "Stripe",
-                      "Solana",
-                      "Python",
-                      "Prisma",
-                      "Tailwind",
-                      "Redis",
-                    ].map((tech) => (
-                      <span
-                        key={tech}
-                        className="rounded-lg bg-white/[0.06] px-2.5 py-1.5 text-xs text-text-secondary"
-                      >
+                    {["Next.js", "TypeScript", "PostgreSQL", "Supabase", "Stripe", "Solana", "Python", "Prisma", "Tailwind", "Redis"].map((tech) => (
+                      <span key={tech} className="rounded-lg bg-white/[0.06] px-2.5 py-1.5 text-xs text-text-secondary">
                         {tech}
                       </span>
                     ))}
@@ -190,22 +250,15 @@ const Hero = () => {
                 </div>
 
                 <div className="rounded-2xl border border-white/[0.08] bg-white/[0.04] p-4">
-                  <h3 className="text-sm font-semibold text-cream-50 mb-3">
-                    Recent
-                  </h3>
+                  <h3 className="text-sm font-semibold text-cream-50 mb-3">Recent</h3>
                   <div className="space-y-2.5">
                     {[
                       { name: "Tenora SaaS", status: "Active" },
                       { name: "Plume Marketplace", status: "New" },
                       { name: "Restauranter", status: "Complete" },
                     ].map((item) => (
-                      <div
-                        key={item.name}
-                        className="flex items-center justify-between"
-                      >
-                        <span className="text-xs text-text-secondary">
-                          {item.name}
-                        </span>
+                      <div key={item.name} className="flex items-center justify-between">
+                        <span className="text-xs text-text-secondary">{item.name}</span>
                         <span className="rounded-full bg-status-success/15 px-2 py-0.5 text-[10px] text-status-success font-medium">
                           {item.status}
                         </span>
@@ -218,7 +271,7 @@ const Hero = () => {
           </div>
         </motion.div>
 
-        {/* Floating stat card 1 */}
+        {/* Floating cards — desktop only */}
         <motion.div
           style={{ y: floatingCardY }}
           initial={{ opacity: 0, x: 20 }}
@@ -237,7 +290,6 @@ const Hero = () => {
           </div>
         </motion.div>
 
-        {/* Floating stat card 2 */}
         <motion.div
           style={{ y: floatingCard2Y }}
           initial={{ opacity: 0, x: -20 }}
