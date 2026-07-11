@@ -1,88 +1,96 @@
-'use client';
+"use client";
 
-import { motion } from 'framer-motion';
-import { Button } from '@/components/ui/button';
-import { Separator } from '@/components/ui/separator';
-import { 
-  Github, 
-  Linkedin, 
-  Twitter, 
-  Mail, 
-  Heart,
-  ArrowUp
-} from 'lucide-react';
+import { motion } from "framer-motion";
+import { Github, Linkedin, Twitter, Mail, Heart, ArrowUp } from "lucide-react";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   const socialLinks = [
     {
-      icon: <Github className="h-5 w-5" />,
-      href: 'https://github.com/stephen-carew',
-      label: 'GitHub'
+      icon: Github,
+      href: "https://github.com/stephen-carew",
+      label: "GitHub",
     },
     {
-      icon: <Linkedin className="h-5 w-5" />,
-      href: 'https://linkedin.com/in/stephen-carew',
-      label: 'LinkedIn'
+      icon: Linkedin,
+      href: "https://linkedin.com/in/stephen-carew",
+      label: "LinkedIn",
     },
     {
-      icon: <Twitter className="h-5 w-5" />,
-      href: 'https://twitter.com/stephen_carew',
-      label: 'Twitter'
+      icon: Twitter,
+      href: "https://twitter.com/stephen_carew",
+      label: "Twitter",
     },
     {
-      icon: <Mail className="h-5 w-5" />,
-      href: 'mailto:stephen.carew@example.com',
-      label: 'Email'
-    }
+      icon: Mail,
+      href: "mailto:stephen.carw@outlook.com",
+      label: "Email",
+    },
   ];
 
   const quickLinks = [
-    { label: 'About', href: '#about' },
-    { label: 'Projects', href: '#projects' },
-    { label: 'Contact', href: '#contact' }
+    { label: "Expertise", href: "#skills" },
+    { label: "Case Studies", href: "#projects" },
+    { label: "Contact", href: "#contact" },
   ];
 
   const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   return (
-    <footer className="bg-background border-t">
-      <div className="container mx-auto px-4 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
-          {/* Brand & Description */}
+    <footer className="relative border-t border-white/[0.06]">
+      <div className="mx-auto max-w-[1180px] px-6 py-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-10">
+          {/* Brand */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
             viewport={{ once: true }}
             className="space-y-4"
           >
-            <h3 className="text-xl font-bold">Stephen Carew</h3>
-            <p className="text-muted-foreground text-sm leading-relaxed">
-              Blockchain Engineer & Full Stack Developer passionate about creating 
-              innovative solutions that bridge traditional web development with 
-              cutting-edge blockchain technology.
+            <div className="flex items-center gap-2.5">
+              <span className="flex h-10 w-10 items-center justify-center rounded-full overflow-hidden bg-white/[0.08] ring-1 ring-white/[0.10]">
+                <img
+                  src="/IMG_3191.jpg"
+                  alt="Stephen Carew"
+                  className="h-full w-full object-cover"
+                />
+              </span>
+              <span className="text-lg font-semibold text-cream-50">
+                Stephen Carew
+              </span>
+            </div>
+            <p className="text-sm text-text-secondary leading-relaxed max-w-xs">
+              Full-stack product engineer. I build SaaS applications end-to-end
+              — database design, API architecture, UI components, payment
+              integrations, and AI features — then ship them to production.
             </p>
           </motion.div>
 
           {/* Quick Links */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.1 }}
+            transition={{
+              duration: 0.5,
+              delay: 0.08,
+              ease: [0.22, 1, 0.36, 1],
+            }}
             viewport={{ once: true }}
             className="space-y-4"
           >
-            <h4 className="font-semibold">Quick Links</h4>
-            <nav className="flex flex-col space-y-2">
+            <h4 className="text-sm font-semibold text-cream-50">
+              Quick Links
+            </h4>
+            <nav className="flex flex-col gap-2">
               {quickLinks.map((link) => (
                 <a
                   key={link.label}
                   href={link.href}
-                  className="text-muted-foreground hover:text-primary transition-colors text-sm"
+                  className="text-sm text-text-secondary hover:text-cream-50 transition-colors"
                 >
                   {link.label}
                 </a>
@@ -90,60 +98,66 @@ const Footer = () => {
             </nav>
           </motion.div>
 
-          {/* Social Links */}
+          {/* Social */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
+            transition={{
+              duration: 0.5,
+              delay: 0.16,
+              ease: [0.22, 1, 0.36, 1],
+            }}
             viewport={{ once: true }}
             className="space-y-4"
           >
-            <h4 className="font-semibold">Connect</h4>
-            <div className="flex gap-3">
+            <h4 className="text-sm font-semibold text-cream-50">Connect</h4>
+            <div className="flex gap-2.5">
               {socialLinks.map((social) => (
                 <a
                   key={social.label}
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-2 rounded-lg border hover:bg-muted transition-colors"
-                  title={social.label}
+                  className="flex h-10 w-10 items-center justify-center rounded-xl border border-white/[0.08] text-text-secondary hover:text-cream-50 hover:border-white/[0.16] hover:bg-white/[0.04] transition-all duration-200"
+                  aria-label={social.label}
                 >
-                  {social.icon}
+                  <social.icon className="h-4 w-4" />
                 </a>
               ))}
             </div>
-            <p className="text-xs text-muted-foreground">
+            <p className="text-xs text-text-muted">
               Available for freelance projects and collaborations
             </p>
           </motion.div>
         </div>
 
-        <Separator className="mb-6" />
+        {/* Bottom */}
+        <div className="h-px bg-white/[0.06] mb-6" />
 
-        {/* Bottom Section */}
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.5, delay: 0.3 }}
+          transition={{
+            duration: 0.5,
+            delay: 0.2,
+            ease: [0.22, 1, 0.36, 1],
+          }}
           viewport={{ once: true }}
           className="flex flex-col md:flex-row items-center justify-between gap-4"
         >
-          <div className="flex items-center gap-2 text-sm text-muted-foreground">
+          <div className="flex items-center gap-1.5 text-sm text-text-muted">
             <span>© {currentYear} Stephen Carew. Made with</span>
-            <Heart className="h-4 w-4 text-red-500 fill-current" />
-            <span>using Next.js & Shadcn UI</span>
+            <Heart className="h-3.5 w-3.5 text-accent-dust fill-current" />
+            <span>using Next.js</span>
           </div>
 
-          <Button
-            variant="outline"
-            size="sm"
+          <button
             onClick={scrollToTop}
-            className="flex items-center gap-2"
+            className="flex items-center gap-2 text-sm text-text-secondary hover:text-cream-50 transition-colors rounded-xl px-4 py-2 hover:bg-white/[0.04] border border-white/[0.06]"
           >
-            <ArrowUp className="h-4 w-4" />
-            Back to Top
-          </Button>
+            <ArrowUp className="h-3.5 w-3.5" />
+            Back to top
+          </button>
         </motion.div>
       </div>
     </footer>

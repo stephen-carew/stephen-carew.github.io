@@ -1,150 +1,156 @@
-'use client';
+"use client";
 
-import { useState, useEffect } from 'react';
-import { Button } from '@/components/ui/button';
-import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
-import { Menu, Moon, Sun, Github, Linkedin, Mail, Terminal } from 'lucide-react';
-import { motion } from 'framer-motion';
+import { useState, useEffect } from "react";
+import { Button } from "@/components/ui/button";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { Menu, Github, Linkedin, Mail } from "lucide-react";
+import { motion } from "framer-motion";
+import { cn } from "@/lib/utils";
+
+const navItems = [
+  { href: "#skills", label: "Expertise" },
+  { href: "#projects", label: "Case Studies" },
+  { href: "#contact", label: "Contact" },
+];
+
+const socialLinks = [
+  {
+    href: "https://github.com/stephen-carew",
+    icon: Github,
+    label: "GitHub",
+  },
+  {
+    href: "https://www.linkedin.com/in/stephen-carew",
+    icon: Linkedin,
+    label: "LinkedIn",
+  },
+  {
+    href: "mailto:stephen.carw@outlook.com",
+    icon: Mail,
+    label: "Email",
+  },
+];
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isDark, setIsDark] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
     };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
-  const toggleTheme = () => {
-    setIsDark(!isDark);
-    document.documentElement.classList.toggle('dark');
-  };
-
-  const navItems = [
-    { href: '#skills', label: 'Expertise' },
-    { href: '#projects', label: 'Case Studies' },
-    { href: '#contact', label: 'Contact' },
-  ];
-
-  const socialLinks = [
-    { href: 'https://github.com/stephen-carew', icon: Github, label: 'GitHub' },
-    { href: 'https://www.linkedin.com/in/stephen-carew', icon: Linkedin, label: 'LinkedIn' },
-    { href: 'mailto:stephen.carw@outlook.com', icon: Mail, label: 'Email' },
-  ];
 
   return (
     <motion.header
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      className={`fixed top-0 w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-background/80 backdrop-blur-md border-b' : 'bg-transparent'
-        }`}
+      transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+      className={cn(
+        "fixed top-0 w-full z-50 transition-all duration-500",
+        isScrolled
+          ? "glass border-b border-white/[0.06]"
+          : "bg-transparent",
+      )}
     >
-      <div className="container mx-auto px-4">
+      <div className="mx-auto max-w-[1200px] px-6">
         <nav className="flex items-center justify-between h-16">
           {/* Logo */}
-          <motion.div
+          <motion.a
+            href="#"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            className="text-xl font-bold font-mono"
+            className="flex items-center gap-2.5 text-cream-50 font-semibold tracking-tight text-lg"
           >
-            <a href="#" className="flex items-center gap-2 text-primary hover:text-primary/80 transition-colors">
-              <Terminal className="h-5 w-5" />
-              <span>Stephen Carew</span>
-            </a>
-          </motion.div>
+            <span className="flex h-8 w-8 items-center justify-center rounded-full overflow-hidden bg-white/[0.08] ring-1 ring-white/[0.10]">
+              <img
+                src="/IMG_3191.jpg"
+                alt="Stephen Carew"
+                className="h-full w-full object-cover"
+              />
+            </span>
+            Stephen Carew
+          </motion.a>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          {/* Desktop nav links */}
+          <div className="hidden md:flex items-center gap-1">
             {navItems.map((item) => (
               <a
                 key={item.href}
                 href={item.href}
-                className="text-muted-foreground hover:text-foreground transition-colors"
+                className="px-4 py-2 text-sm text-text-secondary hover:text-cream-50 transition-colors duration-200 rounded-xl hover:bg-white/[0.04]"
               >
                 {item.label}
               </a>
             ))}
           </div>
 
-          {/* Desktop Actions */}
-          <div className="hidden md:flex items-center space-x-4">
-            <div className="flex items-center space-x-2">
-              {socialLinks.map((social) => (
-                <Button
-                  key={social.href}
-                  variant="ghost"
-                  size="sm"
-                  asChild
+          {/* Desktop actions */}
+          <div className="hidden md:flex items-center gap-2">
+            {socialLinks.map((social) => (
+              <Button
+                key={social.href}
+                variant="ghost"
+                size="sm"
+                className="h-9 w-9 rounded-xl text-text-secondary hover:text-cream-50 hover:bg-white/[0.06]"
+                asChild
+              >
+                <a
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={social.label}
                 >
-                  <a
-                    href={social.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={social.label}
-                  >
-                    <social.icon className="h-4 w-4" />
-                  </a>
-                </Button>
-              ))}
-            </div>
-            <Button
-              variant="ghost"
-              size="sm"
-              onClick={toggleTheme}
-              aria-label="Toggle theme"
+                  <social.icon className="h-4 w-4" />
+                </a>
+              </Button>
+            ))}
+            <div className="ml-2 h-6 w-px bg-white/[0.10]" />
+            <a
+              href="#contact"
+              className="ml-1 rounded-2xl bg-white px-5 py-2 text-sm font-semibold text-ink-950 transition-all duration-200 hover:bg-cream-100 hover:-translate-y-0.5"
             >
-              {isDark ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
-            </Button>
+              Get in touch
+            </a>
           </div>
 
-          {/* Mobile Navigation */}
-          <div className="md:hidden flex items-center space-x-2">
-            <Button
-              variant="ghost"
-              size="sm"
-              onClick={toggleTheme}
-              aria-label="Toggle theme"
-            >
-              {isDark ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
-            </Button>
+          {/* Mobile */}
+          <div className="md:hidden flex items-center">
             <Sheet>
               <SheetTrigger asChild>
-                <Button variant="ghost" size="sm">
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  className="h-9 w-9 rounded-xl text-text-secondary hover:text-cream-50"
+                >
                   <Menu className="h-5 w-5" />
                 </Button>
               </SheetTrigger>
-              <SheetContent>
-                <div className="flex flex-col space-y-4 mt-8">
+              <SheetContent className="border-l border-white/[0.08] bg-ink-900/95 backdrop-blur-2xl">
+                <div className="flex flex-col gap-1 mt-8">
                   {navItems.map((item) => (
                     <a
                       key={item.href}
                       href={item.href}
-                      className="text-lg font-medium hover:text-primary transition-colors"
+                      className="px-4 py-3 text-lg font-medium text-text-secondary hover:text-cream-50 hover:bg-white/[0.04] rounded-2xl transition-colors"
                     >
                       {item.label}
                     </a>
                   ))}
-                  <div className="flex items-center space-x-4 pt-4 border-t">
+                  <div className="h-px bg-white/[0.08] my-4" />
+                  <div className="flex items-center gap-3 px-4">
                     {socialLinks.map((social) => (
-                      <Button
+                      <a
                         key={social.href}
-                        variant="ghost"
-                        size="sm"
-                        asChild
+                        href={social.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={social.label}
+                        className="flex h-10 w-10 items-center justify-center rounded-xl border border-white/[0.08] text-text-secondary hover:text-cream-50 hover:bg-white/[0.06] transition-colors"
                       >
-                        <a
-                          href={social.href}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          aria-label={social.label}
-                        >
-                          <social.icon className="h-4 w-4" />
-                        </a>
-                      </Button>
+                        <social.icon className="h-4 w-4" />
+                      </a>
                     ))}
                   </div>
                 </div>

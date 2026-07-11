@@ -4,9 +4,9 @@ export interface Project {
   description: string;
   longDescription?: string;
   technologies: string[];
-  category: 'web' | 'blockchain' | 'bot' | 'fullstack';
+  category: "web" | "blockchain" | "bot" | "fullstack" | "saas";
   featured: boolean;
-  status?: 'new' | 'updated' | 'completed' | 'featured';
+  status?: "new" | "updated" | "completed" | "featured";
   liveUrl?: string;
   githubUrl?: string;
   imageUrl?: string;
@@ -23,8 +23,8 @@ export interface Project {
 
 export interface Skill {
   name: string;
-  category: 'frontend' | 'backend' | 'blockchain' | 'tools' | 'languages';
-  level: 'beginner' | 'intermediate' | 'advanced' | 'expert';
+  category: "frontend" | "backend" | "blockchain" | "tools" | "languages";
+  level: "beginner" | "intermediate" | "advanced" | "expert";
   icon?: string;
 }
 

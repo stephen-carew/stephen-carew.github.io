@@ -1,98 +1,145 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Card } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
-import { Button } from '@/components/ui/button';
-import { Github, ArrowUpRight, Layers, BarChart3, ChevronDown, ChevronUp } from 'lucide-react';
-import { projects as localProjects } from '@/data/projects';
-import { cn } from '@/lib/utils';
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Button } from "@/components/ui/button";
+import {
+  Github,
+  ArrowUpRight,
+  ChevronDown,
+  ChevronUp,
+  Layers,
+} from "lucide-react";
+import { projects as localProjects } from "@/data/projects";
+import { cn } from "@/lib/utils";
+
+const categories = [
+  { id: "all", label: "All Work" },
+  { id: "saas", label: "SaaS" },
+  { id: "web", label: "Web Applications" },
+  { id: "blockchain", label: "Blockchain & Web3" },
+];
 
 const Projects = () => {
-  const [selectedCategory, setSelectedCategory] = useState<string>('all');
+  const [selectedCategory, setSelectedCategory] = useState<string>("all");
   const [expandedProject, setExpandedProject] = useState<string | null>(null);
 
-  const categories = [
-    { id: 'all', label: 'All Work' },
-    { id: 'web', label: 'Web Applications' },
-    { id: 'blockchain', label: 'Blockchain & Web3' },
-  ];
-
-  // Helper for mapping category IDs if needed, though simple matching works
-  const categoryMap = {
-    'web': 'web',
-    'blockchain': 'blockchain'
-  };
-
-  const filteredProjects = selectedCategory === 'all'
-    ? localProjects
-    : localProjects.filter(project => project.category === categoryMap[selectedCategory as keyof typeof categoryMap] || project.category === selectedCategory);
+  const filteredProjects =
+    selectedCategory === "all"
+      ? localProjects
+      : localProjects.filter(
+          (project) => project.category === selectedCategory,
+        );
 
   const toggleExpand = (id: string) => {
     setExpandedProject(expandedProject === id ? null : id);
   };
 
   return (
-    <section id="projects" className="py-24 bg-background">
-      <div className="container mx-auto px-4 max-w-6xl">
+    <section id="projects" className="relative py-28">
+      <div className="mx-auto max-w-[1180px] px-6">
         <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
           <div>
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">Selected Case Studies</h2>
-            <p className="text-muted-foreground max-w-xl">
-              Deep dives into complex technical challenges, architectural decisions, and measurable outcomes.
+            <p className="mb-3 text-sm font-medium text-accent-sand tracking-wide uppercase">
+              Case studies
+            </p>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold tracking-[-0.03em] text-cream-50">
+              Selected work
+            </h2>
+            <p className="mt-3 text-text-secondary max-w-lg">
+              Deep dives into complex technical challenges, architectural
+              decisions, and measurable outcomes.
             </p>
           </div>
 
-          <div className="flex flex-wrap gap-2">
+          <div className="flex flex-wrap gap-1.5">
             {categories.map((category) => (
-              <Button
+              <button
                 key={category.id}
-                variant={selectedCategory === category.id ? 'default' : 'outline'}
                 onClick={() => setSelectedCategory(category.id)}
-                size="sm"
-                className="rounded-full"
+                className={cn(
+                  "rounded-xl px-4 py-2 text-sm font-medium transition-all duration-200",
+                  selectedCategory === category.id
+                    ? "bg-white text-ink-950"
+                    : "bg-white/[0.04] text-text-secondary hover:text-cream-50 hover:bg-white/[0.08] border border-white/[0.06]",
+                )}
               >
                 {category.label}
-              </Button>
+              </button>
             ))}
           </div>
         </div>
 
-        <div className="space-y-8">
+        <div className="space-y-4">
           {filteredProjects.map((project, index) => (
             <motion.div
               key={project.id}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
+              viewport={{ once: true, margin: "-40px" }}
+              transition={{
+                duration: 0.5,
+                delay: index * 0.06,
+                ease: [0.22, 1, 0.36, 1],
+              }}
             >
-              <Card className="overflow-hidden border-border/60 bg-card/40 hover:bg-card/60 transition-colors">
+              <div className="overflow-hidden rounded-[28px] border border-white/[0.08] bg-white/[0.03] transition-colors duration-300 hover:border-white/[0.14]">
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-0">
-                  {/* Left Column: Core Info */}
-                  <div className={cn(
-                    "p-6 md:p-8 border-b lg:border-b-0 border-border/60",
-                    project.features ? "lg:col-span-8 lg:border-r" : "lg:col-span-12"
-                  )}>
+                  {/* Main content */}
+                  <div
+                    className={cn(
+                      "p-6 md:p-8 border-b lg:border-b-0 border-white/[0.06]",
+                      project.problem
+                        ? "lg:col-span-8 lg:border-r lg:border-white/[0.06]"
+                        : "lg:col-span-12",
+                    )}
+                  >
                     <div className="flex justify-between items-start mb-4">
                       <div>
-                        <div className="text-primary font-mono text-xs uppercase tracking-wider mb-2">
-                          {project.category} • {project.year}
+                        <div className="flex items-center gap-3 mb-2">
+                          <span className="text-accent-sand font-mono text-xs uppercase tracking-wider">
+                            {project.category}
+                          </span>
+                          <span className="h-1 w-1 rounded-full bg-white/[0.18]" />
+                          <span className="text-xs text-text-muted">
+                            {project.year}
+                          </span>
                         </div>
-                        <h3 className="text-2xl font-bold mb-2">{project.title}</h3>
+                        <h3 className="text-2xl font-semibold text-cream-50">
+                          {project.title}
+                        </h3>
                       </div>
-                      <div className="flex gap-2">
+                      <div className="flex gap-1.5">
                         {project.liveUrl && (
-                          <Button size="icon" variant="ghost" asChild className="h-8 w-8 text-muted-foreground hover:text-primary">
-                            <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" aria-label="View Live">
+                          <Button
+                            size="icon"
+                            variant="ghost"
+                            asChild
+                            className="h-8 w-8 rounded-xl text-text-secondary hover:text-cream-50 hover:bg-white/[0.08]"
+                          >
+                            <a
+                              href={project.liveUrl}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              aria-label="View Live"
+                            >
                               <ArrowUpRight className="h-4 w-4" />
                             </a>
                           </Button>
                         )}
                         {project.githubUrl && (
-                          <Button size="icon" variant="ghost" asChild className="h-8 w-8 text-muted-foreground hover:text-primary">
-                            <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" aria-label="View Code">
+                          <Button
+                            size="icon"
+                            variant="ghost"
+                            asChild
+                            className="h-8 w-8 rounded-xl text-text-secondary hover:text-cream-50 hover:bg-white/[0.08]"
+                          >
+                            <a
+                              href={project.githubUrl}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              aria-label="View Code"
+                            >
                               <Github className="h-4 w-4" />
                             </a>
                           </Button>
@@ -100,96 +147,98 @@ const Projects = () => {
                       </div>
                     </div>
 
-                    <p className="text-muted-foreground mb-6 leading-relaxed">
+                    <p className="text-text-secondary mb-5 leading-relaxed">
                       {project.description}
                     </p>
 
-                    <div className="flex flex-wrap gap-2 mb-6">
+                    <div className="flex flex-wrap gap-1.5 mb-5">
                       {project.technologies.map((tech) => (
-                        <Badge key={tech} variant="secondary" className="rounded-md px-2 py-1 text-xs font-normal">
+                        <span
+                          key={tech}
+                          className="rounded-lg bg-white/[0.06] px-2.5 py-1.5 text-xs text-text-secondary"
+                        >
                           {tech}
-                        </Badge>
+                        </span>
                       ))}
                     </div>
 
-                    {/* Case Study Details - Toggleable or Always Visible on Desktop? 
-                        Let's make it expandable for a cleaner initial view but rich detail.
-                    */}
-                    <div className="mt-6 pt-6 border-t border-border/60">
-                      <Button
-                        variant="ghost"
-                        size="sm"
-                        onClick={() => toggleExpand(project.id)}
-                        className="pl-0 hover:bg-transparent hover:text-primary"
-                      >
-                        {expandedProject === project.id ? (
-                          <>Hide Technical Details <ChevronUp className="ml-2 h-4 w-4" /></>
-                        ) : (
-                          <>View Technical Case Study <ChevronDown className="ml-2 h-4 w-4" /></>
-                        )}
-                      </Button>
+                    {/* Expand toggle */}
+                    {project.problem && (
+                      <div className="mt-2 pt-5 border-t border-white/[0.06]">
+                        <button
+                          onClick={() => toggleExpand(project.id)}
+                          className="inline-flex items-center gap-2 text-sm text-text-secondary hover:text-cream-50 transition-colors"
+                        >
+                          {expandedProject === project.id ? (
+                            <>
+                              Hide technical details
+                              <ChevronUp className="h-4 w-4" />
+                            </>
+                          ) : (
+                            <>
+                              View technical case study
+                              <ChevronDown className="h-4 w-4" />
+                            </>
+                          )}
+                        </button>
 
-                      <AnimatePresence>
-                        {expandedProject === project.id && (
-                          <motion.div
-                            initial={{ height: 0, opacity: 0 }}
-                            animate={{ height: "auto", opacity: 1 }}
-                            exit={{ height: 0, opacity: 0 }}
-                            transition={{ duration: 0.3 }}
-                            className="overflow-hidden"
-                          >
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pt-6">
-                              <div>
-                                <h4 className="flex items-center gap-2 text-sm font-semibold mb-3 text-foreground">
-                                  <Layers className="h-4 w-4 text-primary" /> Challenge & Solution
-                                </h4>
-                                <div className="space-y-4 text-sm text-muted-foreground">
-                                  <div>
-                                    <strong className="text-foreground block mb-1">Problem:</strong>
-                                    {project.problem || "Addressing complex scalability and user experience challenges in a competitive market."}
-                                  </div>
-                                  <div>
-                                    <strong className="text-foreground block mb-1">Solution:</strong>
-                                    {project.solution || project.longDescription}
+                        <AnimatePresence>
+                          {expandedProject === project.id && (
+                            <motion.div
+                              initial={{ height: 0, opacity: 0 }}
+                              animate={{ height: "auto", opacity: 1 }}
+                              exit={{ height: 0, opacity: 0 }}
+                              transition={{ duration: 0.35, ease: "easeInOut" }}
+                              className="overflow-hidden"
+                            >
+                              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pt-6">
+                                <div>
+                                  <h4 className="flex items-center gap-2 text-sm font-semibold mb-3 text-cream-50">
+                                    <Layers className="h-4 w-4 text-accent-sand" />
+                                    Challenge & Solution
+                                  </h4>
+                                  <div className="space-y-4 text-sm text-text-secondary">
+                                    <div>
+                                      <strong className="text-cream-50 block mb-1">
+                                        Problem:
+                                      </strong>
+                                      {project.problem}
+                                    </div>
+                                    <div>
+                                      <strong className="text-cream-50 block mb-1">
+                                        Solution:
+                                      </strong>
+                                      {project.solution ||
+                                        project.longDescription}
+                                    </div>
                                   </div>
                                 </div>
+                                <div />
                               </div>
-
-                              <div>
-                                <h4 className="flex items-center gap-2 text-sm font-semibold mb-3 text-foreground">
-                                  <BarChart3 className="h-4 w-4 text-primary" /> Key Metrics
-                                </h4>
-                                {project.metrics ? (
-                                  <ul className="space-y-2 text-sm text-muted-foreground">
-                                    {project.metrics.map((metric, idx) => (
-                                      <li key={idx} className="flex items-start gap-2">
-                                        <span className="text-primary mt-1">•</span>
-                                        {metric}
-                                      </li>
-                                    ))}
-                                  </ul>
-                                ) : (
-                                  <p className="text-sm text-muted-foreground italic">
-                                    Performance metrics and analytics data available upon request.
-                                  </p>
-                                )}
-                              </div>
-                            </div>
-                          </motion.div>
-                        )}
-                      </AnimatePresence>
-                    </div>
+                            </motion.div>
+                          )}
+                        </AnimatePresence>
+                      </div>
+                    )}
                   </div>
 
-                  {/* Right Column: Visual/Features */}
+                  {/* Right features column */}
                   {project.features && (
-                    <div className="lg:col-span-4 bg-muted/30 p-6 md:p-8 flex flex-col justify-center">
+                    <div className="lg:col-span-4 bg-white/[0.02] p-6 md:p-8 flex flex-col justify-center">
                       <div className="space-y-4">
-                        <div className="text-sm font-semibold text-foreground mb-3">Key Features</div>
-                        <ul className="space-y-2">
+                        <h4 className="text-sm font-semibold text-cream-50">
+                          Key Features
+                        </h4>
+                        <ul className="space-y-2.5">
                           {project.features.slice(0, 4).map((feature, i) => (
-                            <li key={i} className="text-xs text-muted-foreground flex gap-2">
-                              <span className="text-primary/50">•</span> {feature}
+                            <li
+                              key={i}
+                              className="text-sm text-text-secondary flex gap-2.5"
+                            >
+                              <span className="text-accent-sand/50 mt-0.5">
+                                •
+                              </span>
+                              {feature}
                             </li>
                           ))}
                         </ul>
@@ -197,7 +246,7 @@ const Projects = () => {
                     </div>
                   )}
                 </div>
-              </Card>
+              </div>
             </motion.div>
           ))}
         </div>

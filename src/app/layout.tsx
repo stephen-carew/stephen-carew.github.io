@@ -1,10 +1,10 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, JetBrains_Mono } from "next/font/google";
+import { Geist, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import Script from "next/script";
 
-const inter = Inter({
+const geist = Geist({
   subsets: ["latin"],
   variable: "--font-sans",
 });
@@ -15,10 +15,19 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://stephen-carew.dev'),
+  metadataBase: new URL("https://stephen-carew.dev"),
   title: "Stephen Carew | Full-Stack Engineer",
-  description: "Full-Stack Engineer specializing in high-performance React architectures, Solana smart contracts, and cloud-native infrastructure.",
-  keywords: ["Full Stack Engineer", "React", "Next.js", "Solana", "Blockchain", "TypeScript", "Enterprise Software"],
+  description:
+    "Full-Stack Engineer specializing in high-performance React architectures, Solana smart contracts, and cloud-native infrastructure.",
+  keywords: [
+    "Full Stack Engineer",
+    "React",
+    "Next.js",
+    "Solana",
+    "Blockchain",
+    "TypeScript",
+    "Enterprise Software",
+  ],
   authors: [{ name: "Stephen Carew" }],
   creator: "Stephen Carew",
   manifest: "/manifest.json",
@@ -27,7 +36,8 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://stephen-carew.dev",
     title: "Stephen Carew | Full-Stack Engineer",
-    description: "Building Scalable Distributed Systems & Blockchain Infrastructure.",
+    description:
+      "Building Scalable Distributed Systems & Blockchain Infrastructure.",
     siteName: "Stephen Carew Portfolio",
     images: [
       {
@@ -41,7 +51,8 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Stephen Carew | Full-Stack Engineer",
-    description: "Building Scalable Distributed Systems & Blockchain Infrastructure.",
+    description:
+      "Building Scalable Distributed Systems & Blockchain Infrastructure.",
     creator: "@stephen_carew",
   },
   robots: {
@@ -69,12 +80,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body className={cn(
-        "min-h-screen bg-background font-sans antialiased",
-        inter.variable,
-        jetbrainsMono.variable
-      )}>
+    <html lang="en" suppressHydrationWarning className="bg-ink-950">
+      <body
+        className={cn(
+          "min-h-screen font-sans antialiased bg-ink-950 text-cream-50",
+          geist.variable,
+          jetbrainsMono.variable,
+        )}
+      >
         {children}
         <Script
           id="json-ld"
@@ -83,15 +96,15 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Person",
-              "name": "Stephen Carew",
-              "url": "https://stephen-carew.dev",
-              "jobTitle": "Full-Stack Engineer",
-              "sameAs": [
+              name: "Stephen Carew",
+              url: "https://stephen-carew.dev",
+              jobTitle: "Full-Stack Engineer",
+              sameAs: [
                 "https://github.com/stephen-carew",
                 "https://linkedin.com/in/stephen-carew",
-                "https://twitter.com/stephen_carew"
-              ]
-            })
+                "https://twitter.com/stephen_carew",
+              ],
+            }),
           }}
         />
       </body>
