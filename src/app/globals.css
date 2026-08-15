@@ -3,7 +3,8 @@
 
 @theme inline {
   --font-sans: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
-  --font-mono: var(--font-mono), ui-monospace, SFMono-Regular, monospace;
+  --font-serif: Georgia, 'Times New Roman', ui-serif, serif;
+  --font-mono: var(--font-mono), ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
 
   --color-ink-950: #080909;
   --color-ink-900: #101211;
@@ -13,10 +14,6 @@
   --color-cream-50: #f5f3ef;
   --color-cream-100: #ebe6dc;
   --color-cream-200: #d9d0c0;
-
-  --color-glass: rgba(255, 255, 255, 0.06);
-  --color-glass-strong: rgba(255, 255, 255, 0.10);
-  --color-glass-muted: rgba(255, 255, 255, 0.04);
 
   --color-border-soft: rgba(255, 255, 255, 0.08);
   --color-border-default: rgba(255, 255, 255, 0.10);
@@ -65,68 +62,10 @@
   }
 }
 
-/* ── Glass utilities ── */
-@utility glass {
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.10);
-  backdrop-filter: blur(24px);
-  -webkit-backdrop-filter: blur(24px);
-}
-
-@utility glass-strong {
-  background: rgba(255, 255, 255, 0.10);
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  backdrop-filter: blur(28px);
-  -webkit-backdrop-filter: blur(28px);
-}
-
-@utility glass-muted {
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-}
-
-/* ── Shadow utilities ── */
-@utility shadow-glass {
-  box-shadow:
-    0 24px 80px rgba(0, 0, 0, 0.45),
-    inset 0 1px 0 rgba(255, 255, 255, 0.06);
-}
-
-@utility shadow-cinematic {
-  box-shadow: 0 40px 120px rgba(0, 0, 0, 0.65);
-}
-
-@utility shadow-card {
-  box-shadow:
-    0 8px 32px rgba(0, 0, 0, 0.35),
-    inset 0 1px 0 rgba(255, 255, 255, 0.04);
-}
-
-/* ── Noise overlay ── */
-@utility noise-overlay {
-  pointer-events: none;
-  position: absolute;
-  inset: 0;
-  opacity: 0.06;
-  mix-blend-mode: overlay;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
-}
-
-/* ── Atmospheric backgrounds ── */
-@utility bg-warm-atmosphere {
-  background:
-    radial-gradient(circle at 50% 15%, rgba(185, 145, 120, 0.22), transparent 34%),
-    radial-gradient(circle at 80% 60%, rgba(42, 49, 36, 0.25), transparent 42%),
-    #080909;
-}
-
-@utility bg-atmosphere-soft {
-  background:
-    radial-gradient(circle at 30% 40%, rgba(185, 145, 120, 0.12), transparent 45%),
-    radial-gradient(circle at 70% 80%, rgba(42, 49, 36, 0.15), transparent 40%),
-    #0b0d0d;
+/* ── Technical grid surface ── */
+@utility bg-grid {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cpath d='M80 0H0V80' fill='none' stroke='%23F3EFE6' stroke-opacity='0.05' stroke-width='1'/%3E%3C/svg%3E");
+  background-size: 80px 80px;
 }
 
 /* ── Reduced motion ── */

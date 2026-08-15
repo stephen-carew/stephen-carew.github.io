@@ -16,17 +16,16 @@ const jetbrainsMono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://stephen-carew.dev"),
-  title: "Stephen Carew | Full-Stack Engineer",
+  title: "Stephen Carew | Product Engineer",
   description:
-    "Full-Stack Engineer specializing in high-performance React architectures, Solana smart contracts, and cloud-native infrastructure.",
+    "Full-stack product engineer who ships production SaaS end-to-end — with a control-systems background.",
   keywords: [
+    "Product Engineer",
     "Full Stack Engineer",
     "React",
     "Next.js",
     "Solana",
-    "Blockchain",
     "TypeScript",
-    "Enterprise Software",
   ],
   authors: [{ name: "Stephen Carew" }],
   creator: "Stephen Carew",
@@ -35,9 +34,9 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: "https://stephen-carew.dev",
-    title: "Stephen Carew | Full-Stack Engineer",
+    title: "Stephen Carew | Product Engineer",
     description:
-      "Building Scalable Distributed Systems & Blockchain Infrastructure.",
+      "Full-stack products, engineered as systems.",
     siteName: "Stephen Carew Portfolio",
     images: [
       {
@@ -50,9 +49,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Stephen Carew | Full-Stack Engineer",
+    title: "Stephen Carew | Product Engineer",
     description:
-      "Building Scalable Distributed Systems & Blockchain Infrastructure.",
+      "Full-stack products, engineered as systems.",
     creator: "@stephen_carew",
   },
   robots: {
@@ -98,7 +97,7 @@ export default function RootLayout({
               "@type": "Person",
               name: "Stephen Carew",
               url: "https://stephen-carew.dev",
-              jobTitle: "Full-Stack Engineer",
+              jobTitle: "Product Engineer",
               sameAs: [
                 "https://github.com/stephen-carew",
                 "https://linkedin.com/in/stephen-carew",

@@ -201,7 +201,7 @@ Wallets: Solana Wallet Adapter (Phantom, Solflare)
 
 ## 📫 Contact Me
 
-* ✉️ [stephen.carw@outlook.com](mailto:stephen.carw@outlook.com)
+* ✉️ [hi@stephencarew.dev](mailto:hi@stephencarew.dev)
 * 🔗 [LinkedIn](https://www.linkedin.com/in/stephen-carew)
 
 ---

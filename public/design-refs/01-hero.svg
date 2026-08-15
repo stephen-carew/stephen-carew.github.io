@@ -1,0 +1,49 @@
+<svg width="1600" height="1000" viewBox="0 0 1600 1000" xmlns="http://www.w3.org/2000/svg" font-family="Georgia, 'Times New Roman', serif">
+  <defs>
+    <pattern id="grid" width="80" height="80" patternUnits="userSpaceOnUse">
+      <path d="M 80 0 L 0 0 0 80" fill="none" stroke="#F3EFE6" stroke-opacity="0.05" stroke-width="1"/>
+    </pattern>
+    <linearGradient id="wash" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0B0D0C"/>
+      <stop offset="1" stop-color="#121514"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1600" height="1000" fill="url(#wash)"/>
+  <rect width="1600" height="1000" fill="url(#grid)"/>
+  <rect x="0" y="0" width="1600" height="1000" fill="#8A6252" opacity="0.04"/>
+
+  <!-- top rule + wordmark -->
+  <rect x="72" y="56" width="1456" height="1" fill="#F3EFE6" opacity="0.16"/>
+  <text x="72" y="94" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="15" letter-spacing="3" fill="#F3EFE6" opacity="0.92">STEPHEN&#160;CAREW</text>
+  <text x="1528" y="94" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13" letter-spacing="2" fill="#C8A184">SYS.01 — INDEX</text>
+
+  <!-- vertical side-rail annotation (second-read moment) -->
+  <line x1="46" y1="120" x2="46" y2="884" stroke="#C8A184" stroke-opacity="0.45" stroke-width="1"/>
+  <text x="28" y="470" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="11" letter-spacing="3" fill="#F3EFE6" opacity="0.35" transform="rotate(-90 28 470)">SIGNAL&#160;→&#160;PRODUCT</text>
+
+  <!-- eyebrow -->
+  <text x="800" y="300" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="15" letter-spacing="4" fill="#C8A184">FULL-STACK&#160;PRODUCT&#160;ENGINEER</text>
+
+  <!-- headline -->
+  <text x="800" y="404" text-anchor="middle" font-size="86" letter-spacing="-2" fill="#F3EFE6">Full-stack products,</text>
+  <text x="800" y="496" text-anchor="middle" font-size="86" letter-spacing="-2" fill="#C8A184">engineered as systems.</text>
+
+  <!-- supporting line -->
+  <text x="800" y="588" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="19" letter-spacing="0.5" fill="#A8A39A">Database&#160;→&#160;API&#160;→&#160;UI&#160;→&#160;payments&#160;→&#160;ship.&#160;Built&#160;end-to-end,&#160;mostly&#160;solo.</text>
+
+  <!-- CTAs -->
+  <g font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="16">
+    <rect x="632" y="662" width="186" height="52" rx="4" fill="#F3EFE6"/>
+    <text x="714" y="693" text-anchor="middle" fill="#0B0D0C">View case studies</text>
+    <text x="792" y="693" fill="#0B0D0C">↗</text>
+
+    <rect x="834" y="662" width="134" height="52" rx="4" fill="none" stroke="#F3EFE6" stroke-opacity="0.35"/>
+    <text x="901" y="693" text-anchor="middle" fill="#F3EFE6" opacity="0.9">Get in touch</text>
+  </g>
+
+  <!-- bottom meta -->
+  <rect x="72" y="876" width="1456" height="1" fill="#F3EFE6" opacity="0.16"/>
+  <text x="72" y="922" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13" letter-spacing="2" fill="#A8A39A">UK&#160;·&#160;SOLO-SHIPPED&#160;SAAS&#160;·&#160;SOLANA&#160;·&#160;CONTROL-SYSTEMS&#160;BACKGROUND</text>
+  <text x="1528" y="922" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13" letter-spacing="2" fill="#C8A184">SCROLL&#160;↓</text>
+</svg>

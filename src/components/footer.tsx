@@ -1,36 +1,21 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Github, Linkedin, Twitter, Mail, Heart, ArrowUp } from "lucide-react";
+import { Github, Linkedin, Twitter, Mail, ArrowUp } from "lucide-react";
+import { sectionReveal, cardReveal } from "@/lib/motion";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   const socialLinks = [
-    {
-      icon: Github,
-      href: "https://github.com/stephen-carew",
-      label: "GitHub",
-    },
-    {
-      icon: Linkedin,
-      href: "https://linkedin.com/in/stephen-carew",
-      label: "LinkedIn",
-    },
-    {
-      icon: Twitter,
-      href: "https://twitter.com/stephen_carew",
-      label: "Twitter",
-    },
-    {
-      icon: Mail,
-      href: "mailto:stephen.carw@outlook.com",
-      label: "Email",
-    },
+    { icon: Github, href: "https://github.com/stephen-carew", label: "GitHub" },
+    { icon: Linkedin, href: "https://linkedin.com/in/stephen-carew", label: "LinkedIn" },
+    { icon: Twitter, href: "https://twitter.com/stephen_carew", label: "Twitter" },
+    { icon: Mail, href: "mailto:hi@stephencarew.dev", label: "Email" },
   ];
 
   const quickLinks = [
-    { label: "Expertise", href: "#skills" },
+    { label: "Capabilities", href: "#skills" },
     { label: "Case Studies", href: "#projects" },
     { label: "Contact", href: "#contact" },
   ];
@@ -40,57 +25,40 @@ const Footer = () => {
   };
 
   return (
-    <footer className="relative border-t border-white/[0.06]">
+    <footer className="relative border-t border-white/[0.08] bg-ink-950">
       <div className="mx-auto max-w-[1180px] px-6 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-10">
-          {/* Brand */}
+        <div className="grid grid-cols-1 gap-10 mb-10 md:grid-cols-3">
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
             viewport={{ once: true }}
+            transition={sectionReveal}
             className="space-y-4"
           >
-            <div className="flex items-center gap-2.5">
-              <span className="flex h-10 w-10 items-center justify-center rounded-full overflow-hidden bg-white/[0.08] ring-1 ring-white/[0.10]">
-                <img
-                  src="/IMG_3191.jpg"
-                  alt="Stephen Carew"
-                  className="h-full w-full object-cover"
-                />
-              </span>
-              <span className="text-lg font-semibold text-cream-50">
-                Stephen Carew
-              </span>
-            </div>
-            <p className="text-sm text-text-secondary leading-relaxed max-w-xs">
-              Full-stack product engineer. I build SaaS applications end-to-end
-              — database design, API architecture, UI components, payment
-              integrations, and AI features — then ship them to production.
+            <span className="font-serif text-lg text-cream-50">
+              Stephen Carew
+            </span>
+            <p className="max-w-xs font-mono text-sm leading-6 text-text-secondary">
+              Product engineer. I build SaaS end-to-end and ship to production.
             </p>
           </motion.div>
 
-          {/* Quick Links */}
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{
-              duration: 0.5,
-              delay: 0.08,
-              ease: [0.22, 1, 0.36, 1],
-            }}
             viewport={{ once: true }}
+            transition={cardReveal(0.08)}
             className="space-y-4"
           >
-            <h4 className="text-sm font-semibold text-cream-50">
-              Quick Links
+            <h4 className="font-mono text-sm tracking-[0.14em] text-cream-50">
+              INDEX
             </h4>
             <nav className="flex flex-col gap-2">
               {quickLinks.map((link) => (
                 <a
                   key={link.label}
                   href={link.href}
-                  className="text-sm text-text-secondary hover:text-cream-50 transition-colors"
+                  className="font-mono text-sm text-text-secondary transition-colors duration-150 hover:text-cream-50"
                 >
                   {link.label}
                 </a>
@@ -98,19 +66,16 @@ const Footer = () => {
             </nav>
           </motion.div>
 
-          {/* Social */}
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{
-              duration: 0.5,
-              delay: 0.16,
-              ease: [0.22, 1, 0.36, 1],
-            }}
             viewport={{ once: true }}
+            transition={cardReveal(0.16)}
             className="space-y-4"
           >
-            <h4 className="text-sm font-semibold text-cream-50">Connect</h4>
+            <h4 className="font-mono text-sm tracking-[0.14em] text-cream-50">
+              CONNECT
+            </h4>
             <div className="flex gap-2.5">
               {socialLinks.map((social) => (
                 <a
@@ -118,47 +83,34 @@ const Footer = () => {
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex h-10 w-10 items-center justify-center rounded-xl border border-white/[0.08] text-text-secondary hover:text-cream-50 hover:border-white/[0.16] hover:bg-white/[0.04] transition-all duration-200"
+                  className="flex h-10 w-10 items-center justify-center rounded-[4px] border border-white/[0.12] text-text-secondary transition-colors duration-150 hover:text-cream-50 hover:border-white/[0.3] hover:bg-white/[0.04]"
                   aria-label={social.label}
                 >
                   <social.icon className="h-4 w-4" />
                 </a>
               ))}
             </div>
-            <p className="text-xs text-text-muted">
-              Available for freelance projects and collaborations
+            <p className="font-mono text-xs text-text-muted">
+              Available for freelance and full-time roles.
             </p>
           </motion.div>
         </div>
 
-        {/* Bottom */}
-        <div className="h-px bg-white/[0.06] mb-6" />
+        <div className="h-px bg-white/[0.08] mb-6" />
 
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{
-            duration: 0.5,
-            delay: 0.2,
-            ease: [0.22, 1, 0.36, 1],
-          }}
-          viewport={{ once: true }}
-          className="flex flex-col md:flex-row items-center justify-between gap-4"
-        >
-          <div className="flex items-center gap-1.5 text-sm text-text-muted">
-            <span>© {currentYear} Stephen Carew. Made with</span>
-            <Heart className="h-3.5 w-3.5 text-accent-dust fill-current" />
-            <span>using Next.js</span>
-          </div>
+        <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
+          <p className="font-mono text-[13px] tracking-[0.12em] text-text-muted">
+            © {currentYear} STEPHEN CAREW — ENGINEERED, NOT TEMPLATED
+          </p>
 
           <button
             onClick={scrollToTop}
-            className="flex items-center gap-2 text-sm text-text-secondary hover:text-cream-50 transition-colors rounded-xl px-4 py-2 hover:bg-white/[0.04] border border-white/[0.06]"
+            className="flex items-center gap-2 rounded-[4px] px-4 py-2 font-mono text-sm text-text-secondary transition-colors duration-150 hover:text-cream-50 hover:bg-white/[0.04]"
           >
             <ArrowUp className="h-3.5 w-3.5" />
             Back to top
           </button>
-        </motion.div>
+        </div>
       </div>
     </footer>
   );

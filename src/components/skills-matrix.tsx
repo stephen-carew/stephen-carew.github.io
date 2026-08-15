@@ -1,148 +1,94 @@
 "use client";
 
 import { motion } from "framer-motion";
-import {
-  Monitor,
-  Database,
-  CreditCard,
-  Orbit,
-  Bot,
-} from "lucide-react";
+import { sectionReveal, cardReveal } from "@/lib/motion";
 
-const skillGroups = [
+const capabilities = [
   {
-    icon: Monitor,
-    category: "Frontend Architecture",
-    items: [
-      { name: "React / Next.js (App Router)", level: "Expert" },
-      { name: "TypeScript (strict mode)", level: "Expert" },
-      { name: "Tailwind CSS v4 + shadcn/ui", level: "Expert" },
-      { name: "Framer Motion", level: "Expert" },
-      { name: "TanStack Query v5", level: "Advanced" },
-    ],
+    index: "01",
+    name: "Frontend architecture",
+    stack: "React · Next.js · TypeScript · Tailwind · Framer Motion",
+    proof: "Shipped production UI across 6 products.",
   },
   {
-    icon: Database,
-    category: "Backend & Data",
-    items: [
-      { name: "PostgreSQL + Supabase", level: "Expert" },
-      { name: "Prisma + Drizzle ORM", level: "Expert" },
-      { name: "Express.js + Node.js", level: "Advanced" },
-      { name: "Redis + Upstash", level: "Advanced" },
-      { name: "Vercel Blob / Edge Storage", level: "Intermediate" },
-    ],
+    index: "02",
+    name: "Backend & data",
+    stack: "PostgreSQL · Supabase · Prisma · Drizzle · Node · Redis",
+    proof: "RLS, migrations, and API design at product scale.",
   },
   {
-    icon: CreditCard,
-    category: "Payments & Real-time",
-    items: [
-      { name: "Stripe (subscriptions + payments)", level: "Advanced" },
-      { name: "M-Pesa API Integration", level: "Advanced" },
-      { name: "Plaid + TrueLayer (Open Banking)", level: "Advanced" },
-      { name: "Server-Sent Events (SSE)", level: "Advanced" },
-      { name: "OpenAI / DeepSeek API", level: "Advanced" },
-    ],
+    index: "03",
+    name: "Payments & realtime",
+    stack: "Stripe · Plaid · TrueLayer · M-Pesa · SSE",
+    proof: "Rent collection and live order sync in production.",
   },
   {
-    icon: Orbit,
-    category: "Blockchain & Web3",
-    items: [
-      { name: "Solana (Web3.js / Anchor)", level: "Advanced" },
-      { name: "Smart Contract Development", level: "Advanced" },
-      { name: "Metaplex (Bubblegum / cNFTs)", level: "Advanced" },
-      { name: "SPL Token Standards", level: "Advanced" },
-      { name: "Wallet Adapter Integration", level: "Advanced" },
-    ],
+    index: "04",
+    name: "Blockchain & Web3",
+    stack: "Solana · Anchor · Rust · Metaplex · SPL tokens",
+    proof: "On-chain programs and marketplaces deployed.",
   },
   {
-    icon: Bot,
-    category: "Bot Development & Python",
-    items: [
-      { name: "Discord Bot Architecture", level: "Expert" },
-      { name: "Python + interactions.py", level: "Advanced" },
-      { name: "MySQL + SQLite Persistence", level: "Advanced" },
-      { name: "BIP-39 Seed Management", level: "Intermediate" },
-      { name: "GitHub Actions / CI/CD", level: "Intermediate" },
-    ],
+    index: "05",
+    name: "Automation & bots",
+    stack: "Python · interactions.py · MySQL · Redis",
+    proof: "Bots running across 50+ servers.",
+  },
+  {
+    index: "06",
+    name: "AI integration",
+    stack: "OpenAI · DeepSeek · structured JSON output",
+    proof: "Intent parsing in production tenant messaging.",
   },
 ];
 
-const levelColors: Record<string, string> = {
-  Expert: "bg-accent-sand/15 text-accent-sand",
-  Advanced: "bg-accent-dust/15 text-accent-dust",
-  Intermediate: "bg-white/[0.08] text-text-secondary",
-};
-
 const SkillsMatrix = () => {
   return (
-    <section id="skills" className="relative py-28">
+    <section id="skills" className="relative bg-ink-950 py-28">
       <div className="mx-auto max-w-[1180px] px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
-          transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-          className="mb-14 text-center"
+          transition={sectionReveal}
+          className="mb-14 max-w-3xl"
         >
-          <p className="mb-3 text-sm font-medium text-accent-sand tracking-wide uppercase">
-            Technical expertise
+          <p className="mb-3 font-mono text-sm tracking-[0.22em] text-accent-sand">
+            SYS.04 — CAPABILITIES
           </p>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold tracking-[-0.03em] text-cream-50">
-            What I work with
+          <h2 className="font-serif text-5xl tracking-[-0.02em] text-cream-50 md:text-[60px]">
+            What I actually use.
           </h2>
-          <p className="mx-auto mt-4 max-w-xl text-text-secondary leading-relaxed">
-            Tools and technologies I use to build and ship production
-            applications, from database schema to deployed product — across
-            web, mobile payments, blockchain, and bot ecosystems.
+          <p className="mt-4 font-mono text-base leading-7 text-text-secondary">
+            No self-ratings. Proof by application.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-          {skillGroups.map((group, index) => {
-            const Icon = group.icon;
-            return (
-              <motion.div
-                key={group.category}
-                initial={{ opacity: 0, y: 24 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-60px" }}
-                transition={{
-                  duration: 0.5,
-                  delay: index * 0.08,
-                  ease: [0.22, 1, 0.36, 1],
-                }}
-                className="md:col-span-2 lg:col-span-1"
-              >
-                <div className="h-full rounded-[24px] border border-white/[0.08] bg-white/[0.03] p-6 transition-colors duration-300 hover:border-white/[0.14] hover:bg-white/[0.05]">
-                  <div className="mb-5 flex h-10 w-10 items-center justify-center rounded-2xl ">
-                    <Icon className="h-5 w-5 text-accent-sand" />
-                  </div>
-                  <h3 className="text-lg font-semibold text-cream-50 mb-4">
-                    {group.category}
-                  </h3>
-                  <div className="space-y-3">
-                    {group.items.map((skill) => (
-                      <div
-                        key={skill.name}
-                        className="flex items-center justify-between group"
-                      >
-                        <span className="text-sm text-text-secondary group-hover:text-cream-50 transition-colors">
-                          {skill.name}
-                        </span>
-                        <span
-                          className={`shrink-0 ml-2 rounded-full px-2.5 py-0.5 text-[11px] font-medium ${
-                            levelColors[skill.level] || levelColors.Intermediate
-                          }`}
-                        >
-                          {skill.level}
-                        </span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </motion.div>
-            );
-          })}
+        <div>
+          {capabilities.map((capability, index) => (
+            <motion.div
+              key={capability.index}
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-40px" }}
+              transition={cardReveal(index * 0.05)}
+              className="grid grid-cols-1 gap-3 border-t border-white/[0.12] py-6 md:grid-cols-12 md:items-baseline"
+            >
+              <span className="font-mono text-[13px] text-accent-sand md:col-span-1">
+                {capability.index}
+              </span>
+              <h3 className="font-serif text-xl text-cream-50 md:col-span-4">
+                {capability.name}
+              </h3>
+              <p className="font-mono text-sm leading-6 text-text-secondary md:col-span-4">
+                {capability.stack}
+              </p>
+              <p className="font-mono text-sm leading-6 text-text-muted md:col-span-3 md:text-right">
+                {capability.proof}
+              </p>
+            </motion.div>
+          ))}
+          <div className="border-t border-white/[0.12]" />
         </div>
       </div>
     </section>

@@ -12,6 +12,7 @@ import {
   Twitter,
 } from "lucide-react";
 import { useRef, useState } from "react";
+import { sectionReveal, cardReveal } from "@/lib/motion";
 
 const EnhancedContact = () => {
   const [formData, setFormData] = useState({
@@ -64,7 +65,7 @@ const EnhancedContact = () => {
       const body = encodeURIComponent(
         `Hi Stephen,\n\nName: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`,
       );
-      const mailtoUrl = `mailto:stephen.carw@outlook.com?subject=${subject}&body=${body}`;
+      const mailtoUrl = `mailto:hi@stephencarew.dev?subject=${subject}&body=${body}`;
 
       window.open(mailtoUrl, "_blank");
       setSubmitStatus("success");
@@ -79,8 +80,8 @@ const EnhancedContact = () => {
     {
       icon: Mail,
       label: "Email",
-      value: "stephen.carw@outlook.com",
-      href: "mailto:stephen.carw@outlook.com",
+      value: "hi@stephencarew.dev",
+      href: "mailto:hi@stephencarew.dev",
     },
     {
       icon: MapPin,
@@ -97,61 +98,60 @@ const EnhancedContact = () => {
   ];
 
   return (
-    <section id="contact" className="relative py-28" ref={ref}>
+    <section id="contact" className="relative bg-ink-950 py-28" ref={ref}>
       <div className="mx-auto max-w-[1180px] px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-          transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-          className="mb-14 text-center"
+          transition={sectionReveal}
+          className="mb-14"
         >
-          <p className="mb-3 text-sm font-medium text-accent-sand tracking-wide uppercase">
-            Get in touch
+          <p className="mb-3 font-mono text-sm tracking-[0.22em] text-accent-sand">
+            SYS.06 — CONTACT
           </p>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold tracking-[-0.03em] text-cream-50">
-            Let&apos;s work together
+          <h2 className="max-w-3xl font-serif text-5xl leading-[1.03] tracking-[-0.02em] text-cream-50 md:text-[86px]">
+            Let&apos;s build
+            <br />
+            something real.
           </h2>
-          <p className="mx-auto mt-4 max-w-xl text-text-secondary leading-relaxed">
-            Have a project in mind? I&apos;d love to hear about it. Let&apos;s
-            discuss how we can bring your ideas to life.
+          <p className="mt-6 max-w-xl font-mono text-base leading-7 text-text-secondary">
+            Have a product, a hard problem, or a role worth doing well?
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 gap-8 lg:grid-cols-12">
           {/* Left: info */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
-            transition={{ duration: 0.5, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
-            className="space-y-8"
+            transition={cardReveal(0.1)}
+            className="space-y-8 lg:col-span-5"
           >
             <div>
-              <h3 className="text-2xl font-semibold text-cream-50 mb-4">
-                Get in touch
-              </h3>
-              <p className="text-text-secondary leading-relaxed">
-                I&apos;m always open to discussing new opportunities, interesting
-                projects, or just having a chat about technology and innovation.
-              </p>
+              <a
+                href="mailto:hi@stephencarew.dev"
+                className="font-mono text-2xl text-cream-50 transition-colors hover:text-accent-sand"
+              >
+                hi@stephencarew.dev
+              </a>
+              <div className="mt-2 h-px w-56 bg-accent-sand" />
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
               {contactInfo.map((info) => (
                 <div
                   key={info.label}
-                  className="rounded-2xl border border-white/[0.08] bg-white/[0.03] p-4 transition-colors duration-300 hover:border-white/[0.14]"
+                  className="rounded-[4px] border border-white/[0.12] bg-ink-900 p-5 transition-colors duration-200 hover:border-white/[0.24]"
                 >
                   <div className="flex items-center gap-3">
-                    <div className="flex h-9 w-9 items-center justify-center rounded-xl">
-                      <info.icon className="h-4 w-4 text-accent-sand" />
-                    </div>
+                    <info.icon className="h-4 w-4 text-accent-sand" />
                     <div>
-                      <div className="text-sm font-medium text-cream-50">
+                      <div className="font-mono text-sm text-cream-50">
                         {info.label}
                       </div>
                       <a
                         href={info.href}
-                        className="text-xs text-text-secondary hover:text-cream-50 transition-colors"
+                        className="font-mono text-xs text-text-secondary transition-colors hover:text-cream-50"
                       >
                         {info.value}
                       </a>
@@ -162,8 +162,8 @@ const EnhancedContact = () => {
             </div>
 
             <div>
-              <h4 className="text-sm font-semibold text-cream-50 mb-3">
-                Connect with me
+              <h4 className="mb-3 font-mono text-sm tracking-[0.14em] text-cream-50">
+                CONNECT
               </h4>
               <div className="flex gap-2.5">
                 {socialLinks.map((social) => (
@@ -172,7 +172,7 @@ const EnhancedContact = () => {
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex h-10 w-10 items-center justify-center rounded-xl border border-white/[0.08] text-text-secondary hover:text-cream-50 hover:border-white/[0.16] hover:bg-white/[0.04] transition-all duration-200"
+                    className="flex h-10 w-10 items-center justify-center rounded-[4px] border border-white/[0.12] text-text-secondary transition-colors duration-150 hover:text-cream-50 hover:border-white/[0.3] hover:bg-white/[0.04]"
                     aria-label={social.label}
                   >
                     <social.icon className="h-4 w-4" />
@@ -186,35 +186,33 @@ const EnhancedContact = () => {
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 20 }}
-            transition={{ duration: 0.5, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+            transition={cardReveal(0.2)}
+            className="lg:col-span-7"
           >
-            <div className="rounded-[28px] border border-white/[0.08] bg-white/[0.03] p-6 md:p-8">
-              <h3 className="text-xl font-semibold text-cream-50 mb-1">
-                Send me a message
-              </h3>
-              <p className="text-sm text-text-secondary mb-6">
-                Fill out the form below and I&apos;ll get back to you as soon as
-                possible.
+            <div className="rounded-[4px] border border-white/[0.12] bg-ink-900 p-6 md:p-8">
+              <h3 className="font-serif text-2xl text-cream-50">Send a message</h3>
+              <p className="mb-6 mt-1 font-mono text-sm text-text-secondary">
+                I&apos;ll get back to you.
               </p>
 
               <form onSubmit={handleSubmit} className="space-y-4">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
                   <input
                     name="name"
-                    placeholder="Your Name"
+                    placeholder="Name"
                     value={formData.name}
                     onChange={handleInputChange}
                     required
-                    className="w-full rounded-xl border border-white/[0.10] bg-white/[0.04] px-4 py-3 text-sm text-cream-50 placeholder:text-text-muted outline-none transition-colors focus:border-white/[0.20] focus:bg-white/[0.06]"
+                    className="w-full rounded-[4px] border border-white/[0.12] bg-ink-950 px-4 py-3 font-mono text-sm text-cream-50 placeholder:text-text-muted outline-none transition-colors focus:border-white/[0.3] focus:bg-ink-900"
                   />
                   <input
                     name="email"
                     type="email"
-                    placeholder="Your Email"
+                    placeholder="Email"
                     value={formData.email}
                     onChange={handleInputChange}
                     required
-                    className="w-full rounded-xl border border-white/[0.10] bg-white/[0.04] px-4 py-3 text-sm text-cream-50 placeholder:text-text-muted outline-none transition-colors focus:border-white/[0.20] focus:bg-white/[0.06]"
+                    className="w-full rounded-[4px] border border-white/[0.12] bg-ink-950 px-4 py-3 font-mono text-sm text-cream-50 placeholder:text-text-muted outline-none transition-colors focus:border-white/[0.3] focus:bg-ink-900"
                   />
                 </div>
                 <input
@@ -223,57 +221,48 @@ const EnhancedContact = () => {
                   value={formData.subject}
                   onChange={handleInputChange}
                   required
-                  className="w-full rounded-xl border border-white/[0.10] bg-white/[0.04] px-4 py-3 text-sm text-cream-50 placeholder:text-text-muted outline-none transition-colors focus:border-white/[0.20] focus:bg-white/[0.06]"
+                  className="w-full rounded-[4px] border border-white/[0.12] bg-ink-950 px-4 py-3 font-mono text-sm text-cream-50 placeholder:text-text-muted outline-none transition-colors focus:border-white/[0.3] focus:bg-ink-900"
                 />
                 <textarea
                   name="message"
-                  placeholder="Your Message"
+                  placeholder="Message"
                   value={formData.message}
                   onChange={handleInputChange}
                   required
                   rows={5}
-                  className="w-full rounded-xl border border-white/[0.10] bg-white/[0.04] px-4 py-3 text-sm text-cream-50 placeholder:text-text-muted outline-none transition-colors focus:border-white/[0.20] focus:bg-white/[0.06] resize-none"
+                  className="w-full rounded-[4px] border border-white/[0.12] bg-ink-950 px-4 py-3 font-mono text-sm text-cream-50 placeholder:text-text-muted outline-none transition-colors focus:border-white/[0.3] focus:bg-ink-900 resize-none"
                 />
 
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full flex items-center justify-center gap-2 rounded-2xl bg-white px-6 py-3 text-sm font-semibold text-ink-950 transition-all duration-200 hover:bg-cream-100 hover:-translate-y-0.5 disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="w-full flex items-center justify-center gap-2 rounded-[4px] bg-cream-50 px-6 py-3 font-mono text-sm font-medium text-ink-950 transition-colors duration-150 hover:bg-cream-100 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   {isSubmitting ? (
                     <>
                       <Send className="h-4 w-4 animate-pulse" />
-                      Sending...
+                      Sending…
                     </>
                   ) : (
                     "Send Message"
                   )}
                 </button>
 
-                {submitStatus === "submitting" && (
-                  <motion.p
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    className="text-center text-sm text-text-secondary"
-                  >
-                    Sending your message...
-                  </motion.p>
-                )}
                 {submitStatus === "success" && (
                   <motion.div
-                    initial={{ opacity: 0, scale: 0.95 }}
+                    initial={{ opacity: 0, scale: 0.97 }}
                     animate={{ opacity: 1, scale: 1 }}
-                    className="flex items-center justify-center gap-2 text-sm text-status-success"
+                    className="flex items-center justify-center gap-2 font-mono text-sm text-status-success"
                   >
                     <CheckCircle className="h-4 w-4" />
-                    Message sent successfully! I&apos;ll get back to you soon.
+                    Message sent. I&apos;ll get back to you.
                   </motion.div>
                 )}
                 {submitStatus === "error" && (
                   <motion.div
-                    initial={{ opacity: 0, scale: 0.95 }}
+                    initial={{ opacity: 0, scale: 0.97 }}
                     animate={{ opacity: 1, scale: 1 }}
-                    className="flex items-center justify-center gap-2 text-sm text-status-danger"
+                    className="flex items-center justify-center gap-2 font-mono text-sm text-status-danger"
                   >
                     <AlertCircle className="h-4 w-4" />
                     Something went wrong. Please try again.

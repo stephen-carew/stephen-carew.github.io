@@ -1,0 +1,55 @@
+<svg width="1600" height="1000" viewBox="0 0 1600 1000" xmlns="http://www.w3.org/2000/svg" font-family="Georgia, 'Times New Roman', serif">
+  <rect width="1600" height="1000" fill="#0B0D0C"/>
+
+  <!-- section header -->
+  <text x="72" y="96" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="14" letter-spacing="4" fill="#C8A184">SYS.02 — SELECTED WORK</text>
+  <text x="72" y="152" font-size="60" letter-spacing="-1.5" fill="#F3EFE6">Work that shipped.</text>
+  <text x="72" y="196" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="16" fill="#A8A39A">Eight projects. Seven built alone. One currently in production.</text>
+
+  <!-- featured case study -->
+  <rect x="72" y="248" width="880" height="640" rx="2" fill="#121514" stroke="#F3EFE6" stroke-opacity="0.12"/>
+  <rect x="72" y="248" width="880" height="2" fill="#C8A184"/>
+
+  <text x="108" y="308" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13" letter-spacing="2" fill="#C8A184">FEATURED&#160;—&#160;2026</text>
+  <text x="108" y="364" font-size="54" letter-spacing="-1" fill="#F3EFE6">Tenora</text>
+  <text x="108" y="412" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="15" fill="#A8A39A">UK property-management SaaS. 110+ features. Solo-built.</text>
+
+  <text x="108" y="478" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="15" fill="#F3EFE6">Replaces 5–10 disconnected landlord tools.</text>
+  <text x="108" y="510" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="15" fill="#A8A39A">Stripe + Open Banking rent collection, AI tenant screening,</text>
+  <text x="108" y="542" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="15" fill="#A8A39A">clause-level contract negotiation, maintenance ticketing.</text>
+
+  <!-- decision callout -->
+  <rect x="108" y="596" width="808" height="1" fill="#F3EFE6" opacity="0.12"/>
+  <text x="108" y="636" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13" letter-spacing="2" fill="#F3EFE6" opacity="0.55">KEY&#160;DECISION</text>
+  <text x="108" y="672" font-size="22" fill="#F3EFE6">Contract engine as a JSON state machine —</text>
+  <text x="108" y="706" font-size="22" fill="#A8A39A">both parties must agree 100% before signing.</text>
+
+  <text x="108" y="786" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="14" letter-spacing="1" fill="#C8A184">OPEN&#160;CASE&#160;STUDY&#160;↗</text>
+
+  <!-- compact index rail -->
+  <text x="1008" y="308" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13" letter-spacing="2" fill="#F3EFE6" opacity="0.55">INDEX</text>
+
+  <g font-family="ui-monospace, SFMono-Regular, Menlo, monospace">
+    <text x="1008" y="376" font-size="13" fill="#A8A39A">01</text>
+    <text x="1080" y="376" font-size="17" fill="#F3EFE6">Plume — Trait Marketplace</text>
+    <text x="1528" y="376" text-anchor="end" font-size="13" fill="#C8A184">SOLANA</text>
+
+    <text x="1008" y="432" font-size="13" fill="#A8A39A">02</text>
+    <text x="1080" y="432" font-size="17" fill="#F3EFE6">Restauranter</text>
+    <text x="1528" y="432" text-anchor="end" font-size="13" fill="#C8A184">MPESA</text>
+
+    <text x="1008" y="488" font-size="13" fill="#A8A39A">03</text>
+    <text x="1080" y="488" font-size="17" fill="#F3EFE6">Car Parts Finder</text>
+    <text x="1528" y="488" text-anchor="end" font-size="13" fill="#A8A39A">B2B</text>
+
+    <text x="1008" y="544" font-size="13" fill="#A8A39A">04</text>
+    <text x="1080" y="544" font-size="17" fill="#F3EFE6">Dummified Labs</text>
+    <text x="1528" y="544" text-anchor="end" font-size="13" fill="#A8A39A">STAKING</text>
+
+    <text x="1008" y="600" font-size="13" fill="#A8A39A">05</text>
+    <text x="1080" y="600" font-size="17" fill="#F3EFE6">Discord Bot Ecosystem</text>
+    <text x="1528" y="600" text-anchor="end" font-size="13" fill="#A8A39A">PYTHON</text>
+  </g>
+
+  <text x="1008" y="716" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="14" letter-spacing="1" fill="#C8A184">ALL&#160;PROJECTS&#160;↓</text>
+</svg>
