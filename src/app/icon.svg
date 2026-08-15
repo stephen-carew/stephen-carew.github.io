@@ -1,0 +1,29 @@
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0B0D0C"/>
+      <stop offset="1" stop-color="#141716"/>
+    </linearGradient>
+  </defs>
+
+  <!-- tile -->
+  <rect width="512" height="512" rx="96" fill="url(#bg)"/>
+
+  <!-- hairline inner frame -->
+  <rect x="36" y="36" width="440" height="440" rx="72" fill="none" stroke="#F3EFE6" stroke-opacity="0.14" stroke-width="2"/>
+
+  <!-- faint technical grid -->
+  <g stroke="#F3EFE6" stroke-opacity="0.04" stroke-width="1">
+    <path d="M128 36 V476 M256 36 V476 M384 36 V476"/>
+    <path d="M36 128 H476 M36 256 H476 M36 384 H476"/>
+  </g>
+
+  <!-- serif S mark -->
+  <text x="256" y="312" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="240" fill="#F3EFE6">S</text>
+
+  <!-- signal dot / annotation -->
+  <circle cx="256" cy="404" r="14" fill="#C8A184"/>
+
+  <!-- signal baseline -->
+  <line x1="176" y1="404" x2="336" y2="404" stroke="#C8A184" stroke-width="4" stroke-linecap="round"/>
+</svg>
