@@ -6,7 +6,7 @@ import { Annot } from "@/components/drawing";
 import { cn } from "@/lib/utils";
 
 const sheets = [
-  { href: "#case-study", num: "02", label: "Case study" },
+  { href: "#case-study", num: "02", label: "Impact" },
   { href: "#work", num: "03", label: "Work" },
   { href: "#skills", num: "04", label: "Skills" },
   { href: "#background", num: "05", label: "Background" },
@@ -42,9 +42,7 @@ const Navigation = () => {
       <div className="mx-auto flex h-14 max-w-[1240px] items-center justify-between px-5 md:px-8">
         {/* Mark */}
         <a href="#top" className="flex items-center gap-3">
-          <span className="border border-ink px-2 py-1 font-mono text-[10px] tracking-[0.16em]">
-            SC-2026
-          </span>
+
           <span className="font-sans text-[15px] font-extrabold uppercase tracking-[-0.01em] text-ink">
             Stephen&nbsp;Carew
           </span>
