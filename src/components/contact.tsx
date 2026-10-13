@@ -1,18 +1,11 @@
 "use client";
 
-import { motion, useInView } from "framer-motion";
-import {
-  AlertCircle,
-  CheckCircle,
-  Github,
-  Linkedin,
-  Mail,
-  MapPin,
-  Send,
-  Twitter,
-} from "lucide-react";
 import { useRef, useState } from "react";
-import { sectionReveal, cardReveal } from "@/lib/motion";
+import { motion, useInView } from "framer-motion";
+import { sectionReveal, easeSmoothOut } from "@/lib/motion";
+import { Annot, Field, SheetStamp, DimRule, SettleBlock } from "@/components/drawing";
+
+const RESUME_HREF = "/Stephen_Carew_Instrumentation_Engineer.pdf";
 
 const EnhancedContact = () => {
   const [formData, setFormData] = useState({
@@ -44,9 +37,7 @@ const EnhancedContact = () => {
     try {
       const response = await fetch("/api/contact", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
       });
 
@@ -59,217 +50,203 @@ const EnhancedContact = () => {
         throw new Error(data.error || "Failed to send message");
       }
     } catch {
+      // Static export has no API; hand the order to the visitor's mail client.
       const subject = encodeURIComponent(
-        formData.subject || "Contact from Portfolio",
+        formData.subject || "Portfolio enquiry",
       );
       const body = encodeURIComponent(
-        `Hi Stephen,\n\nName: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`,
+        `Name: ${formData.name}\nEmail: ${formData.email}\n\n${formData.message}`,
       );
-      const mailtoUrl = `mailto:hi@stephencarew.dev?subject=${subject}&body=${body}`;
-
-      window.open(mailtoUrl, "_blank");
+      window.open(
+        `mailto:hi@stephencarew.dev?subject=${subject}&body=${body}`,
+        "_blank",
+      );
       setSubmitStatus("success");
       setFormData({ name: "", email: "", subject: "", message: "" });
     } finally {
       setIsSubmitting(false);
-      setTimeout(() => setSubmitStatus("idle"), 5000);
+      setTimeout(() => setSubmitStatus("idle"), 6000);
     }
   };
 
-  const contactInfo = [
-    {
-      icon: Mail,
-      label: "Email",
-      value: "hi@stephencarew.dev",
-      href: "mailto:hi@stephencarew.dev",
-    },
-    {
-      icon: MapPin,
-      label: "Location",
-      value: "United Kingdom",
-      href: "#",
-    },
-  ];
-
-  const socialLinks = [
-    { icon: Github, label: "GitHub", href: "https://github.com/stephen-carew" },
-    { icon: Linkedin, label: "LinkedIn", href: "https://linkedin.com/in/stephen-carew" },
-    { icon: Twitter, label: "Twitter", href: "https://twitter.com/stephen_carew" },
-  ];
+  const inputCls =
+    "w-full border-b border-rule-strong bg-transparent px-1 py-3 font-sans text-[16px] font-medium text-ink placeholder:text-ink-faint/70 outline-none transition-colors focus:border-accent";
 
   return (
-    <section id="contact" className="relative bg-ink-950 py-28" ref={ref}>
-      <div className="mx-auto max-w-[1180px] px-6">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-          transition={sectionReveal}
-          className="mb-14"
-        >
-          <p className="mb-3 font-mono text-sm tracking-[0.22em] text-accent-sand">
-            SYS.06 — CONTACT
-          </p>
-          <h2 className="max-w-3xl font-serif text-5xl leading-[1.03] tracking-[-0.02em] text-cream-50 md:text-[86px]">
-            Let&apos;s build
-            <br />
-            something real.
+    <section id="contact" className="relative py-24 md:py-28" ref={ref}>
+      <div className="mx-auto max-w-[1240px] px-5 md:px-8">
+        <SettleBlock inView className="mb-10">
+          <div className="mb-3 flex items-center gap-4">
+            <SheetStamp sheet="06" />
+            <DimRule className="hidden w-40 md:flex" />
+          </div>
+          <h2 className="font-sans text-[clamp(2.1rem,5vw,3.6rem)] font-extrabold leading-[1.02] tracking-[-0.025em] text-ink">
+            Get in touch.
           </h2>
-          <p className="mt-6 max-w-xl font-mono text-base leading-7 text-text-secondary">
-            Have a product, a hard problem, or a role worth doing well?
+          <p className="mt-3 max-w-2xl font-sans text-[16px] leading-7 font-medium text-ink-soft">
+            Full-time roles, contract work, and product problems all start
+            here. Send the details and I&apos;ll answer directly.
           </p>
-        </motion.div>
+        </SettleBlock>
 
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-12">
-          {/* Left: info */}
+          {/* Distribution */}
           <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
-            transition={cardReveal(0.1)}
-            className="space-y-8 lg:col-span-5"
+            initial={{ opacity: 0, y: 16 }}
+            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 16 }}
+            transition={sectionReveal}
+            className="space-y-4 lg:col-span-4"
           >
-            <div>
+            <Field label="Email" strong>
               <a
                 href="mailto:hi@stephencarew.dev"
-                className="font-mono text-2xl text-cream-50 transition-colors hover:text-accent-sand"
+                className="break-all text-accent-deep hover:underline"
               >
                 hi@stephencarew.dev
               </a>
-              <div className="mt-2 h-px w-56 bg-accent-sand" />
-            </div>
-
-            <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
-              {contactInfo.map((info) => (
-                <div
-                  key={info.label}
-                  className="rounded-[4px] border border-white/[0.12] bg-ink-900 p-5 transition-colors duration-200 hover:border-white/[0.24]"
-                >
-                  <div className="flex items-center gap-3">
-                    <info.icon className="h-4 w-4 text-accent-sand" />
-                    <div>
-                      <div className="font-mono text-sm text-cream-50">
-                        {info.label}
-                      </div>
-                      <a
-                        href={info.href}
-                        className="font-mono text-xs text-text-secondary transition-colors hover:text-cream-50"
-                      >
-                        {info.value}
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            <div>
-              <h4 className="mb-3 font-mono text-sm tracking-[0.14em] text-cream-50">
-                CONNECT
-              </h4>
-              <div className="flex gap-2.5">
-                {socialLinks.map((social) => (
+            </Field>
+            <Field label="Elsewhere">
+              <ul className="space-y-1.5">
+                <li>
                   <a
-                    key={social.label}
-                    href={social.href}
+                    href="https://github.com/stephen-carew"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex h-10 w-10 items-center justify-center rounded-[4px] border border-white/[0.12] text-text-secondary transition-colors duration-150 hover:text-cream-50 hover:border-white/[0.3] hover:bg-white/[0.04]"
-                    aria-label={social.label}
+                    className="hover:text-accent-deep"
                   >
-                    <social.icon className="h-4 w-4" />
+                    github.com/stephen-carew ↗
                   </a>
-                ))}
-              </div>
+                </li>
+                <li>
+                  <a
+                    href="https://linkedin.com/in/stephen-carew"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-accent-deep"
+                  >
+                    linkedin.com/in/stephen-carew ↗
+                  </a>
+                </li>
+              </ul>
+            </Field>
+            <Field label="Documents">
+              <a
+                href={RESUME_HREF}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-accent-deep"
+              >
+                Résumé — Instrumentation / Product Engineer (PDF) ↗
+              </a>
+            </Field>
+
+            <div className="border-2 border-ink px-5 py-4 text-center">
+              <Annot className="mb-1 block">Availability</Annot>
+              <p className="font-mono text-[12px] uppercase tracking-[0.14em] text-ink">
+                Full-time · Contract · UK / Remote
+              </p>
             </div>
           </motion.div>
 
-          {/* Right: form */}
+          {/* The work order form */}
           <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 20 }}
-            transition={cardReveal(0.2)}
-            className="lg:col-span-7"
+            initial={{ opacity: 0, y: 16 }}
+            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 16 }}
+            transition={sectionReveal}
+            className="lg:col-span-8"
           >
-            <div className="rounded-[4px] border border-white/[0.12] bg-ink-900 p-6 md:p-8">
-              <h3 className="font-serif text-2xl text-cream-50">Send a message</h3>
-              <p className="mb-6 mt-1 font-mono text-sm text-text-secondary">
-                I&apos;ll get back to you.
-              </p>
+            <form
+              onSubmit={handleSubmit}
+              className="relative border border-ink bg-paper"
+            >
+              {/* form header band */}
+              <div className="flex items-center justify-between border-b border-ink bg-ink px-6 py-3">
+                <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-paper">
+                  Contact — SC-2026
+                </span>
+                <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-paper/60">
+                  Form 06-A
+                </span>
+              </div>
 
-              <form onSubmit={handleSubmit} className="space-y-4">
-                <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+              <div className="grid grid-cols-1 gap-x-8 gap-y-2 p-6 sm:grid-cols-2 sm:p-8">
+                <div>
+                  <Annot className="mb-1 block">Your name</Annot>
                   <input
                     name="name"
-                    placeholder="Name"
+                    placeholder="First and last name"
                     value={formData.name}
                     onChange={handleInputChange}
                     required
-                    className="w-full rounded-[4px] border border-white/[0.12] bg-ink-950 px-4 py-3 font-mono text-sm text-cream-50 placeholder:text-text-muted outline-none transition-colors focus:border-white/[0.3] focus:bg-ink-900"
+                    className={inputCls}
                   />
+                </div>
+                <div>
+                  <Annot className="mb-1 block">Email</Annot>
                   <input
                     name="email"
                     type="email"
-                    placeholder="Email"
+                    placeholder="Where the reply goes"
                     value={formData.email}
                     onChange={handleInputChange}
                     required
-                    className="w-full rounded-[4px] border border-white/[0.12] bg-ink-950 px-4 py-3 font-mono text-sm text-cream-50 placeholder:text-text-muted outline-none transition-colors focus:border-white/[0.3] focus:bg-ink-900"
+                    className={inputCls}
                   />
                 </div>
-                <input
-                  name="subject"
-                  placeholder="Subject"
-                  value={formData.subject}
-                  onChange={handleInputChange}
-                  required
-                  className="w-full rounded-[4px] border border-white/[0.12] bg-ink-950 px-4 py-3 font-mono text-sm text-cream-50 placeholder:text-text-muted outline-none transition-colors focus:border-white/[0.3] focus:bg-ink-900"
-                />
-                <textarea
-                  name="message"
-                  placeholder="Message"
-                  value={formData.message}
-                  onChange={handleInputChange}
-                  required
-                  rows={5}
-                  className="w-full rounded-[4px] border border-white/[0.12] bg-ink-950 px-4 py-3 font-mono text-sm text-cream-50 placeholder:text-text-muted outline-none transition-colors focus:border-white/[0.3] focus:bg-ink-900 resize-none"
-                />
+                <div className="sm:col-span-2">
+                  <Annot className="mb-1 block">Subject</Annot>
+                  <input
+                    name="subject"
+                    placeholder="Role, project, or problem"
+                    value={formData.subject}
+                    onChange={handleInputChange}
+                    required
+                    className={inputCls}
+                  />
+                </div>
+                <div className="sm:col-span-2">
+                  <Annot className="mb-1 block">Message</Annot>
+                  <textarea
+                    name="message"
+                    placeholder="Context, constraints, timelines — as much as you have."
+                    value={formData.message}
+                    onChange={handleInputChange}
+                    required
+                    rows={5}
+                    className={`${inputCls} resize-none`}
+                  />
+                </div>
+              </div>
 
+              <div className="flex flex-col items-start gap-4 border-t border-rule px-6 pb-6 pt-5 sm:flex-row sm:items-center sm:justify-between sm:px-8">
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full flex items-center justify-center gap-2 rounded-[4px] bg-cream-50 px-6 py-3 font-mono text-sm font-medium text-ink-950 transition-colors duration-150 hover:bg-cream-100 disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="group inline-flex items-center gap-2 bg-ink px-7 py-3.5 font-mono text-[11px] uppercase tracking-[0.18em] text-paper transition-colors duration-200 hover:bg-accent-deep disabled:opacity-50"
                 >
-                  {isSubmitting ? (
-                    <>
-                      <Send className="h-4 w-4 animate-pulse" />
-                      Sending…
-                    </>
-                  ) : (
-                    "Send Message"
-                  )}
+                  {isSubmitting ? "Sending…" : "Send message"}
+                  <span className="transition-transform duration-200 group-hover:translate-x-1">
+                    →
+                  </span>
                 </button>
 
                 {submitStatus === "success" && (
-                  <motion.div
-                    initial={{ opacity: 0, scale: 0.97 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    className="flex items-center justify-center gap-2 font-mono text-sm text-status-success"
+                  <motion.span
+                    initial={{ opacity: 0, scale: 1.1, rotate: -6 }}
+                    animate={{ opacity: 1, scale: 1, rotate: -6 }}
+                    transition={{ duration: 0.3, ease: easeSmoothOut }}
+                    className="border-2 border-accent px-4 py-1.5 font-mono text-[11px] uppercase tracking-[0.2em] text-accent-deep"
                   >
-                    <CheckCircle className="h-4 w-4" />
-                    Message sent. I&apos;ll get back to you.
-                  </motion.div>
+                    Sent ✓
+                  </motion.span>
                 )}
                 {submitStatus === "error" && (
-                  <motion.div
-                    initial={{ opacity: 0, scale: 0.97 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    className="flex items-center justify-center gap-2 font-mono text-sm text-status-danger"
-                  >
-                    <AlertCircle className="h-4 w-4" />
-                    Something went wrong. Please try again.
-                  </motion.div>
+                  <span className="font-mono text-[11px] uppercase tracking-[0.16em] text-redline">
+                    Didn&apos;t send — please email me directly
+                  </span>
                 )}
-              </form>
-            </div>
+              </div>
+            </form>
           </motion.div>
         </div>
       </div>

@@ -1,71 +1,126 @@
 @import "tailwindcss";
-@import "tw-animate-css";
+
+/* ─────────────────────────────────────────────────────────────
+   DRAWING PACKAGE SC-2026
+   Vellum surface. Ink line-work. The accent is a pen colour:
+   redline (product) or bluepen (instrument), set by the
+   control transfer in the navbar.
+   ───────────────────────────────────────────────────────────── */
 
 @theme inline {
-  --font-sans: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
-  --font-serif: Georgia, 'Times New Roman', ui-serif, serif;
-  --font-mono: var(--font-mono), ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  --font-sans: var(--font-archivo), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-mono-annot), ui-monospace, SFMono-Regular, Menlo,
+    Consolas, monospace;
 
-  --color-ink-950: #080909;
-  --color-ink-900: #101211;
-  --color-ink-850: #141615;
-  --color-ink-800: #171918;
+  /* Paper */
+  --color-paper: oklch(95.5% 0.017 85);
+  --color-sheet: oklch(92.8% 0.02 85);
+  --color-chart: oklch(90% 0.045 92);
 
-  --color-cream-50: #f5f3ef;
-  --color-cream-100: #ebe6dc;
-  --color-cream-200: #d9d0c0;
+  /* Ink */
+  --color-ink: oklch(24% 0.017 75);
+  --color-ink-soft: oklch(44% 0.02 75);
+  --color-ink-faint: oklch(57% 0.02 78);
+  --color-rule: oklch(24% 0.017 75 / 0.16);
+  --color-rule-strong: oklch(24% 0.017 75 / 0.32);
 
-  --color-border-soft: rgba(255, 255, 255, 0.08);
-  --color-border-default: rgba(255, 255, 255, 0.10);
-  --color-border-strong: rgba(255, 255, 255, 0.16);
+  /* Pens */
+  --color-redline: oklch(55% 0.19 28);
+  --color-redline-deep: oklch(45% 0.18 28);
+  --color-bluepen: oklch(42% 0.11 248);
+  --color-bluepen-deep: oklch(34% 0.11 248);
+  --color-accent: var(--pen);
+  --color-accent-deep: var(--pen-deep);
 
-  --color-text-primary: #f5f3ef;
-  --color-text-secondary: rgba(245, 243, 239, 0.68);
-  --color-text-muted: rgba(245, 243, 239, 0.44);
+  /* Stamps */
+  --color-pass: oklch(48% 0.11 152);
 
-  --color-accent-sand: #b99178;
-  --color-accent-clay: #8a6252;
-  --color-accent-dust: #c88f84;
-  --color-accent-olive: #2a3124;
+  --radius-sm: 2px;
+  --radius-md: 2px;
+  --radius-lg: 3px;
+  --radius-xl: 3px;
+  --radius-2xl: 3px;
 
-  --color-status-success: #6dd58c;
-  --color-status-warning: #f5bd5f;
-  --color-status-danger: #ff6b6b;
+  /* Legacy tokens kept for unused ui/* primitives */
+  --color-ink-950: oklch(24% 0.017 75);
+  --color-ink-900: oklch(28% 0.017 75);
+  --color-cream-50: oklch(95.5% 0.017 85);
+  --color-cream-100: oklch(92.8% 0.02 85);
+}
 
-  --radius-sm: 10px;
-  --radius-md: 16px;
-  --radius-lg: 24px;
-  --radius-xl: 32px;
-  --radius-2xl: 40px;
+:root {
+  --pen: var(--color-redline);
+  --pen-deep: var(--color-redline-deep);
+}
+
+html[data-mode="instrument"] {
+  --pen: var(--color-bluepen);
+  --pen-deep: var(--color-bluepen-deep);
 }
 
 @layer base {
   html {
     scroll-behavior: smooth;
-    background: #080909;
+    background: oklch(95.5% 0.017 85);
   }
 
   body {
-    background: #080909;
-    color: #f5f3ef;
+    background: var(--color-paper);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
 
-  * {
-    border-color: rgba(255, 255, 255, 0.08);
+  ::selection {
+    background: color-mix(in oklab, var(--pen) 26%, transparent);
+    color: var(--color-ink);
   }
 
-  ::selection {
-    background: rgba(185, 145, 120, 0.35);
-    color: #f5f3ef;
+  :focus-visible {
+    outline: 2px solid var(--pen);
+    outline-offset: 2px;
   }
 }
 
-/* ── Technical grid surface ── */
-@utility bg-grid {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cpath d='M80 0H0V80' fill='none' stroke='%23F3EFE6' stroke-opacity='0.05' stroke-width='1'/%3E%3C/svg%3E");
-  background-size: 80px 80px;
+/* ── Vellum: faint drafting grid + paper grain ── */
+@utility bg-draft {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Cpath d='M40 0H0V40' fill='none' stroke='%23241f1a' stroke-opacity='0.045' stroke-width='1'/%3E%3C/svg%3E");
+  background-size: 40px 40px;
+}
+
+@utility bg-grain {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140' viewBox='0 0 140 140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+}
+
+/* ── Strip-chart paper: fine engineering ruling ── */
+@utility bg-rules-fine {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath d='M24 0H0V24' fill='none' stroke='%23241f1a' stroke-opacity='0.07'/%3E%3C/svg%3E"),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cpath d='M120 0H0V120' fill='none' stroke='%23241f1a' stroke-opacity='0.12'/%3E%3C/svg%3E");
+  background-size: 24px 24px, 120px 120px;
+}
+
+/* ── Perforated edge for the chart recorder ── */
+@utility perf-edge {
+  background-image: radial-gradient(
+    circle at 6px 50%,
+    var(--color-paper) 3px,
+    transparent 3.5px
+  );
+  background-size: 100% 22px;
+  background-repeat: repeat-y;
+}
+
+/* ── Dotted sign-lines (title block APPROVED field) ── */
+@utility sign-line {
+  background-image: linear-gradient(
+    to right,
+    var(--color-rule-strong) 45%,
+    transparent 55%
+  );
+  background-size: 7px 1px;
+  background-repeat: repeat-x;
+  background-position: bottom;
 }
 
 /* ── Reduced motion ── */

@@ -1,28 +1,33 @@
 import type { Metadata, Viewport } from "next";
-import { Geist, JetBrains_Mono } from "next/font/google";
+import { Archivo, Martian_Mono } from "next/font/google";
 import "./globals.css";
-import { cn } from "@/lib/utils";
+import { ModeProvider } from "@/lib/mode";
 import Script from "next/script";
 
-const geist = Geist({
+const archivo = Archivo({
   subsets: ["latin"],
-  variable: "--font-sans",
+  weight: ["400", "500", "600", "700", "800", "900"],
+  variable: "--font-archivo",
+  display: "swap",
 });
 
-const jetbrainsMono = JetBrains_Mono({
+const martianMono = Martian_Mono({
   subsets: ["latin"],
-  variable: "--font-mono",
+  weight: ["400", "500", "700"],
+  variable: "--font-mono-annot",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://stephen-carew.dev"),
-  title: "Stephen Carew | Product Engineer",
+  metadataBase: new URL("https://stephencarew.dev"),
+  title: "Stephen Carew — Instrument & Control Engineer / Product Engineer",
   description:
-    "Full-stack product engineer who ships production SaaS end-to-end — with a control-systems background.",
+    "Instrumentation & control engineer (MSc, Teesside) who builds production software solo — including Ebenor, a UK property platform live at ebenor.co.uk.",
   keywords: [
+    "Instrumentation Engineer",
+    "Control Systems",
     "Product Engineer",
     "Full Stack Engineer",
-    "React",
     "Next.js",
     "Solana",
     "TypeScript",
@@ -32,26 +37,18 @@ export const metadata: Metadata = {
   manifest: "/manifest.json",
   openGraph: {
     type: "website",
-    locale: "en_US",
-    url: "https://stephen-carew.dev",
-    title: "Stephen Carew | Product Engineer",
+    locale: "en_GB",
+    url: "https://stephencarew.dev",
+    title: "Stephen Carew — Instrument & Control Engineer / Product Engineer",
     description:
-      "Full-stack products, engineered as systems.",
-    siteName: "Stephen Carew Portfolio",
-    images: [
-      {
-        url: "/og-image.png",
-        width: 1200,
-        height: 630,
-        alt: "Stephen Carew Portfolio",
-      },
-    ],
+      "Instrumentation & control engineer (MSc, Teesside) who builds production software solo — including Ebenor, a UK property platform live at ebenor.co.uk.",
+    siteName: "Stephen Carew",
   },
   twitter: {
-    card: "summary_large_image",
-    title: "Stephen Carew | Product Engineer",
+    card: "summary",
+    title: "Stephen Carew — Drawing Package SC-2026",
     description:
-      "Full-stack products, engineered as systems.",
+      "Instrumentation & control engineer who ships production software solo.",
     creator: "@stephen_carew",
   },
   robots: {
@@ -70,7 +67,7 @@ export const metadata: Metadata = {
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  maximumScale: 1,
+  themeColor: "#f3efe4",
 };
 
 export default function RootLayout({
@@ -79,15 +76,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning className="bg-ink-950">
+    <html lang="en" data-mode="product" suppressHydrationWarning>
       <body
-        className={cn(
-          "min-h-screen font-sans antialiased bg-ink-950 text-cream-50",
-          geist.variable,
-          jetbrainsMono.variable,
-        )}
+        className={`${archivo.variable} ${martianMono.variable} min-h-screen bg-paper font-sans text-ink antialiased`}
       >
-        {children}
+        <ModeProvider>{children}</ModeProvider>
         <Script
           id="json-ld"
           type="application/ld+json"
@@ -96,12 +89,12 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "Person",
               name: "Stephen Carew",
-              url: "https://stephen-carew.dev",
-              jobTitle: "Product Engineer",
+              url: "https://stephencarew.dev",
+              jobTitle:
+                "Instrumentation & Control Engineer / Product Engineer",
               sameAs: [
                 "https://github.com/stephen-carew",
                 "https://linkedin.com/in/stephen-carew",
-                "https://twitter.com/stephen_carew",
               ],
             }),
           }}

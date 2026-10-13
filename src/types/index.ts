@@ -19,6 +19,10 @@ export interface Project {
   problem?: string;
   solution?: string;
   metrics?: string[];
+  // Drawing-package annotation fields
+  tag?: string; // ISA-style tag, e.g. "TEN-101"
+  service?: string; // one-line service description for the schedule
+  loopNote?: string; // control-systems reading of the project
 }
 
 export interface Skill {
